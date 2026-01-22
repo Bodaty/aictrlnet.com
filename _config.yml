@@ -1,0 +1,43 @@
+title: AICtrlNet
+description: AI orchestration with humans in the loop
+url: "https://aictrlnet.com"
+baseurl: ""
+
+theme: minima
+
+author:
+  name: Srirajasekhar "Bobby" Koritala
+  email: bobby@aictrlnet.com
+
+# Social links
+social:
+  twitter: aictrlnet
+  github: Bodaty
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Post defaults - all posts go under /blog/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Bobby Bodaty"
+
+# Build settings
+markdown: kramdown
+
+# Posts live at /blog/YYYY/MM/title/
+permalink: /blog/:year/:month/:title/
+
+# Show excerpts on blog index
+show_excerpts: true
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
