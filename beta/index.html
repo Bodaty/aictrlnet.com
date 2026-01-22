@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Private Beta - AICtrlNet</title>
+    <meta name="description" content="Join the AICtrlNet private beta. Be among the first to build AI workflows with native human-in-the-loop architecture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #6ee7b7;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .signup-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 450px;
+        }
+        .form-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .form-row input, .form-row select {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-row input:focus, .form-row select:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .form-row input::placeholder {
+            color: #6b7280;
+        }
+        .form-row select {
+            cursor: pointer;
+        }
+        .form-row select option {
+            background: #1a1a3e;
+        }
+        .form-row.full input {
+            width: 100%;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            text-align: left;
+            margin-bottom: 2rem;
+            max-width: 400px;
+        }
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+        .benefit svg {
+            color: #6ee7b7;
+            flex-shrink: 0;
+        }
+        .back-link {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            color: #a5b4fc;
+        }
+        @media (max-width: 500px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="badge">Limited Spots Available</div>
+    <h1>Join the Private Beta</h1>
+    <p>Be among the first to build AI workflows where humans are first-class citizens.</p>
+
+    <div class="benefits">
+        <div class="benefit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Early access to Community Edition
+        </div>
+        <div class="benefit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Direct channel to founding team
+        </div>
+        <div class="benefit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Input on roadmap priorities
+        </div>
+        <div class="benefit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Beta contributor recognition
+        </div>
+    </div>
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="signup-form">
+        <div class="form-row full">
+            <input type="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-row">
+            <input type="text" name="company" placeholder="Company (optional)">
+        </div>
+        <div class="form-row">
+            <select name="role">
+                <option value="">I am a... (optional)</option>
+                <option value="developer">Developer</option>
+                <option value="startup">Startup Founder</option>
+                <option value="smb">SMB / Team Lead</option>
+                <option value="enterprise">Enterprise</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <button type="submit">Get Early Access</button>
+    </form>
+
+    <a href="/" class="back-link">← Back to Home</a>
+</body>
+</html>

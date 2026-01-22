@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICtrlNet - AI Orchestration Where Humans Come First</title>
+    <meta name="description" content="Open core AI orchestration platform with native human-in-the-loop architecture. Private beta launching January 2026.">
+    <meta property="og:title" content="AICtrlNet - AI Orchestration Where Humans Come First">
+    <meta property="og:description" content="Open core AI orchestration platform with native human-in-the-loop architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aictrlnet.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #a5b4fc;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .highlight {
+            color: #a5b4fc;
+            font-weight: 500;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        .signup-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .signup-form h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .signup-form p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .form-row input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-row input:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .form-row input::placeholder {
+            color: #6b7280;
+        }
+
+        .form-row button {
+            padding: 0.875rem 1.5rem;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .form-row button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .credibility {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        .credibility-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .credibility-item strong {
+            color: #9ca3af;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">Private Beta - Launching January 2026</div>
+
+        <h1>AI Orchestration Where Humans Come First</h1>
+
+        <p class="subtitle">
+            The <span class="highlight">open core</span> platform for building AI workflows with
+            <span class="highlight">native human-in-the-loop</span> architecture.
+            Not a bolt-on approval step—humans as first-class workflow participants.
+        </p>
+
+        <div class="cta-group">
+            <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Star on GitHub
+            </a>
+            <a href="/blog" class="btn btn-secondary">Read the Blog</a>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">Human-in-the-Loop Native</div>
+                <div class="feature-desc">Approval nodes, review queues, and escalation paths built into the core architecture.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Multi-Framework Support</div>
+                <div class="feature-desc">LangChain, AutoGPT, CrewAI, AutoGen, Semantic Kernel—use what works for you.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Open Core Model</div>
+                <div class="feature-desc">MIT-licensed Community Edition. Genuine open source, not fair-code.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Enterprise Governance</div>
+                <div class="feature-desc">Audit trails, bias detection, explainability. Built for regulated industries.</div>
+            </div>
+        </div>
+
+        <div class="signup-form">
+            <h3>Join the Private Beta</h3>
+            <p>Be among the first to build AI workflows where humans are first-class citizens.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="form-row">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <button type="submit">Get Early Access</button>
+            </form>
+        </div>
+
+        <div class="credibility">
+            <div class="credibility-item">
+                <strong>Founded by</strong> AI patent holder with 20+ years enterprise software experience
+            </div>
+            <div class="credibility-item">
+                <strong>Background</strong> Infogix (Precisely), Protiviti, SPSS (IBM)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a><br>
+            <a href="https://hitlai.net">HitLai</a> (Commercial Product) &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
