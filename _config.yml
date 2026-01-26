@@ -5,9 +5,8 @@ baseurl: ""
 
 theme: minima
 
-author:
-  name: Srirajasekhar "Bobby" Koritala
-  email: bobby@aictrlnet.com
+author: Bobby Koritala
+email: bobby@aictrlnet.com
 
 # Social links
 social:
