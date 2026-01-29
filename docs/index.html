@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation - AICtrlNet</title>
-    <meta name="description" content="AICtrlNet documentation - API reference, guides, and tutorials. Coming soon.">
+    <meta name="description" content="AICtrlNet documentation - Getting started, API reference, guides, and examples for the AI orchestration platform.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
         }
         .badge {
             display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            border: 1px solid rgba(99, 102, 241, 0.4);
-            color: #a5b4fc;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #86efac;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -62,6 +62,20 @@
             padding: 1rem;
             font-size: 0.9rem;
             color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: block;
+        }
+        .doc-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(99, 102, 241, 0.4);
+            color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        .doc-item .icon {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
         .cta-group {
             display: flex;
@@ -99,21 +113,39 @@
     </style>
 </head>
 <body>
-    <div class="badge">Coming January 2026</div>
+    <div class="badge">Community Edition v1.0</div>
     <h1>Documentation</h1>
-    <p>Comprehensive docs launching with the private beta. Get notified when they're ready.</p>
+    <p>Everything you need to build AI workflows with human-in-the-loop orchestration.</p>
 
     <div class="docs-preview">
-        <div class="doc-item">Getting Started</div>
-        <div class="doc-item">API Reference</div>
-        <div class="doc-item">Python SDK</div>
-        <div class="doc-item">Guides</div>
-        <div class="doc-item">Examples</div>
-        <div class="doc-item">CLI Reference</div>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/getting-started.md" class="doc-item">
+            <span class="icon">&#128640;</span>
+            Getting Started
+        </a>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/api.md" class="doc-item">
+            <span class="icon">&#128218;</span>
+            API Reference
+        </a>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/guides.md" class="doc-item">
+            <span class="icon">&#128736;</span>
+            Guides
+        </a>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/examples.md" class="doc-item">
+            <span class="icon">&#128187;</span>
+            Examples
+        </a>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/ENV_VARS.md" class="doc-item">
+            <span class="icon">&#9881;</span>
+            Configuration
+        </a>
+        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/CONTRIBUTING.md" class="doc-item">
+            <span class="icon">&#129309;</span>
+            Contributing
+        </a>
     </div>
 
     <div class="cta-group">
-        <a href="/" class="btn btn-primary">Join the Beta</a>
+        <a href="https://github.com/Bodaty/aictrlnet-community" class="btn btn-primary">View on GitHub</a>
         <a href="/blog" class="btn btn-secondary">Read the Blog</a>
     </div>
 </body>
