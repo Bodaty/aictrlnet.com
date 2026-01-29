@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - AICtrlNet</title>
-    <meta name="description" content="AICtrlNet platform features - Human-in-the-loop AI orchestration. Coming soon.">
+    <meta name="description" content="AICtrlNet platform features: human-in-the-loop architecture, multi-framework AI support, visual workflow builder, 27+ adapters, AI governance, and developer tools.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
@@ -18,148 +19,454 @@
             display: flex;
             flex-direction: column;
         }
-        .page-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
             flex: 1;
-            display: flex;
-            flex-direction: column;
         }
+
         .nav {
             padding: 1rem 0;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
+
         .nav a {
             color: #9ca3af;
             text-decoration: none;
             font-size: 0.9rem;
         }
+
         .nav a:hover {
             color: #a5b4fc;
         }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Feature sections */
+        .feature-section {
+            margin-bottom: 4rem;
+        }
+
+        .feature-section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-section-desc {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .feature-item-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #c9cdd3;
+            margin-bottom: 0.35rem;
+        }
+
+        .feature-item-desc {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Tag grid for compact lists */
+        .tag-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #a5b4fc;
+        }
+
+        /* Code block */
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #c9cdd3;
+            overflow-x: auto;
+        }
+
+        .code-block .prompt {
+            color: #a5b4fc;
+        }
+
+        .code-block .comment {
+            color: #6b7280;
+        }
+
+        /* CTA banner */
+        .cta-banner {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
             color: #6b7280;
             font-size: 0.85rem;
         }
+
         footer a {
             color: #9ca3af;
             text-decoration: none;
         }
+
         footer a:hover {
             color: #a5b4fc;
         }
+
         .footer-links {
             margin-top: 0.5rem;
         }
-        .badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            border: 1px solid rgba(99, 102, 241, 0.4);
-            color: #a5b4fc;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-        .features-preview {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-        .feature-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: #a5b4fc;
-        }
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: white;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-        }
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+
+        @media (max-width: 600px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-    <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
-    <div class="page-content">
-    <div class="badge">Coming January 2026</div>
-    <h1>Platform Features</h1>
-    <p>Full feature documentation launching with our private beta. Here's what's coming:</p>
 
-    <div class="features-preview">
-        <span class="feature-tag">Human-in-the-Loop Native</span>
-        <span class="feature-tag">5 AI Frameworks</span>
-        <span class="feature-tag">Visual Workflow Builder</span>
-        <span class="feature-tag">27+ Adapters</span>
-        <span class="feature-tag">Enterprise Governance</span>
-        <span class="feature-tag">MCP & A2A Protocols</span>
-    </div>
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
 
-    <div class="cta-group">
-        <a href="/" class="btn btn-primary">Join the Beta</a>
-        <a href="/blog" class="btn btn-secondary">Read the Blog</a>
-    </div>
-    </div>
+        <div class="page-header">
+            <h1>Platform Features</h1>
+            <p>Everything you need to build AI workflows where humans and AI are equal participants.</p>
+        </div>
+
+        <!-- Section 1: Human-in-the-Loop Architecture -->
+        <div class="feature-section">
+            <div class="feature-section-label">Core Architecture</div>
+            <div class="feature-section-title">Human-in-the-Loop Native</div>
+            <div class="feature-section-desc">
+                Human oversight isn't bolted on after the fact. Approval nodes, review queues, and escalation paths are built into the workflow engine from the ground up.
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-title">Approval Nodes</div>
+                    <div class="feature-item-desc">Require human sign-off at any point in a workflow before proceeding.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Review Queues</div>
+                    <div class="feature-item-desc">Route AI outputs to the right reviewer with priority and assignment rules.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Escalation Paths</div>
+                    <div class="feature-item-desc">Define fallback chains when approvals aren't granted or deadlines pass.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Human Task Assignment</div>
+                    <div class="feature-item-desc">Assign specific tasks to specific people based on role, expertise, or availability.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Timeout &amp; Fallback</div>
+                    <div class="feature-item-desc">Configurable timeouts with automatic escalation or alternative handling.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: AI Agent Support -->
+        <div class="feature-section">
+            <div class="feature-section-label">AI Capabilities</div>
+            <div class="feature-section-title">Multi-Framework Agent Support</div>
+            <div class="feature-section-desc">
+                Bring your own framework. AICtrlNet integrates with the major AI agent frameworks so you can use the tools your team already knows.
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-title">5 Framework Integrations</div>
+                    <div class="feature-item-desc">LangChain, AutoGPT, CrewAI, AutoGen, and Semantic Kernel supported out of the box.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">41 Pre-built Agents</div>
+                    <div class="feature-item-desc">33 AI agents and 8 specialized agents ready to deploy in your workflows.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Custom Agent Creation</div>
+                    <div class="feature-item-desc">Build your own agents with the Python SDK or the visual builder.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Agent Collaboration</div>
+                    <div class="feature-item-desc">Agent pods enable multi-agent collaboration within a single workflow.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Workflow Engine -->
+        <div class="feature-section">
+            <div class="feature-section-label">Build</div>
+            <div class="feature-section-title">Visual + Code Workflow Engine</div>
+            <div class="feature-section-desc">
+                Build workflows visually with drag-and-drop or programmatically with Python. Conditional logic, loops, branching, error handling, and retry built in.
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-title">Visual Workflow Builder</div>
+                    <div class="feature-item-desc">Drag-and-drop interface for building workflows without writing code.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">183 Workflow Templates</div>
+                    <div class="feature-item-desc">Pre-built templates for common patterns across industries.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Conditional Logic</div>
+                    <div class="feature-item-desc">Branching, loops, and conditional execution based on data or human decisions.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Error Handling &amp; Retry</div>
+                    <div class="feature-item-desc">Configurable error handling, retry policies, and dead-letter queues.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Protocol & Integration -->
+        <div class="feature-section">
+            <div class="feature-section-label">Connect</div>
+            <div class="feature-section-title">Protocols &amp; Integrations</div>
+            <div class="feature-section-desc">
+                Native support for MCP (Model Context Protocol) and A2A (Agent-to-Agent), plus 27 adapters for connecting to the services your team already uses.
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <div class="feature-section-desc" style="margin-bottom: 0.75rem; font-weight: 500; color: #c9cdd3;">Adapters</div>
+                <div class="tag-grid">
+                    <span class="tag">Salesforce</span>
+                    <span class="tag">HubSpot</span>
+                    <span class="tag">Slack</span>
+                    <span class="tag">Teams</span>
+                    <span class="tag">Email</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">S3</span>
+                    <span class="tag">GCS</span>
+                    <span class="tag">OpenAI</span>
+                    <span class="tag">Anthropic</span>
+                    <span class="tag">n8n</span>
+                    <span class="tag">Zapier</span>
+                    <span class="tag">Make</span>
+                    <span class="tag">+13 more</span>
+                </div>
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-title">MCP Native</div>
+                    <div class="feature-item-desc">Model Context Protocol support for standardized AI model interactions.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Google A2A</div>
+                    <div class="feature-item-desc">Agent-to-Agent protocol for cross-platform agent communication.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Platform Bridges</div>
+                    <div class="feature-item-desc">Integrate with n8n, Zapier, and Make for existing automation workflows.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: AI Governance -->
+        <div class="feature-section">
+            <div class="feature-section-label">Govern</div>
+            <div class="feature-section-title">AI Governance &amp; Compliance</div>
+            <div class="feature-section-desc">
+                Production AI needs oversight. Audit trails, bias detection, and explainability reports give your team confidence that AI is operating within bounds.
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-title">Audit Trails</div>
+                    <div class="feature-item-desc">Complete record of every decision, approval, and AI action across workflows.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Bias Detection</div>
+                    <div class="feature-item-desc">ML-powered analysis to flag potential bias in AI outputs before they reach production.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Explainability Reports</div>
+                    <div class="feature-item-desc">Human-readable explanations of AI decisions for compliance and review.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Compliance Frameworks</div>
+                    <div class="feature-item-desc">Built-in support for HIPAA, GDPR, and SOC2 compliance requirements.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Developer Experience -->
+        <div class="feature-section">
+            <div class="feature-section-label">Develop</div>
+            <div class="feature-section-title">Developer Experience</div>
+            <div class="feature-section-desc">
+                Python SDK, REST API, CLI tools, and Docker-first deployment. Build locally, deploy anywhere.
+            </div>
+            <div class="code-block">
+                <span class="comment"># Install and run</span><br>
+                <span class="prompt">$</span> docker pull bodaty/aictrlnet-community<br>
+                <span class="prompt">$</span> docker run -p 8000:8000 bodaty/aictrlnet-community<br>
+                <br>
+                <span class="comment"># Or use the Python SDK</span><br>
+                <span class="prompt">$</span> pip install aictrlnet<br>
+                <span class="prompt">$</span> aictrlnet init my-project
+            </div>
+            <div class="feature-list" style="margin-top: 1.5rem;">
+                <div class="feature-item">
+                    <div class="feature-item-title">Python SDK</div>
+                    <div class="feature-item-desc">Build and manage workflows programmatically with a clean Python API.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">REST API</div>
+                    <div class="feature-item-desc">Full REST API for integration with any language or platform.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">CLI Tools</div>
+                    <div class="feature-item-desc">Command-line tools for project scaffolding, deployment, and management.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item-title">Docker &amp; Kubernetes</div>
+                    <div class="feature-item-desc">Container-native deployment with Docker Compose and Kubernetes support.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Ready to build?</h2>
+            <p>Get started with the Community Edition or compare editions to find the right fit for your team.</p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">Get Started Free</a>
+                <a href="/editions" class="btn btn-secondary">Compare Editions</a>
+                <a href="/docs" class="btn btn-secondary">Read the Docs</a>
+            </div>
+        </div>
+
     </div>
 
     <footer>
