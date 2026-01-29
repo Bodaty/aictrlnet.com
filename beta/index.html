@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
@@ -18,51 +19,53 @@
             display: flex;
             flex-direction: column;
         }
-        .page-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
             flex: 1;
-            display: flex;
-            flex-direction: column;
         }
+
         .nav {
             padding: 1rem 0;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
+
         .nav a {
             color: #9ca3af;
             text-decoration: none;
             font-size: 0.9rem;
         }
+
         .nav a:hover {
             color: #a5b4fc;
         }
-        footer {
+
+        .page-header {
             text-align: center;
-            padding: 2rem;
-            color: #6b7280;
-            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            padding-top: 2rem;
         }
-        footer a {
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
             color: #9ca3af;
-            text-decoration: none;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-        footer a:hover {
-            color: #a5b4fc;
-        }
-        .footer-links {
-            margin-top: 0.5rem;
-        }
+
         .badge {
             display: inline-block;
             background: rgba(16, 185, 129, 0.2);
@@ -74,34 +77,47 @@
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .beta-content {
+            max-width: 450px;
+            margin: 0 auto;
         }
-        p {
-            font-size: 1.1rem;
-            color: #9ca3af;
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            text-align: left;
             margin-bottom: 2rem;
-            max-width: 500px;
         }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .benefit svg {
+            color: #6ee7b7;
+            flex-shrink: 0;
+        }
+
         .signup-form {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
-            width: 100%;
-            max-width: 450px;
         }
+
         .form-row {
             display: flex;
             gap: 0.75rem;
             margin-bottom: 1rem;
         }
+
         .form-row input, .form-row select {
             flex: 1;
             padding: 0.875rem 1rem;
@@ -112,22 +128,28 @@
             font-size: 1rem;
             font-family: inherit;
         }
+
         .form-row input:focus, .form-row select:focus {
             outline: none;
             border-color: #6366f1;
         }
+
         .form-row input::placeholder {
             color: #6b7280;
         }
+
         .form-row select {
             cursor: pointer;
         }
+
         .form-row select option {
             background: #1a1a3e;
         }
+
         .form-row.full input {
             width: 100%;
         }
+
         button[type="submit"] {
             width: 100%;
             padding: 1rem;
@@ -141,37 +163,32 @@
             transition: all 0.2s ease;
             font-family: inherit;
         }
+
         button[type="submit"]:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
         }
-        .benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            text-align: left;
-            margin-bottom: 2rem;
-            max-width: 400px;
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
         }
-        .benefit {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-            color: #d1d5db;
-        }
-        .benefit svg {
-            color: #6ee7b7;
-            flex-shrink: 0;
-        }
-        .back-link {
+
+        footer a {
             color: #9ca3af;
             text-decoration: none;
-            font-size: 0.9rem;
         }
-        .back-link:hover {
+
+        footer a:hover {
             color: #a5b4fc;
         }
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
         @media (max-width: 500px) {
             .form-row {
                 flex-direction: column;
@@ -181,52 +198,56 @@
 </head>
 <body>
     <div class="container">
-    <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
-    <div class="page-content">
-    <div class="badge">Limited Spots Available</div>
-    <h1>Join the Private Beta</h1>
-    <p>Be among the first to build AI workflows where humans are first-class citizens.</p>
 
-    <div class="benefits">
-        <div class="benefit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Early access to Community Edition
-        </div>
-        <div class="benefit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Direct channel to founding team
-        </div>
-        <div class="benefit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Input on roadmap priorities
-        </div>
-        <div class="benefit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Beta contributor recognition
-        </div>
-    </div>
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
 
-    <form action="https://formspree.io/f/xzdezkqz" method="POST" class="signup-form">
-        <div class="form-row full">
-            <input type="email" name="email" placeholder="you@company.com" required>
+        <div class="page-header">
+            <div class="badge">Limited Spots Available</div>
+            <h1>Join the Private Beta</h1>
+            <p>Be among the first to build AI workflows where humans are first-class citizens.</p>
         </div>
-        <div class="form-row">
-            <input type="text" name="company" placeholder="Company (optional)">
-        </div>
-        <div class="form-row">
-            <select name="role">
-                <option value="">I am a... (optional)</option>
-                <option value="developer">Developer</option>
-                <option value="startup">Startup Founder</option>
-                <option value="smb">SMB / Team Lead</option>
-                <option value="enterprise">Enterprise</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <button type="submit">Get Early Access</button>
-    </form>
 
-    </div>
+        <div class="beta-content">
+            <div class="benefits">
+                <div class="benefit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Early access to Community Edition
+                </div>
+                <div class="benefit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Direct channel to founding team
+                </div>
+                <div class="benefit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Input on roadmap priorities
+                </div>
+                <div class="benefit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Beta contributor recognition
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/xzdezkqz" method="POST" class="signup-form">
+                <div class="form-row full">
+                    <input type="email" name="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="company" placeholder="Company (optional)">
+                </div>
+                <div class="form-row">
+                    <select name="role">
+                        <option value="">I am a... (optional)</option>
+                        <option value="developer">Developer</option>
+                        <option value="startup">Startup Founder</option>
+                        <option value="smb">SMB / Team Lead</option>
+                        <option value="enterprise">Enterprise</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit">Get Early Access</button>
+            </form>
+        </div>
+
     </div>
 
     <footer>
