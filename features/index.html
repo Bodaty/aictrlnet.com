@@ -17,10 +17,42 @@
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
+        }
+        .page-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 2rem;
             text-align: center;
+        }
+        .nav {
+            padding: 1rem 2rem;
+        }
+        .nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .nav a:hover {
+            color: #a5b4fc;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #a5b4fc;
+        }
+        .footer-links {
+            margin-top: 0.5rem;
         }
         .badge {
             display: inline-block;
@@ -98,6 +130,8 @@
     </style>
 </head>
 <body>
+    <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
+    <div class="page-content">
     <div class="badge">Coming January 2026</div>
     <h1>Platform Features</h1>
     <p>Full feature documentation launching with our private beta. Here's what's coming:</p>
@@ -115,5 +149,20 @@
         <a href="/" class="btn btn-primary">Join the Beta</a>
         <a href="/blog" class="btn btn-secondary">Read the Blog</a>
     </div>
+    </div>
+
+    <footer>
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/">Home</a> &nbsp;|&nbsp;
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/community">Community</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
+        </p>
+    </footer>
 </body>
 </html>
