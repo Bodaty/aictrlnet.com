@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
@@ -18,51 +19,53 @@
             display: flex;
             flex-direction: column;
         }
-        .page-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
             flex: 1;
-            display: flex;
-            flex-direction: column;
         }
+
         .nav {
             padding: 1rem 0;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
+
         .nav a {
             color: #9ca3af;
             text-decoration: none;
             font-size: 0.9rem;
         }
+
         .nav a:hover {
             color: #a5b4fc;
         }
-        footer {
+
+        .page-header {
             text-align: center;
-            padding: 2rem;
-            color: #6b7280;
-            font-size: 0.85rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
         }
-        footer a {
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
             color: #9ca3af;
-            text-decoration: none;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-        footer a:hover {
-            color: #a5b4fc;
-        }
-        .footer-links {
-            margin-top: 0.5rem;
-        }
+
         .badge {
             display: inline-block;
             background: rgba(34, 197, 94, 0.2);
@@ -74,28 +77,17 @@
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
+
         .docs-preview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
-            max-width: 500px;
-            width: 100%;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
         .doc-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -106,93 +98,127 @@
             text-decoration: none;
             transition: all 0.2s ease;
             display: block;
+            text-align: center;
         }
+
         .doc-item:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(99, 102, 241, 0.4);
             color: #e0e0e0;
             transform: translateY(-2px);
         }
+
         .doc-item .icon {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
             display: block;
         }
+
         .cta-group {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 2rem;
         }
+
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
         }
+
         .btn-primary {
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             color: white;
         }
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
         }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
             color: #e0e0e0;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+        }
+
+        .footer-links {
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-    <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
-    <div class="page-content">
-    <div class="badge">Community Edition v1.0</div>
-    <h1>Documentation</h1>
-    <p>Everything you need to build AI workflows with human-in-the-loop orchestration.</p>
 
-    <div class="docs-preview">
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/getting-started.md" class="doc-item">
-            <span class="icon">&#128640;</span>
-            Getting Started
-        </a>
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/api.md" class="doc-item">
-            <span class="icon">&#128218;</span>
-            API Reference
-        </a>
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/guides.md" class="doc-item">
-            <span class="icon">&#128736;</span>
-            Guides
-        </a>
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/examples.md" class="doc-item">
-            <span class="icon">&#128187;</span>
-            Examples
-        </a>
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/ENV_VARS.md" class="doc-item">
-            <span class="icon">&#9881;</span>
-            Configuration
-        </a>
-        <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/CONTRIBUTING.md" class="doc-item">
-            <span class="icon">&#129309;</span>
-            Contributing
-        </a>
-    </div>
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
 
-    <div class="cta-group">
-        <a href="https://github.com/Bodaty/aictrlnet-community" class="btn btn-primary">View on GitHub</a>
-        <a href="/blog" class="btn btn-secondary">Read the Blog</a>
-    </div>
-    </div>
+        <div class="page-header">
+            <div class="badge">Community Edition v1.0</div>
+            <h1>Documentation</h1>
+            <p>Everything you need to build AI workflows with human-in-the-loop orchestration.</p>
+        </div>
+
+        <div class="docs-preview">
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/getting-started.md" class="doc-item">
+                <span class="icon">&#128640;</span>
+                Getting Started
+            </a>
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/api.md" class="doc-item">
+                <span class="icon">&#128218;</span>
+                API Reference
+            </a>
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/guides.md" class="doc-item">
+                <span class="icon">&#128736;</span>
+                Guides
+            </a>
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/examples.md" class="doc-item">
+                <span class="icon">&#128187;</span>
+                Examples
+            </a>
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/ENV_VARS.md" class="doc-item">
+                <span class="icon">&#9881;</span>
+                Configuration
+            </a>
+            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/CONTRIBUTING.md" class="doc-item">
+                <span class="icon">&#129309;</span>
+                Contributing
+            </a>
+        </div>
+
+        <div class="cta-group">
+            <a href="https://github.com/Bodaty/aictrlnet-community" class="btn btn-primary">View on GitHub</a>
+            <a href="/blog" class="btn btn-secondary">Read the Blog</a>
+        </div>
+
     </div>
 
     <footer>
