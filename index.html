@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AICtrlNet - AI Orchestration Where Humans Come First</title>
-    <meta name="description" content="Open core AI orchestration platform with native human-in-the-loop architecture. Private beta launching January 2026.">
-    <meta property="og:title" content="AICtrlNet - AI Orchestration Where Humans Come First">
-    <meta property="og:description" content="Open core AI orchestration platform with native human-in-the-loop architecture.">
+    <title>AICtrlNet - AI Orchestration Where Humans Are First-Class Citizens</title>
+    <meta name="description" content="Open core AI orchestration platform with native human-in-the-loop architecture. MIT-licensed Community Edition. Now in Private Beta.">
+    <meta property="og:title" content="AICtrlNet - AI Orchestration Where Humans Are First-Class Citizens">
+    <meta property="og:description" content="Open core AI orchestration platform with native human-in-the-loop architecture. Build approval flows, review queues, and collaborative AI processes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aictrlnet.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -29,15 +29,41 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
+        /* Section spacing */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* Badge */
         .badge {
             display: inline-block;
             background: rgba(99, 102, 241, 0.2);
@@ -51,8 +77,14 @@
             letter-spacing: 0.5px;
         }
 
+        /* Hero */
+        .hero {
+            padding-top: 4rem;
+            margin-bottom: 5rem;
+        }
+
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -67,7 +99,7 @@
             color: #9ca3af;
             line-height: 1.6;
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 640px;
         }
 
         .highlight {
@@ -79,14 +111,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-bottom: 3rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
+            padding: 0.875rem 1.75rem;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
@@ -116,39 +147,123 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+        /* What is AICtrlNet */
+        .what-is {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2.5rem;
         }
 
-        .feature {
+        .what-is p {
+            font-size: 1.15rem;
+            color: #c9cdd3;
+            line-height: 1.8;
+        }
+
+        /* Capabilities grid */
+        .capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .capability {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             padding: 1.5rem;
         }
 
-        .feature-title {
-            font-size: 0.9rem;
+        .capability-title {
+            font-size: 0.95rem;
             font-weight: 600;
             color: #a5b4fc;
             margin-bottom: 0.5rem;
         }
 
-        .feature-desc {
+        .capability-desc {
             font-size: 0.85rem;
             color: #9ca3af;
             line-height: 1.5;
         }
 
+        /* Editions overview */
+        .editions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .edition-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .edition-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .edition-price {
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .edition-desc {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        .editions-cta {
+            margin-top: 1.5rem;
+        }
+
+        /* Get Started / code snippet */
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #c9cdd3;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .code-block .prompt {
+            color: #a5b4fc;
+        }
+
+        .code-block .comment {
+            color: #6b7280;
+        }
+
+        /* Community section */
+        .community-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Beta signup form */
         .signup-form {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .signup-form h3 {
@@ -205,6 +320,7 @@
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
         }
 
+        /* Credibility */
         .credibility {
             display: flex;
             flex-wrap: wrap;
@@ -213,6 +329,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             color: #6b7280;
             font-size: 0.85rem;
+            margin-bottom: 3rem;
         }
 
         .credibility-item {
@@ -225,6 +342,7 @@
             color: #9ca3af;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -241,6 +359,11 @@
             color: #a5b4fc;
         }
 
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive */
         @media (max-width: 600px) {
             .form-row {
                 flex-direction: column;
@@ -253,48 +376,136 @@
             .btn {
                 justify-content: center;
             }
+
+            .hero {
+                padding-top: 2rem;
+            }
+
+            .what-is {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="badge">Private Beta - Launching January 2026</div>
 
-        <h1>AI Orchestration Where Humans Come First</h1>
-
-        <p class="subtitle">
-            The <span class="highlight">open core</span> platform for building AI workflows with
-            <span class="highlight">native human-in-the-loop</span> architecture.
-            Not a bolt-on approval step—humans as first-class workflow participants.
-        </p>
-
-        <div class="cta-group">
-            <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Star on GitHub
-            </a>
-            <a href="/blog" class="btn btn-secondary">Read the Blog</a>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-title">Human-in-the-Loop Native</div>
-                <div class="feature-desc">Approval nodes, review queues, and escalation paths built into the core architecture.</div>
-            </div>
-            <div class="feature">
-                <div class="feature-title">Multi-Framework Support</div>
-                <div class="feature-desc">LangChain, AutoGPT, CrewAI, AutoGen, Semantic Kernel—use what works for you.</div>
-            </div>
-            <div class="feature">
-                <div class="feature-title">Open Core Model</div>
-                <div class="feature-desc">MIT-licensed Community Edition. Genuine open source, not fair-code.</div>
-            </div>
-            <div class="feature">
-                <div class="feature-title">Enterprise Governance</div>
-                <div class="feature-desc">Audit trails, bias detection, explainability. Built for regulated industries.</div>
+        <!-- Section 1: Hero -->
+        <div class="hero">
+            <div class="badge">Now in Private Beta</div>
+            <h1>AI Orchestration Where Humans Are First-Class Citizens</h1>
+            <p class="subtitle">
+                The <span class="highlight">open core</span> platform for building AI workflows with
+                <span class="highlight">native human-in-the-loop</span> architecture.
+                MIT-licensed Community Edition.
+            </p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Star on GitHub
+                </a>
+                <a href="/docs" class="btn btn-secondary">Read the Docs</a>
+                <a href="/beta" class="btn btn-secondary">Join Beta</a>
             </div>
         </div>
 
+        <!-- Section 2: What is AICtrlNet? -->
+        <div class="section">
+            <div class="what-is">
+                <div class="section-label">What is AICtrlNet?</div>
+                <p>
+                    AICtrlNet is an AI orchestration platform that treats humans and AI as equal workflow participants.
+                    Build approval flows, review queues, and collaborative AI processes&mdash;not just automated pipelines.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Key Capabilities -->
+        <div class="section">
+            <div class="section-label">Key Capabilities</div>
+            <div class="capabilities">
+                <div class="capability">
+                    <div class="capability-title">Human-in-the-Loop Native</div>
+                    <div class="capability-desc">Approval nodes, review queues, and escalation paths built into the core architecture.</div>
+                </div>
+                <div class="capability">
+                    <div class="capability-title">Multi-Framework Support</div>
+                    <div class="capability-desc">LangChain, AutoGPT, CrewAI, AutoGen, Semantic Kernel&mdash;use what works for you.</div>
+                </div>
+                <div class="capability">
+                    <div class="capability-title">Protocol Support</div>
+                    <div class="capability-desc">MCP, A2A, and 27+ adapters for AI services, databases, CRMs, and platform integrations.</div>
+                </div>
+                <div class="capability">
+                    <div class="capability-title">Visual + Code</div>
+                    <div class="capability-desc">Build workflows visually with the drag-and-drop builder or programmatically via Python SDK and REST API.</div>
+                </div>
+                <div class="capability">
+                    <div class="capability-title">AI Governance</div>
+                    <div class="capability-desc">Audit trails, bias detection, and explainability reports. Built for regulated industries.</div>
+                </div>
+                <div class="capability">
+                    <div class="capability-title">Open Core</div>
+                    <div class="capability-desc">MIT-licensed Community Edition. Genuine open source with commercial Business and Enterprise tiers.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Editions Overview -->
+        <div class="section">
+            <div class="section-label">Editions</div>
+            <div class="editions-grid">
+                <div class="edition-card">
+                    <div class="edition-name">Community</div>
+                    <div class="edition-price">Free &middot; MIT License</div>
+                    <div class="edition-desc">Core workflow engine, human-in-the-loop, visual builder, 5 AI frameworks, basic adapters. Self-hosted.</div>
+                </div>
+                <div class="edition-card">
+                    <div class="edition-name">Business</div>
+                    <div class="edition-price">From $599/mo</div>
+                    <div class="edition-desc">All 27 adapters, industry packs, advanced governance, bias detection, analytics. Cloud or self-hosted.</div>
+                </div>
+                <div class="edition-card">
+                    <div class="edition-name">Enterprise</div>
+                    <div class="edition-price">Custom pricing</div>
+                    <div class="edition-desc">Multi-tenancy, SSO/SAML, federation, on-premise deployment, dedicated support, custom SLA.</div>
+                </div>
+            </div>
+            <div class="editions-cta">
+                <a href="/editions" class="btn btn-secondary">Compare Editions</a>
+            </div>
+        </div>
+
+        <!-- Section 5: Get Started -->
+        <div class="section">
+            <div class="section-label">Get Started</div>
+            <div class="section-title">Up and running in seconds</div>
+            <div class="code-block">
+                <span class="prompt">$</span> docker pull bodaty/aictrlnet-community<br>
+                <span class="prompt">$</span> docker run -p 8000:8000 bodaty/aictrlnet-community<br>
+                <span class="comment"># Open http://localhost:8000</span>
+            </div>
+            <a href="/docs" class="btn btn-secondary">Full Documentation</a>
+        </div>
+
+        <!-- Section 6: Community -->
+        <div class="section">
+            <div class="section-label">Community</div>
+            <div class="section-title">Join developers building human-AI workflows</div>
+            <div class="section-desc">
+                Contribute to the open source platform, share workflow templates, and help shape the roadmap.
+            </div>
+            <div class="community-links">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://github.com/bodaty/aictrlnet-community/discussions" class="btn btn-secondary">Discussions</a>
+                <a href="/community" class="btn btn-secondary">Community Page</a>
+            </div>
+        </div>
+
+        <!-- Beta Signup Form -->
         <div class="signup-form">
             <h3>Join the Private Beta</h3>
             <p>Be among the first to build AI workflows where humans are first-class citizens.</p>
@@ -304,6 +515,7 @@
             </form>
         </div>
 
+        <!-- Credibility -->
         <div class="credibility">
             <div class="credibility-item">
                 <strong>Founded by</strong> AI patent holder with 20+ years enterprise software experience
@@ -312,14 +524,19 @@
                 <strong>Background</strong> Infogix (Precisely), Protiviti, SPSS (IBM)
             </div>
         </div>
+
     </div>
 
     <footer>
-        <p>
-            AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a><br>
-            <a href="https://hitlai.net">HitLai</a> (Commercial Product) &nbsp;|&nbsp;
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
             <a href="/blog">Blog</a> &nbsp;|&nbsp;
-            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a>
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/community">Community</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
         </p>
     </footer>
 </body>
