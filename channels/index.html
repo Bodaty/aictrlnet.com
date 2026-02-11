@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channels - AICtrlNet</title>
+    <meta name="description" content="One workflow engine, six entry points. Connect WhatsApp, Telegram, Slack, Discord, SMS, and Email to your AI automation platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .nav {
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            color: #a5b4fc;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .page-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #22c55e;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #a5b4fc;
+        }
+
+        /* Channel grid */
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .channel-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .channel-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .channel-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .channel-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .channel-example {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #a5b4fc;
+        }
+
+        .channel-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: #22c55e;
+            margin-top: 1rem;
+        }
+
+        /* Section divider */
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: "—";
+            margin: 0 1rem;
+        }
+
+        /* Special capabilities section */
+        .capabilities-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+        }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .capability-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .capability-card.featured {
+            border-color: rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .capability-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .capability-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .capability-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .capability-list {
+            list-style: none;
+        }
+
+        .capability-list li {
+            font-size: 0.85rem;
+            color: #c9cdd3;
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .capability-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #6366f1;
+        }
+
+        /* Architecture diagram */
+        .architecture-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .architecture-diagram {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #c9cdd3;
+            text-align: left;
+            overflow-x: auto;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .diagram-title {
+            color: #a5b4fc;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-arrow {
+            color: #22c55e;
+        }
+
+        /* Edition comparison */
+        .edition-section {
+            margin: 4rem 0;
+        }
+
+        .edition-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .edition-table th,
+        .edition-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .edition-table th {
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #c9cdd3;
+        }
+
+        .edition-table td {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .edition-table td:first-child {
+            color: #e0e0e0;
+        }
+
+        .check {
+            color: #22c55e;
+        }
+
+        .dash {
+            color: #6b7280;
+        }
+
+        /* CTA banner */
+        .cta-banner {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-github {
+            background: #24292e;
+            color: white;
+        }
+
+        .btn-github:hover {
+            background: #2d3339;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+        }
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .channel-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .edition-table {
+                font-size: 0.8rem;
+            }
+
+            .edition-table th,
+            .edition-table td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
+
+        <div class="page-header">
+            <div class="page-label">New in v6</div>
+            <h1>One Workflow. Six Entry Points.</h1>
+            <p>Meet users where they already work. <span class="highlight">WhatsApp, Telegram, Slack, Discord, SMS, Email</span> — all feeding into the same governed workflow engine.</p>
+        </div>
+
+        <!-- Messaging Channels Grid -->
+        <div class="channel-grid">
+            <div class="channel-card">
+                <div class="channel-icon">💬</div>
+                <div class="channel-name">WhatsApp</div>
+                <div class="channel-desc">Business owners live in WhatsApp. Now your workflows do too. Link via 6-digit code, trigger workflows from chat.</div>
+                <div class="channel-example">"Check order status" → workflow executes</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    Link in 30 seconds
+                </div>
+            </div>
+
+            <div class="channel-card">
+                <div class="channel-icon">✈️</div>
+                <div class="channel-name">Telegram</div>
+                <div class="channel-desc">Fast, secure, developer-friendly. Perfect for real-time workflow notifications and bot-style interactions.</div>
+                <div class="channel-example">Escalation alerts → Telegram notification</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    Real-time delivery
+                </div>
+            </div>
+
+            <div class="channel-card">
+                <div class="channel-icon">📱</div>
+                <div class="channel-name">Twilio SMS</div>
+                <div class="channel-desc">Reach customers who prefer text. Order updates, appointment reminders, and two-way workflow interactions via SMS.</div>
+                <div class="channel-example">"Confirm appointment" → SMS response</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    Universal reach
+                </div>
+            </div>
+
+            <div class="channel-card">
+                <div class="channel-icon">💼</div>
+                <div class="channel-name">Slack</div>
+                <div class="channel-desc">Where teams already coordinate. Trigger workflows from channels, approve actions with one click, get status updates in threads.</div>
+                <div class="channel-example">/aictrlnet approve invoice-123</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    One-click approvals
+                </div>
+            </div>
+
+            <div class="channel-card">
+                <div class="channel-icon">🎮</div>
+                <div class="channel-name">Discord</div>
+                <div class="channel-desc">For dev teams and communities. Bot commands trigger workflows, embed responses with rich formatting.</div>
+                <div class="channel-example">!deploy staging → workflow triggered</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    Bot-style commands
+                </div>
+            </div>
+
+            <div class="channel-card">
+                <div class="channel-icon">📧</div>
+                <div class="channel-name">Email (SendGrid)</div>
+                <div class="channel-desc">Some workflows start in an inbox. Parse inbound emails, trigger workflows, send transactional responses.</div>
+                <div class="channel-example">support@ → ticket workflow</div>
+                <div class="channel-time">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                    Inbound parsing
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">Plus Two More Ways In</div>
+
+        <!-- File Processing & Browser Automation -->
+        <div class="capabilities-section">
+            <div class="capability-grid">
+                <div class="capability-card featured">
+                    <div class="capability-badge">Files</div>
+                    <div class="capability-title">File Processing Pipeline</div>
+                    <div class="capability-desc">
+                        Upload a supplier invoice PDF. In 10 seconds: extracted line items, totals, dates. One more click: routed to the right approver.
+                    </div>
+                    <ul class="capability-list">
+                        <li>PDF extraction (text, tables, forms)</li>
+                        <li>Excel/CSV parsing and generation</li>
+                        <li>DOCX processing</li>
+                        <li>File upload as workflow trigger</li>
+                        <li>Document generation output</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card featured">
+                    <div class="capability-badge">Browser</div>
+                    <div class="capability-title">The Infinite Adapter</div>
+                    <div class="capability-desc">
+                        That legacy CRM with no API? Navigate, click, fill, extract, screenshot. Any web app you can use, we can automate.
+                    </div>
+                    <ul class="capability-list">
+                        <li>Navigate to any URL</li>
+                        <li>Click elements by selector</li>
+                        <li>Fill forms and submit</li>
+                        <li>Extract text and data</li>
+                        <li>Screenshot capture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture Diagram -->
+        <div class="architecture-section">
+            <div class="section-label">How It Works</div>
+            <div class="section-title">All Roads Lead to the Workflow Engine</div>
+
+            <div class="architecture-diagram">
+                <div class="diagram-title">User's world              AICtrlNet</div>
+                <div>─────────────              ────────</div>
+                <div>WhatsApp message ────────┐</div>
+                <div>Telegram message ────────┤</div>
+                <div>Slack / Discord ─────────┤</div>
+                <div>SMS (Twilio) ────────────┼──<span class="diagram-arrow">→</span> Workflow Engine (26 node types)</div>
+                <div>Email (SendGrid) ────────┤    AI Governance &amp; Compliance</div>
+                <div>Browser (any web app) ───┤    28 Native Adapters</div>
+                <div>Files (PDF, Excel, CSV) ─┘    Enterprise multi-tenancy</div>
+            </div>
+        </div>
+
+        <!-- Cross-Channel Conversations -->
+        <div class="capabilities-section">
+            <div class="section-label">Cross-Channel</div>
+            <div class="section-title">One Conversation, All Your Channels</div>
+            <div class="section-desc">
+                Start a conversation on WhatsApp. Continue it in the web UI. Get the completion notification in Telegram. One thread, all your channels, same workflow engine.
+            </div>
+        </div>
+
+        <!-- Edition Comparison -->
+        <div class="edition-section">
+            <div class="section-label">Edition Availability</div>
+            <div class="section-title">Every Channel Free in Community</div>
+            <div class="section-desc">
+                Capabilities drive adoption. Intelligence drives revenue. All entry points are free — the value ladder is in what we do with the data.
+            </div>
+
+            <table class="edition-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Community</th>
+                        <th>Business</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>All 6 messaging adapters</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>File upload + processing</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Document generation</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Browser automation</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Cross-channel conversations</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>ML-enhanced file extraction</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>AI Governance on inbound messages</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Compliance audit trail on browser actions</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <h2>Meet Users Where They Are</h2>
+            <p>Start with Community (free) or try Business with a 14-day trial.</p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-github">GitHub (Community)</a>
+                <a href="https://hitlai.net/trial" class="btn btn-primary">Start Free Trial</a>
+                <a href="/features" class="btn btn-secondary">See All Features</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/">Home</a> &nbsp;|&nbsp;
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/channels">Channels</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/community">Community</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
+        </p>
+    </footer>
+</body>
+</html>

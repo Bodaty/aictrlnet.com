@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Automation - AICtrlNet</title>
+    <meta name="description" content="The Infinite Adapter: Browser automation for workflows. Navigate, click, fill, extract, screenshot — any web app becomes an integration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .nav {
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            color: #a5b4fc;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header .tagline {
+            font-size: 1.25rem;
+            color: #6366f1;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #9ca3af;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Actions grid */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .action-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .action-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .action-desc {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        /* Code block */
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #c9cdd3;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .code-block .comment {
+            color: #6b7280;
+        }
+
+        .code-block .keyword {
+            color: #a5b4fc;
+        }
+
+        .code-block .string {
+            color: #86efac;
+        }
+
+        /* Use cases */
+        .use-case {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .use-case-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case-problem {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 0.75rem;
+        }
+
+        .use-case-solution {
+            font-size: 0.9rem;
+            color: #22c55e;
+        }
+
+        /* Feature list */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 0.95rem;
+            color: #c9cdd3;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #c9cdd3;
+        }
+
+        .comparison-table td {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .comparison-table td:first-child {
+            color: #e0e0e0;
+        }
+
+        /* CTA banner */
+        .cta-banner {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+        }
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .actions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a> &nbsp;|&nbsp; <a href="/features">Features</a></div>
+
+        <div class="page-header">
+            <div class="page-badge">New in v6</div>
+            <h1>Browser Automation</h1>
+            <div class="tagline">The Infinite Adapter</div>
+            <p>That legacy system with no API? Navigate, click, fill, extract, screenshot. Any web app you can use, we can automate.</p>
+        </div>
+
+        <!-- Five Actions -->
+        <div class="content-section">
+            <div class="section-label">Capabilities</div>
+            <div class="section-title">Five Actions. Infinite Possibilities.</div>
+
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">🧭</div>
+                    <div class="action-name">Navigate</div>
+                    <div class="action-desc">Go to any URL</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">👆</div>
+                    <div class="action-name">Click</div>
+                    <div class="action-desc">Click any element</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">⌨️</div>
+                    <div class="action-name">Fill</div>
+                    <div class="action-desc">Enter form data</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📋</div>
+                    <div class="action-name">Extract</div>
+                    <div class="action-desc">Pull text & data</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📸</div>
+                    <div class="action-name">Screenshot</div>
+                    <div class="action-desc">Capture state</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="content-section">
+            <div class="section-label">Example</div>
+            <div class="section-title">Extract Data from a Legacy System</div>
+            <div class="section-desc">
+                No API? No problem. Here's how browser automation integrates a legacy CRM that only has a web interface.
+            </div>
+
+            <div class="code-block">
+<span class="comment"># Workflow node configuration</span>
+browser_automation:
+  actions:
+    - type: <span class="keyword">navigate</span>
+      url: <span class="string">"https://legacy-crm.company.com/login"</span>
+
+    - type: <span class="keyword">fill</span>
+      selector: <span class="string">"#username"</span>
+      value: <span class="string">"{{credentials.username}}"</span>
+
+    - type: <span class="keyword">fill</span>
+      selector: <span class="string">"#password"</span>
+      value: <span class="string">"{{credentials.password}}"</span>
+
+    - type: <span class="keyword">click</span>
+      selector: <span class="string">"button[type='submit']"</span>
+
+    - type: <span class="keyword">click</span>
+      selector: <span class="string">".nav-reports"</span>
+
+    - type: <span class="keyword">extract_text</span>
+      selector: <span class="string">".report-table"</span>
+      output: <span class="string">"report_data"</span>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="content-section">
+            <div class="section-label">Use Cases</div>
+            <div class="section-title">When to Use Browser Automation</div>
+
+            <div class="use-case">
+                <div class="use-case-title">Legacy CRM Data Sync</div>
+                <div class="use-case-problem">Problem: CRM has no export API. Marketing needs lead data.</div>
+                <div class="use-case-solution">Solution: Browser automation logs in, navigates to exports, extracts data daily.</div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">Government Portal Filings</div>
+                <div class="use-case-problem">Problem: Quarterly compliance requires navigating a terrible portal.</div>
+                <div class="use-case-solution">Solution: Browser automation handles login, navigation, and PDF download.</div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">Competitor Price Monitoring</div>
+                <div class="use-case-problem">Problem: Need to track competitor pricing across 20 product pages.</div>
+                <div class="use-case-solution">Solution: Browser automation extracts prices every 4 hours, alerts on changes.</div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">SaaS Tool Data Export</div>
+                <div class="use-case-problem">Problem: Tool only exports via email or manual download.</div>
+                <div class="use-case-solution">Solution: Browser automation clicks export, handles download, feeds to workflow.</div>
+            </div>
+        </div>
+
+        <!-- Built on Playwright -->
+        <div class="content-section">
+            <div class="section-label">Technology</div>
+            <div class="section-title">Built on Playwright</div>
+            <div class="section-desc">
+                Under the hood, browser automation runs on Playwright — the same framework used by Microsoft, Google, and Netflix for browser automation.
+            </div>
+
+            <ul class="feature-list">
+                <li>Handles dynamic content and JavaScript-heavy sites</li>
+                <li>Faster than Selenium, optimized for headless operation</li>
+                <li>Cross-browser support (Chrome, Firefox, WebKit)</li>
+                <li>Full-page and element screenshots for debugging</li>
+                <li>Automatic waiting for elements to load</li>
+                <li>Network interception for advanced use cases</li>
+            </ul>
+        </div>
+
+        <!-- When to Use What -->
+        <div class="content-section">
+            <div class="section-label">Decision Guide</div>
+            <div class="section-title">Browser Automation vs. Native Adapters</div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Target system has no API</td>
+                        <td>Browser automation</td>
+                    </tr>
+                    <tr>
+                        <td>Speed matters (1000+ ops/hour)</td>
+                        <td>Native adapter</td>
+                    </tr>
+                    <tr>
+                        <td>Quick prototype before full integration</td>
+                        <td>Browser automation</td>
+                    </tr>
+                    <tr>
+                        <td>Long-term, high-reliability integration</td>
+                        <td>Native adapter</td>
+                    </tr>
+                    <tr>
+                        <td>API is rate-limited or expensive</td>
+                        <td>Browser automation (sometimes)</td>
+                    </tr>
+                    <tr>
+                        <td>UI is the only stable interface</td>
+                        <td>Browser automation</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="section-desc">
+                <strong>Reality check:</strong> Most enterprises need both. Native adapters for the 80% with good APIs. Browser automation for the 20% that don't.
+            </div>
+        </div>
+
+        <!-- Edition Availability -->
+        <div class="content-section">
+            <div class="section-label">Editions</div>
+            <div class="section-title">Available in All Editions</div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Community</th>
+                        <th>Business</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Browser automation nodes</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>5 actions (navigate, click, fill, extract, screenshot)</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>ML-enhanced element detection</td>
+                        <td>—</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Credential vault integration</td>
+                        <td>—</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Compliance audit trail on all actions</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>IP allowlisting & rate controls</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-banner">
+            <h2>No API? No Problem.</h2>
+            <p>Browser automation is free in Community Edition. Enterprise adds governance and compliance.</p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">Get Started Free</a>
+                <a href="/docs" class="btn btn-secondary">Read the Docs</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/">Home</a> &nbsp;|&nbsp;
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/channels">Channels</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/community">Community</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
+        </p>
+    </footer>
+</body>
+</html>

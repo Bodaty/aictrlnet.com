@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processing - AICtrlNet</title>
+    <meta name="description" content="Upload a PDF, trigger a workflow. Extract data from Excel, CSV, DOCX. Generate documents as output. File processing as a first-class workflow capability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .nav {
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            color: #a5b4fc;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header .tagline {
+            font-size: 1.25rem;
+            color: #6366f1;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #9ca3af;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Format cards */
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .format-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .format-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .format-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .format-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .format-desc {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        /* Flow diagram */
+        .flow-diagram {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .flow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .flow-step {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            min-width: 120px;
+        }
+
+        .flow-step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #c9cdd3;
+        }
+
+        .flow-arrow {
+            color: #22c55e;
+            font-size: 1.5rem;
+        }
+
+        /* Use cases */
+        .use-case {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .use-case-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case-time {
+            font-size: 0.8rem;
+            color: #22c55e;
+            margin-bottom: 0.75rem;
+        }
+
+        .use-case-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        /* Capabilities list */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .capability-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .capability-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .capability-desc {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #c9cdd3;
+        }
+
+        .comparison-table td {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .comparison-table td:first-child {
+            color: #e0e0e0;
+        }
+
+        .check { color: #22c55e; }
+        .dash { color: #6b7280; }
+
+        /* CTA banner */
+        .cta-banner {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+        }
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .format-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flow-steps {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a> &nbsp;|&nbsp; <a href="/features">Features</a></div>
+
+        <div class="page-header">
+            <div class="page-badge">New in v6</div>
+            <h1>File Processing</h1>
+            <div class="tagline">Upload. Extract. Automate.</div>
+            <p>Upload a supplier invoice PDF. In 10 seconds: extracted, structured, and routed to approval. No data entry. No copy-paste.</p>
+        </div>
+
+        <!-- Supported Formats -->
+        <div class="content-section">
+            <div class="section-label">Supported Formats</div>
+            <div class="section-title">Four Formats In. Four Formats Out.</div>
+
+            <div class="format-grid">
+                <div class="format-card">
+                    <div class="format-icon">📄</div>
+                    <div class="format-name">PDF</div>
+                    <div class="format-desc">Extract text, tables, and form fields. Generate PDF reports.</div>
+                </div>
+                <div class="format-card">
+                    <div class="format-icon">📊</div>
+                    <div class="format-name">Excel</div>
+                    <div class="format-desc">Parse spreadsheets, read formulas. Generate .xlsx output.</div>
+                </div>
+                <div class="format-card">
+                    <div class="format-icon">📋</div>
+                    <div class="format-name">CSV</div>
+                    <div class="format-desc">Universal data interchange. Import and export.</div>
+                </div>
+                <div class="format-card">
+                    <div class="format-icon">📝</div>
+                    <div class="format-name">DOCX</div>
+                    <div class="format-desc">Extract content from Word documents. Generate contracts.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Flow -->
+        <div class="content-section">
+            <div class="section-label">How It Works</div>
+            <div class="section-title">File Upload as Workflow Trigger</div>
+
+            <div class="flow-diagram">
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-step-icon">📤</div>
+                        <div class="flow-step-label">Upload</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">🔍</div>
+                        <div class="flow-step-label">Extract</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">⚙️</div>
+                        <div class="flow-step-label">Transform</div>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">✅</div>
+                        <div class="flow-step-label">Route</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-desc">
+                Files uploaded via web UI, API, or messaging channels trigger workflows automatically. Extraction happens in real-time. Structured data flows to the next node.
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="content-section">
+            <div class="section-label">Use Cases</div>
+            <div class="section-title">From PDF to Approval</div>
+
+            <div class="use-case">
+                <div class="use-case-title">Invoice Processing</div>
+                <div class="use-case-time">10 seconds to extraction, 15 seconds to approval request</div>
+                <div class="use-case-desc">
+                    Supplier sends invoice PDF. Upload triggers extraction of line items, totals, due date. Structured data routes to the right approver based on amount thresholds. Approver clicks once in Slack. Done.
+                </div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">Weekly Report Aggregation</div>
+                <div class="use-case-time">30 seconds from upload to compiled report</div>
+                <div class="use-case-desc">
+                    Team members upload their weekly status spreadsheets. Workflow extracts key metrics, aggregates across files, generates a summary PDF for leadership. Every Friday, automatically.
+                </div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">Contract Data Extraction</div>
+                <div class="use-case-time">20 seconds per document</div>
+                <div class="use-case-desc">
+                    Legal uploads new contracts as DOCX. Workflow extracts key terms: parties, effective date, termination clause, payment terms. Data populates CRM and alerts relevant teams.
+                </div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-title">Expense Report Processing</div>
+                <div class="use-case-time">5 seconds per receipt</div>
+                <div class="use-case-desc">
+                    Employee uploads receipt photos (converted to PDF). Workflow extracts vendor, amount, date, category. Populates expense report. Routes to manager for approval.
+                </div>
+            </div>
+        </div>
+
+        <!-- Capabilities -->
+        <div class="content-section">
+            <div class="section-label">Capabilities</div>
+            <div class="section-title">Extraction & Generation</div>
+
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="capability-title">Text Extraction</div>
+                    <div class="capability-desc">Pull text content from any supported format. Preserves structure and formatting where applicable.</div>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-title">Table Detection</div>
+                    <div class="capability-desc">Identify and extract tabular data from PDFs and documents. Returns structured rows and columns.</div>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-title">Form Field Parsing</div>
+                    <div class="capability-desc">Extract data from filled PDF forms. Checkbox values, text fields, signatures detected.</div>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-title">Document Generation</div>
+                    <div class="capability-desc">Generate PDFs, Excel files, and DOCX documents as workflow output. Template-based or dynamic.</div>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-title">Agent File Access</div>
+                    <div class="capability-desc">AI agents can list and read user files via MCP tools. Conversational access to document content.</div>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-title">ML-Enhanced Extraction (Business+)</div>
+                    <div class="capability-desc">Named entity recognition, document classification, and intelligent field mapping.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edition Comparison -->
+        <div class="content-section">
+            <div class="section-label">Editions</div>
+            <div class="section-title">Free to Start, Scale with Intelligence</div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Community</th>
+                        <th>Business</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PDF, Excel, CSV, DOCX extraction</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Document generation (PDF, Excel, DOCX)</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>File upload as workflow trigger</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Agent file access tools</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>ML-enhanced extraction (NER, classification)</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Intelligent field mapping</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>File access audit trail</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-banner">
+            <h2>Stop Copy-Pasting from PDFs</h2>
+            <p>File processing is free in Community Edition. ML-enhanced extraction is in Business.</p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">Get Started Free</a>
+                <a href="/docs" class="btn btn-secondary">Read the Docs</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/">Home</a> &nbsp;|&nbsp;
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/channels">Channels</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/community">Community</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
+        </p>
+    </footer>
+</body>
+</html>
