@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Every Enterprise Wants AI Agents. Only 5% Can Actually Deploy Them."
-date: 2026-03-06
+date: 2026-03-05
 author: Bobby Koritala
 categories: [ai-agents, ai-governance, enterprise, deployment]
 excerpt: "79% of enterprises have adopted AI agents. Only 5% made it to production. The bottleneck isn't capability — it's governance. Here's the data, the regulatory reality, and what the 5% do differently."
