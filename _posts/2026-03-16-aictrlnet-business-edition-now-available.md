@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AICtrlNet Business Edition: Now Available"
-date: 2026-02-28
+date: 2026-03-16
 author: Bobby Koritala
 categories: [announcement, product, ai-automation]
 excerpt: "AI that automates anything — 10,000+ tools through platform adapters, any API through self-extending agents, any web app through browser automation. All governed. The Business Edition is live."
