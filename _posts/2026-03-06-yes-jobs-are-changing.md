@@ -131,15 +131,15 @@ The difference isn't the technology. It's the operating model.
 The AI Adoption Spectrum (How It Should Work)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  0%                                              100%
-  ├──────┼──────┼──────┼──────┼──────┼──────┤
-  │      │      │      │      │      │      │
-  No AI  AI     AI     AI     AI     Full
+   0%                                              100%
+  ├──────┼────--──-┼──────┼─--─────┼─-──-───┼──────┤
+  │      │         │      │        │        │      │
+  No AI  AI       AI     AI       AI       Full
          Suggests Drafts Executes Handles  Auto
-         ↑      ↑      ↑       ↑      ↑
-         Human  Human  Human   Human  Human
+         ↑        ↑       ↑       ↑        ↑
+         Human   Human   Human    Human   Human
          Decides Reviews Monitors Handles Reviews
-                               Exceptions Outcomes
+                                  Issues  Outcomes
 
   Most companies are stuck choosing between the far left
   and the far right. The value is in the middle.
