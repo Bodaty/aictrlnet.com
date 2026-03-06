@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Your Team of 5, Working Like 50: How SMBs Are Using AI to Multiply, Not Replace"
-date: 2026-03-13
+date: 2026-03-11
 author: Bobby Koritala
 categories: [smb, ai-automation, productivity]
 excerpt: "You don't need to hire 10 more people. AI can multiply the capacity of the team you already have — without complexity you can't manage. Here's how SMBs are recovering 40+ hours per week."

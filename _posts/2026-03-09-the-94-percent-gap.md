@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The 94% Gap: Why AI Isn't Deployed and What Enterprises Are Missing"
-date: 2026-03-10
+date: 2026-03-09
 author: Bobby Koritala
 categories: [enterprise-ai, strategy, ai-governance]
 excerpt: "AI could handle 94% of computer tasks. Only 33% are automated. The 61-point gap isn't a technology problem — it's an adoption infrastructure problem. Here's what enterprises need to close it."
