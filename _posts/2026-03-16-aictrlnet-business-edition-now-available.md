@@ -5,6 +5,7 @@ date: 2026-03-16
 author: Bobby Koritala
 categories: [announcement, product, ai-automation]
 excerpt: "AI that automates anything — 10,000+ tools through platform adapters, any API through self-extending agents, any web app through browser automation. All governed. The Business Edition is live."
+published: false
 ---
 
 What if AI could automate anything in your business — any tool, any system, any process — and you stayed in control the whole time?
