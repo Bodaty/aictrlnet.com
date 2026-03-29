@@ -185,7 +185,11 @@ Over these four articles, the argument has been simple:
 
 4. **Governance is the outcome, not the starting point.** When you delegate well, you've already built the approval workflows, escalation paths, audit trails, and scope boundaries that governance requires. You didn't implement governance. You just figured out how to get things done with AI the way you actually want them done.
 
-The opportunity is enormous. The technology is ready. The missing piece isn't better models or more governance tools. It's better infrastructure for working with AI — infrastructure that gives you the dial, not just the switch.
+Nobody buys a car and then shops for airbags separately. You buy a car that has them built in. The safety isn't a separate purchase — it's part of what makes the product work.
+
+AI should be the same. The platform you use to work with AI should have the assurance built into how it operates. Approval workflows, escalation paths, audit trails, scope boundaries — all emerging naturally from how you delegate. Not sold as a separate layer. Not bolted on after the fact. Built in.
+
+The opportunity is enormous. The technology is ready. The missing piece isn't better models or more governance tools. It's better infrastructure for working with AI — infrastructure that gives you the dial, not just the switch, with the assurance built into every position on that dial.
 
 ---
 
