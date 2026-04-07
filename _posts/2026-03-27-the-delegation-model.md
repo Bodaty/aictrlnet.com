@@ -200,7 +200,7 @@ This isn't a governance exercise. It's a delegation exercise. The fact that it p
 
 ---
 
-*This is Part 2 of a 4-part series on Working with AI. Next: [The Dial, Not the Switch — Why AI Autonomy Shouldn't Be Binary](/blog/2026/04/the-dial-not-the-switch/).*
+*This is Part 2 of a 4-part series on Working with AI. Next: [The AI Dial, Not the Switch — Why AI Autonomy Shouldn't Be Binary](/blog/2026/04/the-dial-not-the-switch/).*
 
 ---
 

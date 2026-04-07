@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "The Dial, Not the Switch: Why AI Autonomy Shouldn't Be Binary"
+title: "The AI Dial, Not the Switch: Why AI Autonomy Shouldn't Be Binary"
 date: 2026-04-01
 author: Bobby Koritala
 categories: [ai, thought-leadership, working-with-ai]
-excerpt: "Most AI platforms give you two options: off or on. But no organization actually wants binary automation. You want AI to auto-process routine invoices but flag unusual ones. You want AI to respond to simple tickets but escalate complaints. That's not a switch. That's a dial."
+excerpt: "Most AI platforms give you two options: off or on. But no organization actually wants binary automation. You want AI to auto-process routine invoices but flag unusual ones. You want AI to respond to simple tickets but escalate complaints. That's not a switch. That's the AI Dial."
 series: "Working with AI"
 series_part: 3
 ---
@@ -41,11 +41,11 @@ Business AI hasn't caught up. Most platforms still offer Level 0 or Level 5 with
 
 ---
 
-## What a Dial Actually Looks Like
+## What the AI Dial Actually Looks Like
 
 Lee and See's comprehensive review of trust in automation ("Trust in Automation: Designing for Appropriate Reliance," Human Factors, 2004) identified the core design challenge: the goal isn't maximum automation or minimum automation. It's *calibrated* automation — where the level of AI autonomy matches the AI's actual reliability in that specific context.
 
-Calibrated automation means the dial has multiple positions, and you set it per task:
+Calibrated automation means the AI Dial has multiple positions, and you set it per task:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -82,19 +82,19 @@ Calibrated automation means the dial has multiple positions, and you set it per 
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-The key insight: these aren't six products or six configurations. They're six positions on *the same dial* — and different tasks within the same organization sit at different positions simultaneously.
+The key insight: these aren't six products or six configurations. They're six positions on *the same AI Dial* — and different tasks within the same organization sit at different positions simultaneously.
 
 ---
 
-## The Companies That Got the Dial Right
+## The Companies That Got the AI Dial Right
 
 **Stitch Fix** built their entire business model on calibrated automation. Their AI processes millions of data points to select candidate clothing items, but human stylists make the final curation decision. Over the years, more of the initial filtering has been automated as the algorithms demonstrated reliability, but the final human touch has remained — because that's where the AI's accuracy drops and human judgment adds the most value.
 
-The dial position shifted over time. Early on, humans were deeply involved in every step. As the AI proved itself on specific sub-tasks (size prediction, style clustering), those sub-tasks moved toward higher autonomy. Other sub-tasks (occasion matching, personal context) stayed human-led. Same system, multiple dial positions, adjusted based on demonstrated performance.
+The AI Dial position shifted over time. Early on, humans were deeply involved in every step. As the AI proved itself on specific sub-tasks (size prediction, style clustering), those sub-tasks moved toward higher autonomy. Other sub-tasks (occasion matching, personal context) stayed human-led. Same system, multiple AI Dial positions, adjusted based on demonstrated performance.
 
-**Google Search** has incrementally increased AI's role over two decades: from PageRank (algorithmic, rule-based) to RankBrain (2015, ML for ~15% of queries) to BERT (2019, understanding intent) to MUM (2021, multimodal understanding). Each step increased AI autonomy *gradually*, with human quality raters continuously evaluating outputs. They didn't flip a switch from manual to AI. They turned the dial, one notch at a time, validating at each step.
+**Google Search** has incrementally increased AI's role over two decades: from PageRank (algorithmic, rule-based) to RankBrain (2015, ML for ~15% of queries) to BERT (2019, understanding intent) to MUM (2021, multimodal understanding). Each step increased AI autonomy *gradually*, with human quality raters continuously evaluating outputs. They didn't flip a switch from manual to AI. They turned the AI Dial, one notch at a time, validating at each step.
 
-**JPMorgan's COiN** started with AI extracting specific clause types from loan documents — tasks where accuracy was measurable and errors were catchable. As the system demonstrated reliability on simple clauses, it was given more complex extraction tasks. The human review shifted from "check everything" to "check flagged items" to "spot-check monthly." The dial moved based on evidence, not desire.
+**JPMorgan's COiN** started with AI extracting specific clause types from loan documents — tasks where accuracy was measurable and errors were catchable. As the system demonstrated reliability on simple clauses, it was given more complex extraction tasks. The human review shifted from "check everything" to "check flagged items" to "spot-check monthly." The AI Dial moved based on evidence, not desire.
 
 ---
 
@@ -108,7 +108,7 @@ The failures are equally instructive.
 
 **Microsoft Tay**: Switch flipped on a conversational AI in an adversarial environment. No graduated exposure, no content review at intermediate autonomy levels. Shut down in 16 hours.
 
-In every case, the organization had the technology to automate. What they lacked was the infrastructure to *graduate* automation — to start at position 2 on the dial, observe performance, and move to position 3 only when the evidence supported it.
+In every case, the organization had the technology to automate. What they lacked was the infrastructure to *graduate* automation — to start at position 2 on the AI Dial, observe performance, and move to position 3 only when the evidence supported it.
 
 ---
 
@@ -120,7 +120,7 @@ The EU AI Act (Regulation 2024/1689) took the same approach: risk-based requirem
 
 Both frameworks assume something that most platforms don't deliver: **the ability to set different autonomy and oversight levels for different AI applications within the same organization.**
 
-This is the infrastructure gap. It's not that organizations don't know they want a dial. It's that most tools don't give them one. So they're forced into a binary: automate fully and accept the risk, or keep humans involved in everything and accept the inefficiency.
+This is the infrastructure gap. It's not that organizations don't know they want the AI Dial. It's that most tools don't give them one. So they're forced into a binary: automate fully and accept the risk, or keep humans involved in everything and accept the inefficiency.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -157,11 +157,11 @@ If your organization is evaluating AI platforms, or stuck in pilot mode trying t
 
 Can your finance team auto-process invoices under $500 while requiring human approval above $10K? Can your support team auto-respond to Tier 1 while escalating Tier 3? Can your sales team let AI handle lead scoring while keeping pricing decisions human? All within the same platform?
 
-If the answer is "we'd need different tools for different autonomy levels," you don't have a dial. You have multiple switches. And managing multiple switches across an organization doesn't scale.
+If the answer is "we'd need different tools for different autonomy levels," you don't have the AI Dial. You have multiple switches. And managing multiple switches across an organization doesn't scale.
 
-**Can the dial move over time?**
+**Can the AI Dial move over time?**
 
-Can you start with AI suggesting and gradually shift to AI acting as it demonstrates reliability? Can you pull back autonomy on a specific task without disrupting everything else? Can the system track what the AI got right and what it got wrong, so you have evidence for when to turn the dial?
+Can you start with AI suggesting and gradually shift to AI acting as it demonstrates reliability? Can you pull back autonomy on a specific task without disrupting everything else? Can the system track what the AI got right and what it got wrong, so you have evidence for when to turn the AI Dial?
 
 **Can different teams have different settings?**
 

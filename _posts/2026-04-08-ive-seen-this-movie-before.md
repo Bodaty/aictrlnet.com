@@ -182,7 +182,7 @@ Deming said it fifty years ago. The data quality industry proved it over twenty 
 
 ---
 
-*This is Part 5 of a 6-part series on Working with AI. Next: [So We Built the Dial](/blog/2026/04/so-we-built-the-dial/).*
+*This is Part 5 of a 6-part series on Working with AI. Next: [So We Built the AI Dial](/blog/2026/04/so-we-built-the-dial/).*
 
 ---
 
