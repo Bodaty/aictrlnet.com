@@ -49,32 +49,15 @@ There's a principle in quality management called the 1-10-100 rule, popularized 
 - **$10** to correct it downstream after it's in the system
 - **$100+** if nothing is done and the error propagates through downstream systems, reports, and decisions
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    THE 1-10-100 RULE                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  $1          $10              $100+                              │
-│  │───────────│────────────────│                                  │
-│  ▼           ▼                ▼                                  │
-│                                                                  │
-│  PREVENT     CORRECT          FAILURE                           │
-│                                                                  │
-│  Validate    Cleanse data     Bad decisions from                │
-│  at entry.   downstream.      bad data. Regulatory              │
-│  Schema      Profile and      fines. Customer impact.           │
-│  enforcement.reconcile.       Reputational damage.              │
-│  Input       Match and        Cost compounds with               │
-│  controls.   deduplicate.     every system touched.             │
-│                                                                  │
-│  ◄── Where smart orgs invest  Where most orgs spend ──►        │
-│                                                                  │
-│  Built into the       Bolt-on tools       After-the-fact        │
-│  operational system    (Informatica,       consequences          │
-│                        Trillium, Infogix)                       │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="mermaid">
+graph LR
+    P["<b>$1 — PREVENT</b><br/>Validate at entry.<br/>Schema enforcement.<br/>Input controls.<br/><i>Built into the<br/>operational system</i>"]
+    C["<b>$10 — CORRECT</b><br/>Cleanse data downstream.<br/>Profile and reconcile.<br/>Match and deduplicate.<br/><i>Bolt-on tools<br/>Informatica, Trillium, Infogix</i>"]
+    F["<b>$100+ — FAILURE</b><br/>Bad decisions from bad data.<br/>Regulatory fines.<br/>Customer impact.<br/>Reputational damage.<br/><i>After-the-fact<br/>consequences</i>"]
+    P -->|"cost escalates"| C -->|"cost escalates"| F
+</div>
+
+*Where smart orgs invest <--- ---> Where most orgs spend*
 
 The entire data quality industry — the billions spent on tools, the armies of data stewards, the cleansing and reconciliation processes — existed primarily at the $10 level. Correcting errors downstream. The organizations that invested at the $1 level — validation at entry, schema enforcement, quality rules in the pipeline — spent a fraction of the cost for dramatically better results.
 
@@ -110,37 +93,15 @@ Here's what I see happening with AI governance right now:
 
 Sound familiar? It should. It's the exact same pattern.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              THE SAME MOVIE, DIFFERENT DECADE                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  DATA QUALITY (2000s)           AI GOVERNANCE (2020s)           │
-│  ────────────────────           ─────────────────────           │
-│                                                                  │
-│  Build system first,            Deploy AI first,                │
-│  discover DQ problems later     discover governance gaps later  │
-│                                                                  │
-│  Bolt on profiling and          Bolt on monitoring and          │
-│  cleansing tools                compliance platforms             │
-│                                                                  │
-│  Separate budget, separate      Separate budget, separate       │
-│  team, separate tools           team, separate tools            │
-│                                                                  │
-│  Costs: $12.9M/yr per org      Costs: TBD (early innings)      │
-│  (Gartner)                                                      │
-│                                                                  │
-│  Industry took 20 years to      Industry is at year 2-3 of     │
-│  shift to embedded quality      the same cycle                  │
-│                                                                  │
-│  The lesson: build quality      The lesson: build governance    │
-│  into the pipeline              into the AI system              │
-│                                                                  │
-│  dbt tests, data observability, What's the AI equivalent?       │
-│  data contracts                 Governance inline, not on top.  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| | **Data Quality (2000s)** | **AI Governance (2020s)** |
+|---|---|---|
+| **Pattern** | Build system first, discover DQ problems later | Deploy AI first, discover governance gaps later |
+| **Response** | Bolt on profiling and cleansing tools | Bolt on monitoring and compliance platforms |
+| **Organizational** | Separate budget, separate team, separate tools | Separate budget, separate team, separate tools |
+| **Cost** | $12.9M/yr per org (Gartner) | TBD (early innings) |
+| **Timeline** | Industry took 20 years to shift to embedded quality | Industry is at year 2-3 of the same cycle |
+| **The lesson** | Build quality into the pipeline | Build governance into the AI system |
+| **Solution** | dbt tests, data observability, data contracts | Governance inline, not on top |
 
 The AI governance market is projected to reach $2-5 billion by the end of this decade. Standalone vendors are multiplying — Holistic AI, Credo AI, ModelOp, Arthur AI, Fiddler, Monitaur, ValidMind — all building tools that sit alongside your AI deployment and monitor it from the outside.
 

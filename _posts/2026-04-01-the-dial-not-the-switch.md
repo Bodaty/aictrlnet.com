@@ -47,40 +47,29 @@ Lee and See's comprehensive review of trust in automation ("Trust in Automation:
 
 Calibrated automation means the AI Dial has multiple positions, and you set it per task:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    THE AUTONOMY DIAL                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  1          2          3          4          5          6        │
-│  │──────────│──────────│──────────│──────────│──────────│        │
-│  ▼          ▼          ▼          ▼          ▼          ▼        │
-│                                                                  │
-│  SHOW ME    SUGGEST    DO IT,     DO IT,     ANTICIPATE  JUST   │
-│             TO ME      I'LL       ASK ME     MY NEEDS    RUN    │
-│                        CHECK      SOMETIMES              IT     │
-│                                                                  │
-│  AI shows   AI         AI acts,   AI learns   AI acts    Full   │
-│  insights.  recommends.human      preferences,proactively.auto. │
-│  Human      Human      approves   reduces     Predicts   Human  │
-│  does all.  decides.   before     approval    needs.     reviews│
-│                        action.    frequency.             only   │
-│                                                          excep- │
-│                                                          tions. │
-│                                                                  │
-│  ◄─── Lower risk, more human ──── Higher trust, more AI ───►   │
-│                                                                  │
-│  EXAMPLE: Claims processing at a mid-size insurer               │
-│                                                                  │
-│  Auto-deny  Route to    Auto-pay    Auto-pay    Predict    Full │
-│  obviously  reviewer    under $500  under $5K   fraud      auto │
-│  fraudulent with AI     with daily  with weekly before it  with │
-│  claims.    summary.    batch       spot-check. happens.   human│
-│                         review.                            audit│
-│                                                            only.│
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="mermaid">
+graph LR
+    P1["1<br/><b>SHOW ME</b><br/>AI shows insights.<br/>Human does all."]
+    P2["2<br/><b>SUGGEST TO ME</b><br/>AI recommends.<br/>Human decides."]
+    P3["3<br/><b>DO IT, I'LL CHECK</b><br/>AI acts, human<br/>approves before action."]
+    P4["4<br/><b>DO IT, ASK ME SOMETIMES</b><br/>AI learns preferences,<br/>reduces approval frequency."]
+    P5["5<br/><b>ANTICIPATE MY NEEDS</b><br/>AI acts proactively.<br/>Predicts needs."]
+    P6["6<br/><b>JUST RUN IT</b><br/>Full auto. Human<br/>reviews only exceptions."]
+    P1 -->|"the dial"| P2 -->|"the dial"| P3 -->|"the dial"| P4 -->|"the dial"| P5 -->|"the dial"| P6
+</div>
+
+*Lower risk, more human <--- ---> Higher trust, more AI*
+
+**Example: Claims processing at a mid-size insurer**
+
+| Dial Position | Claims Example |
+|---|---|
+| 1 - Show me | Auto-deny obviously fraudulent claims |
+| 2 - Suggest | Route to reviewer with AI summary |
+| 3 - Do it, I'll check | Auto-pay under $500 with daily batch review |
+| 4 - Ask me sometimes | Auto-pay under $5K with weekly spot-check |
+| 5 - Anticipate | Predict fraud before it happens |
+| 6 - Just run it | Full auto with human audit only |
 
 The key insight: these aren't six products or six configurations. They're six positions on *the same AI Dial* — and different tasks within the same organization sit at different positions simultaneously.
 
@@ -122,30 +111,18 @@ Both frameworks assume something that most platforms don't deliver: **the abilit
 
 This is the infrastructure gap. It's not that organizations don't know they want the AI Dial. It's that most tools don't give them one. So they're forced into a binary: automate fully and accept the risk, or keep humans involved in everything and accept the inefficiency.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                 WHAT MOST PLATFORMS OFFER                        │
-│                                                                  │
-│            OFF ──────────────────────────── ON                  │
-│             │                                │                   │
-│             ▼                                ▼                   │
-│        Manual process                  Full automation          │
-│        (no AI value)                   (full AI risk)           │
-│                                                                  │
-├─────────────────────────────────────────────────────────────────┤
-│                 WHAT ORGANIZATIONS NEED                          │
-│                                                                  │
-│        1 ──── 2 ──── 3 ──── 4 ──── 5 ──── 6                   │
-│        │      │      │      │      │      │                     │
-│        ▼      ▼      ▼      ▼      ▼      ▼                    │
-│      Show   Suggest  Human  Smart  Proact- Full                │
-│      me     to me    approves escal- ive    auto               │
-│                              ation                              │
-│                                                                  │
-│  Per task. Per team. Per workflow. Adjustable over time.        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="mermaid">
+graph TD
+    subgraph platforms ["WHAT MOST PLATFORMS OFFER"]
+        OFF["OFF<br/>Manual process<br/>no AI value"] ---|"binary switch"| ON["ON<br/>Full automation<br/>full AI risk"]
+    end
+    subgraph orgs ["WHAT ORGANIZATIONS NEED"]
+        D1["1<br/>Show me"] --- D2["2<br/>Suggest"] --- D3["3<br/>Human approves"] --- D4["4<br/>Smart escalation"] --- D5["5<br/>Proactive"] --- D6["6<br/>Full auto"]
+    end
+    platforms -.->|"should become"| orgs
+</div>
+
+*Per task. Per team. Per workflow. Adjustable over time.*
 
 ---
 

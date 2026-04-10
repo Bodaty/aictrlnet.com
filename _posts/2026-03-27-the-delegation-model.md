@@ -37,33 +37,25 @@ This is the more common failure and it's less visible. The organization deploys 
 
 McKinsey found that 67% of organizations using generative AI hadn't moved past experimentation in even a single business function. Most of those are stuck in Mistake 2 — not because the technology isn't ready, but because they have no framework for when to let go.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                  │
-│   MISTAKE 1                         MISTAKE 2                   │
-│   ─────────                         ─────────                   │
-│   Too much autonomy, too fast       Too little autonomy, forever│
-│                                                                  │
-│   "Let AI handle everything"        "Review everything AI does" │
-│                                                                  │
-│   Risk: Zillow ($304M loss)         Risk: AI never delivers     │
-│   Risk: Knight Capital ($440M)      ROI — expensive autocomplete│
-│   Risk: Amazon recruiting bias      Risk: Organization stays in │
-│                                     permanent "pilot" mode       │
-│                                                                  │
-│              ▼                                 ▼                 │
-│   Headline-grabbing failure         Quiet, invisible failure    │
-│                                                                  │
-│   ┌──────────────────────────────────────────────────────────┐  │
-│   │                                                           │  │
-│   │  THE MIDDLE: Graduated delegation based on demonstrated   │  │
-│   │  performance. This is where the 10% of companies getting  │  │
-│   │  real results from AI actually operate.                   │  │
-│   │                                                           │  │
-│   └──────────────────────────────────────────────────────────┘  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="mermaid">
+graph TD
+    subgraph m1 ["MISTAKE 1: Too much autonomy, too fast"]
+        M1A["'Let AI handle everything'"]
+        M1B["Risk: Zillow - $304M loss<br/>Risk: Knight Capital - $440M<br/>Risk: Amazon recruiting bias"]
+        M1C["Headline-grabbing failure"]
+        M1A --> M1B --> M1C
+    end
+    subgraph m2 ["MISTAKE 2: Too little autonomy, forever"]
+        M2A["'Review everything AI does'"]
+        M2B["Risk: AI never delivers ROI<br/>Expensive autocomplete<br/>Organization stays in permanent 'pilot' mode"]
+        M2C["Quiet, invisible failure"]
+        M2A --> M2B --> M2C
+    end
+    M1C --> MIDDLE
+    M2C --> MIDDLE
+    MIDDLE["THE MIDDLE: Graduated delegation based on<br/>demonstrated performance. This is where the 10%<br/>of companies getting real results from AI operate."]
+    style MIDDLE fill:#f0f4ff,stroke:#333,stroke-width:2px
+</div>
 
 ---
 
@@ -97,40 +89,23 @@ Accenture studied this pattern across their client base and found that companies
 
 Here's what effective AI delegation looks like across a real organization:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  AI DELEGATION BY FUNCTION                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  CUSTOMER SUPPORT                                               │
-│  ─────────────────                                              │
-│  Tier 1 (password resets, order status): AI handles, no review  │
-│  Tier 2 (billing disputes, returns): AI drafts, agent reviews   │
-│  Tier 3 (escalations, complaints): AI summarizes, human leads   │
-│                                                                  │
-│  FINANCE                                                        │
-│  ───────                                                        │
-│  Invoice data extraction: AI handles, spot-checked monthly      │
-│  Expense categorization: AI handles, exceptions flagged         │
-│  Payment approvals: AI recommends, human approves above $10K    │
-│  Financial forecasting: AI generates, CFO reviews all           │
-│                                                                  │
-│  SALES                                                          │
-│  ─────                                                          │
-│  Lead scoring: AI handles, sales reviews top 20%                │
-│  Email drafts: AI writes, rep reviews before send               │
-│  Pricing/discounting: AI suggests, manager approves >15%        │
-│  Contract terms: Human only, AI provides research               │
-│                                                                  │
-│  LEGAL                                                          │
-│  ─────                                                          │
-│  Contract clause extraction: AI handles, attorney spot-checks   │
-│  Risk flagging: AI flags, attorney reviews all flags            │
-│  Drafting responses: AI assists, attorney writes                │
-│  Strategic decisions: Human only                                │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Department | Task | Delegation Level |
+|---|---|---|
+| **Customer Support** | Tier 1 (password resets, order status) | AI handles, no review |
+| | Tier 2 (billing disputes, returns) | AI drafts, agent reviews |
+| | Tier 3 (escalations, complaints) | AI summarizes, human leads |
+| **Finance** | Invoice data extraction | AI handles, spot-checked monthly |
+| | Expense categorization | AI handles, exceptions flagged |
+| | Payment approvals | AI recommends, human approves above $10K |
+| | Financial forecasting | AI generates, CFO reviews all |
+| **Sales** | Lead scoring | AI handles, sales reviews top 20% |
+| | Email drafts | AI writes, rep reviews before send |
+| | Pricing/discounting | AI suggests, manager approves >15% |
+| | Contract terms | Human only, AI provides research |
+| **Legal** | Contract clause extraction | AI handles, attorney spot-checks |
+| | Risk flagging | AI flags, attorney reviews all flags |
+| | Drafting responses | AI assists, attorney writes |
+| | Strategic decisions | Human only |
 
 Notice the pattern: it's not "legal uses AI less than sales." Every function has a mix of high-autonomy and low-autonomy tasks. The delegation level is set by the task, not the department.
 

@@ -54,43 +54,18 @@ And here's the insight I keep returning to: **when you delegate to AI well — w
 
 Let's revisit the delegation model from earlier in this series. When you work with AI using a graduated approach, here's what you naturally create:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│       WHAT GOOD DELEGATION PRODUCES                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  DELEGATION PRACTICE          GOVERNANCE OUTCOME                │
-│  ───────────────────          ──────────────────                │
-│                                                                  │
-│  "Define which tasks AI       Scope boundaries and              │
-│   handles autonomously"       authorization controls            │
-│                                                                  │
-│  "Review AI outputs before    Approval workflows and            │
-│   they go to customers"       quality checkpoints               │
-│                                                                  │
-│  "Flag anything unusual for   Escalation procedures and         │
-│   human review"               anomaly detection                 │
-│                                                                  │
-│  "Track what AI decided and   Audit trail and decision          │
-│   why"                        logging                           │
-│                                                                  │
-│  "Increase autonomy only      Evidence-based authorization      │
-│   when performance warrants"  and change management             │
-│                                                                  │
-│  "Different autonomy levels   Role-based access control         │
-│   for different teams"        and policy management             │
-│                                                                  │
-│  "Pull back autonomy when     Incident response and             │
-│   conditions change"          adaptive controls                 │
-│                                                                  │
-│  ────────────────────────────────────────────────────────────── │
-│                                                                  │
-│  Left column: How a good manager delegates.                     │
-│  Right column: What a governance framework requires.            │
-│  They're the same practices with different labels.              │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="mermaid">
+graph LR
+    D1["Define which tasks AI<br/>handles autonomously"] --> G1["Scope boundaries and<br/>authorization controls"]
+    D2["Review AI outputs before<br/>they go to customers"] --> G2["Approval workflows and<br/>quality checkpoints"]
+    D3["Flag anything unusual<br/>for human review"] --> G3["Escalation procedures and<br/>anomaly detection"]
+    D4["Track what AI decided<br/>and why"] --> G4["Audit trail and<br/>decision logging"]
+    D5["Increase autonomy only when<br/>performance warrants"] --> G5["Evidence-based authorization<br/>and change management"]
+    D6["Different autonomy levels<br/>for different teams"] --> G6["Role-based access control<br/>and policy management"]
+    D7["Pull back autonomy when<br/>conditions change"] --> G7["Incident response and<br/>adaptive controls"]
+</div>
+
+*Left side: How a good manager delegates. Right side: What a governance framework requires. They're the same practices with different labels.*
 
 Every item in the right column is something enterprises spend significant budget to implement as a separate governance initiative. But every item in the left column is something that happens naturally when you delegate well.
 
