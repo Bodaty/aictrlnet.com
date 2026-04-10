@@ -79,7 +79,7 @@ quadrantChart
     quadrant-3 Limited on both axes
     quadrant-4 Governed but limited
     CrewAI: [0.25, 0.80]
-    AutoGen/AG2: [0.20, 0.70]
+    AutoGen AG2: [0.20, 0.70]
     LangChain: [0.18, 0.60]
     Perplexity Computer: [0.35, 0.85]
     OpenClaw: [0.30, 0.72]

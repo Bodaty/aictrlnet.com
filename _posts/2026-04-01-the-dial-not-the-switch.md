@@ -49,13 +49,13 @@ Calibrated automation means the AI Dial has multiple positions, and you set it p
 
 <div class="mermaid">
 graph LR
-    P1["1<br/><b>SHOW ME</b><br/>AI shows insights.<br/>Human does all."]
-    P2["2<br/><b>SUGGEST TO ME</b><br/>AI recommends.<br/>Human decides."]
-    P3["3<br/><b>DO IT, I'LL CHECK</b><br/>AI acts, human<br/>approves before action."]
-    P4["4<br/><b>DO IT, ASK ME SOMETIMES</b><br/>AI learns preferences,<br/>reduces approval frequency."]
-    P5["5<br/><b>ANTICIPATE MY NEEDS</b><br/>AI acts proactively.<br/>Predicts needs."]
-    P6["6<br/><b>JUST RUN IT</b><br/>Full auto. Human<br/>reviews only exceptions."]
-    P1 -->|"the dial"| P2 -->|"the dial"| P3 -->|"the dial"| P4 -->|"the dial"| P5 -->|"the dial"| P6
+    P1["1 SHOW ME<br/>AI shows insights.<br/>Human does all."]
+    P2["2 SUGGEST<br/>AI recommends.<br/>Human decides."]
+    P3["3 CHECK<br/>AI acts, human<br/>approves before action."]
+    P4["4 SOMETIMES<br/>AI learns preferences,<br/>reduces approval."]
+    P5["5 ANTICIPATE<br/>AI acts proactively.<br/>Predicts needs."]
+    P6["6 JUST RUN IT<br/>Full auto. Human<br/>reviews exceptions only."]
+    P1 --> P2 --> P3 --> P4 --> P5 --> P6
 </div>
 
 *Lower risk, more human <--- ---> Higher trust, more AI*

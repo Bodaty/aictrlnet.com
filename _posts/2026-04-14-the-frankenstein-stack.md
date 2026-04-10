@@ -60,8 +60,7 @@ graph TD
     style E fill:#ff9,stroke:#333
     style stack fill:none,stroke:#999,stroke-dasharray: 5 5
 
-    F["5 vendors. 5 governance stories. 5 audit trails.<br/>Zero unified view. Nobody governing the seams."]
-    stack ~~~ F
+    E ~~~ F["5 vendors. 5 governance stories. 5 audit trails.<br/>Zero unified view. Nobody governing the seams."]
 </div>
 
 ---
