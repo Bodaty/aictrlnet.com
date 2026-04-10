@@ -49,25 +49,13 @@ Five times more likely. Not because of better models or more data. Because of be
 
 The companies treating AI as a tool they "use" are getting tool-level returns. The companies working *with* AI — defining roles, setting boundaries, evolving the relationship — are getting transformation-level returns.
 
-<div class="mermaid">
-graph LR
-    subgraph using ["USING AI"]
-        U1["Human drives everything"]
-        U2["AI is passive tool"]
-        U3["Fixed interaction"]
-        U4["One-directional"]
-        U5["Capability: incremental"]
-        U6["'Draft this email'"]
-    end
-    subgraph working ["WORKING WITH AI"]
-        W1["Division of labor"]
-        W2["AI is active collaborator"]
-        W3["Evolving relationship"]
-        W4["Feedback loop"]
-        W5["Capability: transformational"]
-        W6["'Handle customer inquiries under $500.<br/>Flag anything unusual.<br/>I'll review weekly.'"]
-    end
-</div>
+| | "Using AI" | "Working with AI" |
+|---|---|---|
+| **Relationship** | Human drives everything | Division of labor |
+| **AI role** | Passive tool | Active collaborator |
+| **Interaction** | Fixed, one-directional | Evolving, feedback loop |
+| **Capability** | Incremental | Transformational |
+| **Sounds like** | "Draft this email" | "Handle customer inquiries under $500. Flag anything unusual. I'll review weekly." |
 
 ---
 
