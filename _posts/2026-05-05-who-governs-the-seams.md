@@ -35,26 +35,14 @@ Everyone is right within their silo. The failure happened in the seam between th
 
 Every enterprise integration creates a seam — a boundary between systems where data, decisions, and context cross from one vendor's domain to another. In the Frankenstein stack, these seams multiply:
 
-<div class="mermaid">
-graph LR
-    A["Copilot"] -->|"SEAM"| B["Automation"]
-    B -->|"SEAM"| C["RPA"]
-    B -->|"SEAM"| D["AI Agent"]
-    D -->|"SEAM"| E["Governance Tool"]
+| From | SEAM | To |
+|---|---|---|
+| Copilot | custom integration | Automation Platform |
+| Automation Platform | custom integration | RPA |
+| Automation Platform | custom integration | AI Agent |
+| AI Agent | custom integration | Governance Tool |
 
-    style A fill:#3498db,stroke:#333,color:#fff
-    style B fill:#9b59b6,stroke:#333,color:#fff
-    style C fill:#e67e22,stroke:#333,color:#fff
-    style D fill:#27ae60,stroke:#333,color:#fff
-    style E fill:#e74c3c,stroke:#333,color:#fff
-
-    linkStyle 0 stroke:#ff0000,stroke-width:3px
-    linkStyle 1 stroke:#ff0000,stroke-width:3px
-    linkStyle 2 stroke:#ff0000,stroke-width:3px
-    linkStyle 3 stroke:#ff0000,stroke-width:3px
-</div>
-
-*Each SEAM is: a custom integration that can break, a governance gap that nobody owns, a context loss where decision rationale disappears, and an audit trail discontinuity. 4 seams in a 5-tool stack. Each seam is a potential failure point. Nobody's job to govern the seams.*
+**4 seams in a 5-tool stack.** Each seam is: a custom integration that can break, a governance gap that nobody owns, a context loss where decision rationale disappears, and an audit trail discontinuity. Nobody's job to govern the seams.
 
 The governance tool monitors what happens *inside* the AI tools it knows about. But the decisions that matter — "should this data be trusted?", "is this handoff complete?", "does this agent have the full context?" — happen *between* tools. In the seams.
 

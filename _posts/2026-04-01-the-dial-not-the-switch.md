@@ -47,16 +47,14 @@ Lee and See's comprehensive review of trust in automation ("Trust in Automation:
 
 Calibrated automation means the AI Dial has multiple positions, and you set it per task:
 
-<div class="mermaid">
-graph LR
-    P1["1 SHOW ME<br/>AI shows insights.<br/>Human does all."]
-    P2["2 SUGGEST<br/>AI recommends.<br/>Human decides."]
-    P3["3 CHECK<br/>AI acts, human<br/>approves before action."]
-    P4["4 SOMETIMES<br/>AI learns preferences,<br/>reduces approval."]
-    P5["5 ANTICIPATE<br/>AI acts proactively.<br/>Predicts needs."]
-    P6["6 JUST RUN IT<br/>Full auto. Human<br/>reviews exceptions only."]
-    P1 --> P2 --> P3 --> P4 --> P5 --> P6
-</div>
+| Position | Mode | What Happens | Human Involvement |
+|---|---|---|---|
+| **1** | Show me | AI shows insights | Human does everything |
+| **2** | Suggest to me | AI recommends | Human decides |
+| **3** | Do it, I'll check | AI acts | Human approves before action |
+| **4** | Do it, ask me sometimes | AI learns preferences | Approval frequency decreases |
+| **5** | Anticipate my needs | AI acts proactively | Human reviews periodically |
+| **6** | Just run it | Full automation | Human reviews exceptions only |
 
 *Lower risk, more human <--- ---> Higher trust, more AI*
 
@@ -111,16 +109,17 @@ Both frameworks assume something that most platforms don't deliver: **the abilit
 
 This is the infrastructure gap. It's not that organizations don't know they want the AI Dial. It's that most tools don't give them one. So they're forced into a binary: automate fully and accept the risk, or keep humans involved in everything and accept the inefficiency.
 
-<div class="mermaid">
-graph TD
-    subgraph platforms ["WHAT MOST PLATFORMS OFFER"]
-        OFF["OFF<br/>Manual process<br/>no AI value"] ---|"binary switch"| ON["ON<br/>Full automation<br/>full AI risk"]
-    end
-    subgraph orgs ["WHAT ORGANIZATIONS NEED"]
-        D1["1<br/>Show me"] --- D2["2<br/>Suggest"] --- D3["3<br/>Human approves"] --- D4["4<br/>Smart escalation"] --- D5["5<br/>Proactive"] --- D6["6<br/>Full auto"]
-    end
-    platforms -.->|"should become"| orgs
-</div>
+**What most platforms offer:**
+
+| OFF | --- binary switch --- | ON |
+|---|---|---|
+| Manual process, no AI value | | Full automation, full AI risk |
+
+**What organizations need:**
+
+| 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| Show me | Suggest | Human approves | Smart escalation | Proactive | Full auto |
 
 *Per task. Per team. Per workflow. Adjustable over time.*
 

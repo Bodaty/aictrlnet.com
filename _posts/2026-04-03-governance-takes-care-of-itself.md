@@ -54,18 +54,17 @@ And here's the insight I keep returning to: **when you delegate to AI well — w
 
 Let's revisit the delegation model from earlier in this series. When you work with AI using a graduated approach, here's what you naturally create:
 
-<div class="mermaid">
-graph LR
-    D1["Define which tasks AI<br/>handles autonomously"] --> G1["Scope boundaries and<br/>authorization controls"]
-    D2["Review AI outputs before<br/>they go to customers"] --> G2["Approval workflows and<br/>quality checkpoints"]
-    D3["Flag anything unusual<br/>for human review"] --> G3["Escalation procedures and<br/>anomaly detection"]
-    D4["Track what AI decided<br/>and why"] --> G4["Audit trail and<br/>decision logging"]
-    D5["Increase autonomy only when<br/>performance warrants"] --> G5["Evidence-based authorization<br/>and change management"]
-    D6["Different autonomy levels<br/>for different teams"] --> G6["Role-based access control<br/>and policy management"]
-    D7["Pull back autonomy when<br/>conditions change"] --> G7["Incident response and<br/>adaptive controls"]
-</div>
+| Delegation Practice | Governance Outcome |
+|---|---|
+| Define which tasks AI handles autonomously | Scope boundaries and authorization controls |
+| Review AI outputs before they go to customers | Approval workflows and quality checkpoints |
+| Flag anything unusual for human review | Escalation procedures and anomaly detection |
+| Track what AI decided and why | Audit trail and decision logging |
+| Increase autonomy only when performance warrants | Evidence-based authorization and change management |
+| Different autonomy levels for different teams | Role-based access control and policy management |
+| Pull back autonomy when conditions change | Incident response and adaptive controls |
 
-*Left side: How a good manager delegates. Right side: What a governance framework requires. They're the same practices with different labels.*
+*Left column: How a good manager delegates. Right column: What a governance framework requires. They're the same practices with different labels.*
 
 Every item in the right column is something enterprises spend significant budget to implement as a separate governance initiative. But every item in the left column is something that happens naturally when you delegate well.
 

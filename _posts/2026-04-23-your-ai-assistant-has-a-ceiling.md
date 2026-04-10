@@ -48,31 +48,16 @@ Here's the gap:
 
 That second scenario is what enterprises actually need. It's not individual task assistance. It's multi-system, multi-step orchestration with governance at every decision point.
 
-<div class="mermaid">
-graph TD
-    subgraph assist["AI ASSISTANCE (Copilot, Gemini, ChatGPT)"]
-        A1["One user + one task + one system"]
-        A2["Human initiates every action"]
-        A3["AI helps within the application"]
-        A4["No cross-system workflow"]
-        A5["No governance beyond vendor guardrails"]
-        A6["Value: 10-20% productivity on individual tasks"]
-    end
+| | AI Assistance (Copilot, Gemini, ChatGPT) | AI Orchestration |
+|---|---|---|
+| **Scope** | One user + one task + one system | Multi-step process + multiple systems + governance |
+| **Who drives** | Human initiates every action | AI initiates, executes, and manages the workflow |
+| **Boundaries** | AI helps within the application | Crosses application boundaries |
+| **Governance** | No governance beyond vendor guardrails | Inline governance at every decision point |
+| **Autonomy** | Vendor-controlled | The AI Dial: configurable autonomy per step |
+| **Value** | 10-20% productivity on individual tasks | Entire processes automated end-to-end |
 
-    subgraph orch["AI ORCHESTRATION"]
-        B1["Multi-step process + multiple systems + governance"]
-        B2["AI initiates, executes, and manages the workflow"]
-        B3["Crosses application boundaries"]
-        B4["Inline governance at every decision point"]
-        B5["The AI Dial: configurable autonomy per step"]
-        B6["Value: entire processes automated end-to-end"]
-    end
-
-    assist -.-|"THE CEILING<br/>No amount of Copilot features bridges this gap"| orch
-
-    style assist fill:#ffe0e0,stroke:#c0392b
-    style orch fill:#e0ffe0,stroke:#27ae60
-</div>
+**The ceiling:** No amount of Copilot features bridges this gap. Assistance and orchestration are different architectures.
 
 McKinsey's 2024 global survey found that 72% of organizations had adopted AI in at least one function — but most usage was at the individual task level, not embedded in processes. The ceiling is visible in the data: organizations adopt AI assistants quickly, then stall when trying to move from individual productivity to process transformation.
 

@@ -25,19 +25,13 @@ Zapier, Make, and n8n share the same fundamental architecture: **trigger → act
 
 But the intelligence in these workflows is entirely pre-defined by the human who built them. The workflow doesn't understand what it's doing. It doesn't make decisions. It doesn't handle exceptions it wasn't programmed for. It moves data along a path that a human mapped in advance.
 
-<div class="mermaid">
-graph TD
-    A["Trigger<br/>(new email arrives)"] --> B["Filter<br/>(if subject contains 'invoice')"]
-    B --> C["Action<br/>(extract attachment)"]
-    C --> D["Action<br/>(send to Google Sheets)"]
-    D --> E["Action<br/>(notify in Slack)"]
-
-    style A fill:#3498db,stroke:#333,color:#fff
-    style B fill:#e67e22,stroke:#333,color:#fff
-    style C fill:#9b59b6,stroke:#333,color:#fff
-    style D fill:#9b59b6,stroke:#333,color:#fff
-    style E fill:#9b59b6,stroke:#333,color:#fff
-</div>
+| Step | Type | What Happens |
+|---|---|---|
+| 1 | **Trigger** | New email arrives |
+| 2 | **Filter** | If subject contains "invoice" |
+| 3 | **Action** | Extract attachment |
+| 4 | **Action** | Send to Google Sheets |
+| 5 | **Action** | Notify in Slack |
 
 *This is a pipeline. It moves data. It doesn't understand the data. It doesn't make decisions. It doesn't govern itself. When it fails, it stops.*
 

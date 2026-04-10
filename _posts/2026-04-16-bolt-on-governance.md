@@ -31,17 +31,12 @@ Strip away the marketing and most AI governance platforms do three things:
 
 These are valuable activities. The problem isn't what they do. The problem is **where they sit in the architecture.**
 
-<div class="mermaid">
-graph TD
-    A["AI SYSTEM<br/>(does the actual work)<br/>Makes decisions<br/>Takes actions<br/>Produces outputs"] -->|"Action happens"| B["Action already executed"]
-    A -->|"Logs / outputs / metadata"| C["GOVERNANCE TOOL<br/>(observes from outside)<br/>Monitors after the fact<br/>Flags anomalies<br/>Generates compliance docs"]
-    C -->|"Report generated<br/>(days/weeks later)"| D["Compliance Report"]
-
-    style A fill:#4a90d9,stroke:#333,color:#fff
-    style C fill:#e67e22,stroke:#333,color:#fff
-    style B fill:#e74c3c,stroke:#333,color:#fff
-    style D fill:#f39c12,stroke:#333,color:#fff
-</div>
+| Step | What Happens | Timeline |
+|---|---|---|
+| **AI System** makes a decision | Action executes immediately | Real-time |
+| Logs and metadata sent to **Governance Tool** | Tool receives data after the fact | Minutes to hours |
+| Governance tool flags anomalies | Team reviews flagged items | Days |
+| Compliance report generated | Report delivered to stakeholders | Weeks |
 
 *The action has already happened by the time governance observes it.*
 

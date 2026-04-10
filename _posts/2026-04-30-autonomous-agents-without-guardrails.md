@@ -69,22 +69,16 @@ Beyond individual products, an entire ecosystem of agent frameworks has emerged:
 
 The common pattern across all of these: **the frameworks optimize for capability, not for governed capability.**
 
-<div class="mermaid">
-quadrantChart
-    title Agent Frameworks: Capability vs. Governance
-    x-axis Low Governance --> High Governance
-    y-axis Low Capability --> High Capability
-    quadrant-1 Where enterprises need to be
-    quadrant-2 High capability, low governance
-    quadrant-3 Limited on both axes
-    quadrant-4 Governed but limited
-    CrewAI: [0.25, 0.80]
-    AutoGen AG2: [0.20, 0.70]
-    LangChain: [0.18, 0.60]
-    Perplexity Computer: [0.35, 0.85]
-    OpenClaw: [0.30, 0.72]
-    Enterprise need: [0.80, 0.85]
-</div>
+**Agent Frameworks: Capability vs. Governance**
+
+| Framework | Capability | Governance | Quadrant |
+|---|---|---|---|
+| CrewAI | High | Low | High capability, low governance |
+| AutoGen AG2 | High | Low | High capability, low governance |
+| LangChain | High | Low | High capability, low governance |
+| Perplexity Computer | Very High | Low | High capability, low governance |
+| OpenClaw | High | Low | High capability, low governance |
+| **Enterprise need** | **High** | **High** | **Where enterprises need to be** |
 
 *Every framework is in the top-left quadrant: high capability, low governance. Enterprises need the top-right.*
 

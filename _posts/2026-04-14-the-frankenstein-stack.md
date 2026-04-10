@@ -43,25 +43,15 @@ Enterprise AI adoption didn't happen as a coordinated strategy. It happened in w
 
 Each wave solved a real problem. And each wave created a new procurement decision that didn't consider the decisions that came before.
 
-<div class="mermaid">
-graph TD
-    subgraph stack["THE FRANKENSTEIN STACK"]
-        A["AI Governance<br/>(monitors)"]
-        B["RPA<br/>(scripts)"]
-        C["Copilot<br/>(assistant)"]
-        D["Automation<br/>(connectors)"]
-        E["Autonomous Agents"]
-    end
+| Layer | What It Does | The Gap |
+|---|---|---|
+| **AI Governance** (monitors) | Observes AI behavior, generates reports | Doesn't do any work |
+| **RPA** (scripts) | Automates structured clicks | No intelligence, no governance |
+| **Copilot** (assistant) | AI inside one ecosystem | No cross-system orchestration |
+| **Automation** (connectors) | Moves data between apps | Doesn't make decisions |
+| **Autonomous Agents** | AI that acts independently | No governance guardrails |
 
-    style A fill:#f9f,stroke:#333
-    style B fill:#bbf,stroke:#333
-    style C fill:#bfb,stroke:#333
-    style D fill:#fbf,stroke:#333
-    style E fill:#ff9,stroke:#333
-    style stack fill:none,stroke:#999,stroke-dasharray: 5 5
-
-    E ~~~ F["5 vendors. 5 governance stories. 5 audit trails.<br/>Zero unified view. Nobody governing the seams."]
-</div>
+*5 vendors. 5 governance stories. 5 audit trails. Zero unified view. Nobody governing the seams.*
 
 ---
 
