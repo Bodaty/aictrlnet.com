@@ -99,6 +99,8 @@ Over the next seven articles, I'll look at each layer of the Frankenstein stack 
 
 Not five vendors. Not five audit trails. One platform. One AI Dial.
 
+**Want to see what your Frankenstein stack actually costs?** [Try the calculator](https://hitlai.net/calculator/) — enter your real vendor costs, see the total, and compare to a unified platform.
+
 ---
 
 *This is Part 1 of an 8-part series on The Frankenstein Stack. Next: [Bolt-On Governance Is Expensive Observation](/blog/2026/04/bolt-on-governance/).*

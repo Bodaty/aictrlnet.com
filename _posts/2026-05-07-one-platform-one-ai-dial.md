@@ -135,6 +135,7 @@ You don't have to repeat the pattern.
 - **Community Edition**: [github.com/Bodaty/aictrlnet-community](https://github.com/Bodaty/aictrlnet-community)
 - **HitLai (Commercial)**: [hitlai.net](https://hitlai.net)
 - **Learn more**: [aictrlnet.com](https://aictrlnet.com)
+- **What's your Frankenstein stack costing you?** [Try the calculator](https://hitlai.net/calculator/) — enter your actual vendor costs and see the difference.
 
 The Frankenstein stack assembled itself because each tool solved the problem in front of it. But the system-level problem — governed AI orchestration — requires a system-level solution.
 
