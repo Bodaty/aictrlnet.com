@@ -49,34 +49,12 @@ There's a principle in quality management called the 1-10-100 rule, popularized 
 - **$10** to correct it downstream after it's in the system
 - **$100+** if nothing is done and the error propagates through downstream systems, reports, and decisions
 
-<div class="mermaid">
-graph TD
-    subgraph prevent ["1 DOLLAR — PREVENT"]
-        P1["Validate at entry"]
-        P2["Schema enforcement"]
-        P3["Input controls"]
-        P4["Built into the operational system"]
-    end
-    subgraph correct ["10 DOLLARS — CORRECT"]
-        C1["Cleanse data downstream"]
-        C2["Profile and reconcile"]
-        C3["Match and deduplicate"]
-        C4["Bolt-on tools: Informatica, Trillium, Infogix"]
-    end
-    subgraph failure ["100+ DOLLARS — FAILURE"]
-        F1["Bad decisions from bad data"]
-        F2["Regulatory fines"]
-        F3["Customer impact, reputational damage"]
-        F4["Cost compounds with every system touched"]
-    end
-    prevent -->|"cost escalates 10x"| correct -->|"cost escalates 10x"| failure
-
-    style prevent fill:#27ae60,stroke:#333,color:#fff
-    style correct fill:#e67e22,stroke:#333,color:#fff
-    style failure fill:#e74c3c,stroke:#333,color:#fff
-</div>
-
-*Where smart orgs invest (left) vs. where most orgs spend (right)*
+| | PREVENT | CORRECT | FAILURE |
+|---|---|---|---|
+| **Cost** | $1 | $10 | $100+ |
+| **What** | Validate at entry, schema enforcement, input controls | Cleanse downstream, profile, reconcile, deduplicate | Bad decisions, regulatory fines, customer impact, reputational damage |
+| **Where** | Built into the operational system | Bolt-on tools (Informatica, Trillium, Infogix) | After-the-fact consequences |
+| **Who invests here** | Smart organizations | Most organizations | Nobody (by choice) |
 
 The entire data quality industry — the billions spent on tools, the armies of data stewards, the cleansing and reconciliation processes — existed primarily at the $10 level. Correcting errors downstream. The organizations that invested at the $1 level — validation at entry, schema enforcement, quality rules in the pipeline — spent a fraction of the cost for dramatically better results.
 
