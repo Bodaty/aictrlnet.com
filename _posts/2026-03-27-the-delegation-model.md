@@ -37,25 +37,13 @@ This is the more common failure and it's less visible. The organization deploys 
 
 McKinsey found that 67% of organizations using generative AI hadn't moved past experimentation in even a single business function. Most of those are stuck in Mistake 2 — not because the technology isn't ready, but because they have no framework for when to let go.
 
-<div class="mermaid">
-graph TD
-    subgraph m1 ["MISTAKE 1: Too much autonomy, too fast"]
-        M1A["'Let AI handle everything'"]
-        M1B["Risk: Zillow - $304M loss<br/>Risk: Knight Capital - $440M<br/>Risk: Amazon recruiting bias"]
-        M1C["Headline-grabbing failure"]
-        M1A --> M1B --> M1C
-    end
-    subgraph m2 ["MISTAKE 2: Too little autonomy, forever"]
-        M2A["'Review everything AI does'"]
-        M2B["Risk: AI never delivers ROI<br/>Expensive autocomplete<br/>Organization stays in permanent 'pilot' mode"]
-        M2C["Quiet, invisible failure"]
-        M2A --> M2B --> M2C
-    end
-    M1C --> MIDDLE
-    M2C --> MIDDLE
-    MIDDLE["THE MIDDLE: Graduated delegation based on<br/>demonstrated performance. This is where the 10%<br/>of companies getting real results from AI operate."]
-    style MIDDLE fill:#f0f4ff,stroke:#333,stroke-width:2px
-</div>
+| | MISTAKE 1: Too much autonomy, too fast | MISTAKE 2: Too little autonomy, forever |
+|---|---|---|
+| **Mindset** | "Let AI handle everything" | "Review everything AI does" |
+| **Risks** | Zillow ($304M loss), Knight Capital ($440M), Amazon recruiting bias | AI never delivers ROI, expensive autocomplete, permanent "pilot" mode |
+| **Failure mode** | Headline-grabbing failure | Quiet, invisible failure |
+
+**The middle ground:** Graduated delegation based on demonstrated performance. This is where the 10% of companies getting real results from AI actually operate.
 
 ---
 
