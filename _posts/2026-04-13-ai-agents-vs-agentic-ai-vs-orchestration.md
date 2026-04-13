@@ -236,6 +236,8 @@ Governed AI Orchestration implements graduated autonomy — the AI Dial — per 
 
 Prof. Mohanbir Sawhney at Kellogg School of Management (Northwestern) observed in a public exchange that orchestration without governance that adapts as AI maturity grows is essential for agents to be trusted. He referred to this concept as Governed AI Orchestration. The AI Dial is how it works in practice.
 
+This is what we built with [AICtrlNet](https://aictrlnet.com) and [HitLai](https://hitlai.net) — a Governed AI Orchestration platform where the AI Dial is the core architecture, not a feature. The Community Edition is free and open source. Business and Enterprise editions are currently in private beta with selected design partners.
+
 ### Why This Matters Now
 
 The market is obsessed with building better agents. Billions flowing to agent frameworks, agentic AI products, and agent-as-a-service platforms.
