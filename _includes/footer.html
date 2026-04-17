@@ -1,0 +1,46 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- if site.social -%}
+        <ul class="social-media-list">
+          {%- if site.social.github -%}
+          <li><a href="https://github.com/{{ site.social.github | cgi_escape | escape }}">GitHub</a></li>
+          {%- endif -%}
+          {%- if site.social.twitter -%}
+          <li><a href="https://twitter.com/{{ site.social.twitter | cgi_escape | escape }}">Twitter</a></li>
+          {%- endif -%}
+        </ul>
+        {%- endif -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; font-size: 0.75rem; color: #828282; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e8e8e8;">
+      <p>&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
+    </div>
+
+  </div>
+
+</footer>
