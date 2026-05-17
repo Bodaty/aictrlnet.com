@@ -130,12 +130,19 @@
 
         body::before {
             content: '';
-            position: fixed; inset: 0;
+            position: fixed; inset: -10%;
             background:
-                radial-gradient(ellipse 900px 600px at 85% -10%, rgba(34, 211, 238, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse 700px 500px at -10% 90%, rgba(34, 211, 238, 0.05) 0%, transparent 65%);
+                radial-gradient(ellipse 760px 540px at 85% 8%, rgba(34, 211, 238, 0.13) 0%, transparent 55%),
+                radial-gradient(ellipse 620px 480px at 12% 88%, rgba(34, 211, 238, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 500px 400px at 50% 50%, rgba(103, 232, 249, 0.04) 0%, transparent 70%);
             z-index: -2;
             pointer-events: none;
+            animation: mesh-drift 22s var(--ease) infinite alternate;
+        }
+        @keyframes mesh-drift {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            50%  { transform: translate3d(-2%, 1.5%, 0) scale(1.04); }
+            100% { transform: translate3d(1.5%, -1.5%, 0) scale(1.02); }
         }
         body::after {
             content: '';
@@ -186,21 +193,185 @@
             padding: 0 32px;
         }
 
+        /* Top nav */
+        .topnav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 0 0;
+            opacity: 0; animation: enter 0.7s var(--ease) 0s forwards;
+        }
+        .topnav-brand {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none;
+        }
+        .topnav-mark {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: var(--bg-2);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            display: grid; place-items: center;
+            box-shadow: 0 4px 16px rgba(34, 211, 238, 0.08);
+        }
+        .topnav-mark img {
+            width: 100%; height: 100%; display: block;
+            object-fit: cover;
+        }
+        .topnav-word {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--ink);
+            letter-spacing: -0.4px;
+        }
+        .topnav-links {
+            display: flex; align-items: center; gap: 28px;
+            font-family: var(--font-display);
+            font-size: 13.5px;
+        }
+        .topnav-links a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            transition: color 200ms var(--ease);
+        }
+        .topnav-links a:hover { color: var(--accent); }
+        .topnav-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            color: var(--ink) !important;
+            transition: all 200ms var(--ease);
+        }
+        .topnav-cta:hover {
+            border-color: var(--accent);
+            color: var(--accent) !important;
+        }
+        @media (max-width: 700px) {
+            .topnav-links a:not(.topnav-cta) { display: none; }
+        }
+
         .hero {
-            padding-top: 96px;
+            padding-top: 64px;
             padding-bottom: 80px;
             display: grid;
-            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
             gap: 56px;
-            align-items: start;
+            align-items: center;
         }
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; }
+            .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
         }
 
         .hero-left { display: flex; flex-direction: column; }
-        .hero-right { padding-top: 60px; }
-        @media (max-width: 900px) { .hero-right { padding-top: 0; } }
+        .hero-right {
+            position: relative;
+            opacity: 0; animation: enter 0.8s var(--ease) 0.3s forwards;
+        }
+        .hero-art {
+            position: relative;
+            aspect-ratio: 1;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--bg-2);
+            border: 1px solid var(--line);
+            box-shadow:
+                0 24px 80px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(34, 211, 238, 0.08),
+                inset 0 0 60px rgba(34, 211, 238, 0.05);
+        }
+        .hero-art img {
+            width: 100%; height: 100%; display: block;
+            object-fit: cover;
+            opacity: 0.96;
+        }
+        .hero-art::after {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 100%, transparent 0%, rgba(10, 14, 26, 0.55) 100%),
+                radial-gradient(circle at 30% 25%, rgba(34, 211, 238, 0.18) 0%, transparent 45%);
+            pointer-events: none;
+            mix-blend-mode: normal;
+        }
+        .hero-art-tag {
+            position: absolute;
+            bottom: 16px; left: 16px;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-family: var(--font-display);
+            font-size: 11px;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 10px;
+        }
+        .hero-art-tag::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Proof strip — sits below hero */
+        .proof-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            padding: 28px 0;
+            margin: 16px 0 56px;
+            border-top: 1px solid var(--line-soft);
+            border-bottom: 1px solid var(--line-soft);
+        }
+        @media (max-width: 700px) {
+            .proof-strip { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        }
+        .proof-cell {
+            padding: 0 22px;
+            border-left: 1px solid var(--line-soft);
+        }
+        .proof-cell:first-child { border-left: none; }
+        @media (max-width: 700px) {
+            .proof-cell { padding: 0 12px; border-left: none; }
+        }
+        .proof-cell .num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 32px;
+            letter-spacing: -1px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .proof-cell .label {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 11.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+        .proof-cell .desc {
+            font-family: var(--font-body);
+            font-size: 12.5px;
+            color: var(--ink-dim);
+            line-height: 1.45;
+        }
 
         .eyebrow {
             font-family: var(--font-display);
@@ -624,6 +795,37 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* Scroll-triggered reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.stagger > * {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+        }
+        .reveal.stagger.is-visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+        .reveal.stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+        .reveal.stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+        .reveal.stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal.stagger > * {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
         @media (max-width: 600px) {
             .container { padding: 0 20px; }
             .cta-group { flex-direction: column; align-items: flex-start; }
@@ -636,6 +838,22 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <main id="main" class="container">
+
+        <nav class="topnav" aria-label="Primary">
+            <a href="/" class="topnav-brand" aria-label="AICtrlNet — home">
+                <span class="topnav-mark"><img src="/logo-mark.png" alt="" width="36" height="36" loading="eager" decoding="async"></span>
+                <span class="topnav-word">AICtrlNet</span>
+            </a>
+            <div class="topnav-links">
+                <a href="/docs">Docs</a>
+                <a href="/editions">Editions</a>
+                <a href="/blog">Blog</a>
+                <a href="https://github.com/bodaty/aictrlnet-community" class="topnav-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </nav>
 
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-left">
@@ -663,35 +881,41 @@
                 </div>
             </div>
 
-            <aside class="hero-right" aria-label="Technical proof">
-                <div class="proof-card">
-                    <div class="proof-label">What it takes &middot; what we ship</div>
-                    <div class="proof-stack">
-                        <div class="proof-item">
-                            <span class="num">3</span>
-                            <span class="label">Open agent protocols<small>Google A2A v0.2.5 &middot; MCP client + server &middot; OpenClaw Runtime Gateway</small></span>
-                        </div>
-                        <div class="proof-item">
-                            <span class="num">5</span>
-                            <span class="label">AI frameworks with context-preserving cascade<small>LangChain &middot; AutoGPT &middot; CrewAI &middot; AutoGen &middot; Semantic Kernel</small></span>
-                        </div>
-                        <div class="proof-item">
-                            <span class="num">29</span>
-                            <span class="label">Native adapters + runtime generation + browser fallback<small>Three-layer integration reach</small></span>
-                        </div>
-                        <div class="proof-item">
-                            <span class="num">193</span>
-                            <span class="label">MCP tools<small>Every feature category programmatically accessible</small></span>
-                        </div>
-                    </div>
+            <div class="hero-right" aria-hidden="true">
+                <div class="hero-art">
+                    <img src="/hero-mark.jpg" alt="" width="480" height="480" loading="eager" decoding="async">
+                    <span class="hero-art-tag">In production · v12.6</span>
                 </div>
-            </aside>
+            </div>
         </section>
+
+        <aside class="proof-strip" aria-label="What we ship">
+            <div class="proof-cell">
+                <div class="num">3</div>
+                <div class="label">Open protocols</div>
+                <div class="desc">Google A2A v0.2.5 &middot; MCP client + server &middot; OpenClaw Runtime Gateway</div>
+            </div>
+            <div class="proof-cell">
+                <div class="num">5</div>
+                <div class="label">Framework cascade</div>
+                <div class="desc">LangChain &middot; AutoGPT &middot; CrewAI &middot; AutoGen &middot; Semantic Kernel</div>
+            </div>
+            <div class="proof-cell">
+                <div class="num">29</div>
+                <div class="label">Native adapters</div>
+                <div class="desc">Plus runtime generation + browser automation universal fallback</div>
+            </div>
+            <div class="proof-cell">
+                <div class="num">193</div>
+                <div class="label">MCP tools</div>
+                <div class="desc">Every feature category programmatically accessible</div>
+            </div>
+        </aside>
 
         <section aria-labelledby="why-title">
             <div class="section-label">Why us, not Databricks, Salesforce, or any hyperscaler</div>
             <h2 id="why-title" class="section-title">Four moats hyperscalers can&rsquo;t structurally ship.</h2>
-            <div class="moats">
+            <div class="moats reveal stagger">
                 <div class="moat">
                     <span class="moat-num">01</span>
                     <h3 class="moat-title">Deploy anywhere</h3>
@@ -718,7 +942,7 @@
         <section aria-labelledby="day-one-title">
             <div class="section-label">What you get on day one</div>
             <h2 id="day-one-title" class="section-title">Coordinated AI organization, ready in minutes.</h2>
-            <div class="moats">
+            <div class="moats reveal stagger">
                 <div class="moat">
                     <span class="moat-num">05</span>
                     <h3 class="moat-title">Push-button AI company</h3>
@@ -829,6 +1053,25 @@
         </nav>
         <p class="footer-meta">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
     </footer>
+
+    <script>
+    // Scroll-triggered reveal
+    (function () {
+        if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    })();
+    </script>
 
     <script>
     (function () {
