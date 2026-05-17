@@ -3,346 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editions - AICtrlNet</title>
-    <meta name="description" content="Compare AICtrlNet editions: Community (free, MIT), Business, and Enterprise. Open core AI orchestration for every team size.">
+    <title>AICtrlNet Editions — Community, Business, Enterprise.</title>
+    <meta name="description" content="Compare AICtrlNet editions. Community (MIT, free), Business ($599-$2,499/mo, with expert hours), Enterprise (custom, multi-tenant, sovereign deployment).">
+
+    <link rel="canonical" href="https://aictrlnet.com/editions/">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="color-scheme" content="dark">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AICtrlNet">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="AICtrlNet Editions — Community, Business, Enterprise.">
+    <meta property="og:description" content="Open core. Three tiers. One platform. Deploy anywhere — your infrastructure or our cloud.">
+    <meta property="og:url" content="https://aictrlnet.com/editions/">
+    <meta property="og:image" content="https://aictrlnet.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AICtrlNet Editions">
+    <meta name="twitter:description" content="Open core. Three tiers. One platform.">
+    <meta name="twitter:image" content="https://aictrlnet.com/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
+        :root {
+            --bg:#0a0e1a;--bg-2:#0d1424;--bg-3:#131c30;
+            --line:rgba(34,211,238,0.10);--line-soft:rgba(255,255,255,0.06);
+            --ink:#f5f7fa;--ink-soft:#c9d1de;--ink-dim:#8a94a8;--ink-faint:#5a6478;
+            --accent:#22d3ee;--accent-2:#67e8f9;--accent-glow:rgba(34,211,238,0.30);
+            --font-display:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+            --font-body:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+            --ease:cubic-bezier(0.22,1,0.36,1);
         }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+        body{font-family:var(--font-body);background:var(--bg);color:var(--ink-soft);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;position:relative;overflow-x:hidden}
+        body::before{content:'';position:fixed;inset:-10%;background:radial-gradient(ellipse 760px 540px at 85% 8%,rgba(34,211,238,0.12) 0%,transparent 55%),radial-gradient(ellipse 620px 480px at 12% 88%,rgba(34,211,238,0.07) 0%,transparent 60%);z-index:-2;pointer-events:none;animation:mesh-drift 22s var(--ease) infinite alternate}
+        @keyframes mesh-drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-2%,1.5%,0) scale(1.04)}100%{transform:translate3d(1.5%,-1.5%,0) scale(1.02)}}
+        .skip-link{position:absolute;top:-40px;left:16px;background:var(--accent);color:var(--bg);padding:8px 16px;border-radius:4px;font-family:var(--font-display);font-weight:600;text-decoration:none;z-index:100}
+        .skip-link:focus-visible{top:16px}
+        :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            flex: 1;
-        }
+        nav.topnav{display:flex;justify-content:space-between;align-items:center;padding:22px 32px;max-width:1180px;margin:0 auto}
+        .topnav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+        .topnav-mark{width:36px;height:36px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;box-shadow:0 4px 16px rgba(34,211,238,0.08)}
+        .topnav-mark img{width:100%;height:100%;display:block;object-fit:cover}
+        .topnav-word{font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--ink);letter-spacing:-0.4px}
+        .topnav-links{display:flex;align-items:center;gap:28px;font-family:var(--font-display);font-size:13.5px}
+        .topnav-links a{color:var(--ink-soft);text-decoration:none;transition:color 200ms var(--ease)}
+        .topnav-links a:hover{color:var(--accent)}
+        .topnav-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;color:var(--ink)!important;transition:all 200ms var(--ease)}
+        .topnav-cta:hover{border-color:var(--accent);color:var(--accent)!important}
+        @media (max-width:700px){.topnav-links a:not(.topnav-cta){display:none}}
 
-        /* Nav */
-        .nav {
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
+        .container{max-width:1080px;margin:0 auto;padding:0 32px}
 
-        .nav a {
-            color: #9ca3af;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+        .hero{text-align:center;padding:48px 0 36px}
+        .badge-pill{display:inline-block;font-family:var(--font-display);font-weight:500;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(34,211,238,0.3);padding:5px 14px;border-radius:999px;margin-bottom:20px}
+        h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-1.3px;color:var(--ink);margin-bottom:20px}
+        h1 em{font-style:normal;color:var(--accent)}
+        .hero-sub{font-size:1.08rem;line-height:1.65;color:var(--ink-soft);max-width:720px;margin:0 auto}
 
-        .nav a:hover {
-            color: #a5b4fc;
-        }
+        .value-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+        @media (max-width:820px){.value-cards{grid-template-columns:1fr}}
+        .value-card{background:rgba(13,20,36,0.55);border:1px solid var(--line-soft);border-radius:14px;padding:28px;display:flex;flex-direction:column}
+        .value-card.featured{border-color:rgba(34,211,238,0.35);background:linear-gradient(180deg,rgba(34,211,238,0.08) 0%,rgba(13,20,36,0.6) 100%)}
+        .value-card-name{font-family:var(--font-display);font-weight:700;font-size:1.3rem;color:var(--ink);letter-spacing:-0.4px;margin-bottom:6px}
+        .value-card-price{font-family:var(--font-display);font-size:14px;color:var(--accent);margin-bottom:14px;letter-spacing:0.3px}
+        .value-card-audience{font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--ink-dim);margin-bottom:14px;line-height:1.5}
+        .value-card-desc{font-size:14px;color:var(--ink-soft);line-height:1.55;margin-bottom:18px;flex:1}
 
-        /* Header */
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-        }
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:6px;font-family:var(--font-display);font-size:14px;font-weight:600;text-decoration:none;transition:all 200ms var(--ease);border:1px solid transparent}
+        .btn-primary{background:var(--accent);color:var(--bg)}
+        .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 32px var(--accent-glow)}
+        .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line-soft)}
+        .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
-        .page-header h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .callout{background:rgba(13,20,36,0.5);border:1px solid var(--line-soft);border-left:3px solid var(--accent);border-radius:10px;padding:24px 28px;margin-bottom:48px}
+        .callout-title{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:-0.2px;margin-bottom:8px}
+        .callout-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
 
-        .page-header p {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+        .comparison-section h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,2.8vw,2rem);color:var(--ink);letter-spacing:-0.6px;margin-bottom:22px;text-align:center}
+        .table-wrapper{overflow-x:auto;border-radius:12px;border:1px solid var(--line-soft);background:var(--bg-2)}
+        table{width:100%;border-collapse:collapse;font-size:14px}
+        thead th{background:rgba(0,0,0,0.25);font-family:var(--font-display);font-weight:600;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-dim);padding:14px 18px;text-align:left;border-bottom:1px solid var(--line-soft)}
+        tbody td{padding:14px 18px;border-bottom:1px solid var(--line-soft);color:var(--ink-soft)}
+        tbody tr:last-child td{border-bottom:none}
+        .category-row td{background:rgba(34,211,238,0.04);font-family:var(--font-display);font-weight:600;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)}
+        .check{color:var(--accent);font-weight:700;font-size:1.1rem}
+        .dash{color:var(--ink-faint)}
 
-        /* Value positioning cards */
-        .value-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
+        .closer{padding:48px 0 8px;text-align:center}
+        .closer-quote{font-family:var(--font-display);font-weight:500;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.4;color:var(--ink);max-width:720px;margin:0 auto;letter-spacing:-0.3px}
+        .closer-quote em{font-style:italic;color:var(--accent)}
 
-        .value-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .value-card.featured {
-            border-color: rgba(99, 102, 241, 0.4);
-            background: rgba(99, 102, 241, 0.05);
-        }
-
-        .value-card-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.25rem;
-        }
-
-        .value-card-price {
-            font-size: 0.9rem;
-            color: #a5b4fc;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .value-card-audience {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            line-height: 1.5;
-            margin-bottom: 1.25rem;
-            font-style: italic;
-        }
-
-        .value-card-desc {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Comparison table */
-        .comparison-section {
-            margin-bottom: 3rem;
-        }
-
-        .comparison-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        thead th {
-            padding: 1rem 0.75rem;
-            text-align: left;
-            font-weight: 600;
-            color: #a5b4fc;
-            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
-            white-space: nowrap;
-        }
-
-        thead th:first-child {
-            min-width: 200px;
-        }
-
-        thead th:not(:first-child) {
-            text-align: center;
-            min-width: 120px;
-        }
-
-        tbody td {
-            padding: 0.75rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            color: #c9cdd3;
-        }
-
-        tbody td:not(:first-child) {
-            text-align: center;
-        }
-
-        tbody tr:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .category-row td {
-            padding-top: 1.25rem;
-            font-weight: 600;
-            color: #a5b4fc;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid rgba(99, 102, 241, 0.15);
-        }
-
-        .check {
-            color: #34d399;
-        }
-
-        .dash {
-            color: #4b5563;
-        }
-
-        /* Callout */
-        .callout {
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .callout-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .callout-desc {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #6b7280;
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #a5b4fc;
-        }
-
-        .footer-links {
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 600px) {
-            .value-cards {
-                grid-template-columns: 1fr;
-            }
-
-            thead th:first-child {
-                min-width: 140px;
-            }
-
-            thead th:not(:first-child) {
-                min-width: 80px;
-            }
-
-            table {
-                font-size: 0.8rem;
-            }
-        }
+        footer{border-top:1px solid var(--line-soft);padding:36px 0 48px;text-align:center;font-family:var(--font-body);font-size:13.5px;color:var(--ink-dim);margin-top:48px}
+        .footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;margin:14px 0 18px;font-family:var(--font-display);font-size:13px}
+        footer a{color:var(--ink-soft);text-decoration:none}
+        footer a:hover{color:var(--accent)}
+        .footer-meta{font-size:11.5px;color:var(--ink-faint);margin-top:8px;letter-spacing:0.2px}
     </style>
 </head>
 <body>
-    <div class="container">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="nav">
-            <a href="/">&larr; AICtrlNet Home</a>
+    <nav class="topnav" aria-label="Primary">
+        <a href="/" class="topnav-brand" aria-label="AICtrlNet — home">
+            <span class="topnav-mark"><img src="/logo-mark.png" alt="" width="36" height="36" loading="eager" decoding="async"></span>
+            <span class="topnav-word">AICtrlNet</span>
+        </a>
+        <div class="topnav-links">
+            <a href="/docs">Docs</a>
+            <a href="/features">Features</a>
+            <a href="/community">Community</a>
+            <a href="https://github.com/bodaty/aictrlnet-community" class="topnav-cta">GitHub</a>
         </div>
+    </nav>
 
-        <!-- Header -->
-        <div class="page-header">
-            <h1>Choose Your Edition</h1>
-            <p>AICtrlNet is open core governed AI orchestration. The Community Edition is MIT-licensed and free forever. Business and Enterprise add the AI Dial, self-extending agents, and the features teams need in production.</p>
-        </div>
+    <main id="main" class="container">
 
-        <!-- Value positioning cards -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="badge-pill">Editions</div>
+            <h1 id="hero-title">Open core. <em>Three tiers. One platform.</em></h1>
+            <p class="hero-sub">Community Edition is MIT-licensed and free forever. Business and Enterprise add advanced governance, the full integration reach, and the features teams need in production.</p>
+        </section>
+
         <div class="value-cards">
-            <div class="value-card">
+            <article class="value-card">
                 <div class="value-card-name">Community</div>
-                <div class="value-card-price">Free &middot; MIT License</div>
-                <div class="value-card-audience">"I need a workflow engine with AI capabilities"</div>
-                <div class="value-card-desc">
-                    Full workflow engine, human orchestration, visual builder, 5 AI framework integrations, and basic adapters. Self-hosted, no limits.
-                </div>
+                <div class="value-card-price">Free · MIT License</div>
+                <div class="value-card-audience">&ldquo;I need a workflow engine with AI capabilities.&rdquo;</div>
+                <div class="value-card-desc">Full workflow engine, humans-as-peer agents, visual builder, 5-framework cascade, basic adapters. Self-hosted, no limits.</div>
                 <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">Get Started Free</a>
-            </div>
-            <div class="value-card featured">
+            </article>
+            <article class="value-card featured">
                 <div class="value-card-name">Business</div>
                 <div class="value-card-price">$599 &ndash; $2,499/mo</div>
-                <div class="value-card-audience">"My team needs governed, approved, monitored AI workflows"</div>
-                <div class="value-card-desc">
-                    Everything in Community plus 10,000+ tools, 20+ industry packs, advanced governance, bias detection, analytics, and expert assistance.
-                </div>
+                <div class="value-card-audience">&ldquo;My team needs coordinated AI workflows in production.&rdquo;</div>
+                <div class="value-card-desc">Everything in Community plus all 29 native adapters, runtime adapter generation, industry packs, advanced governance, analytics, and expert hours.</div>
                 <a href="https://hitlai.net" class="btn btn-primary">Start Trial</a>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
                 <div class="value-card-name">Enterprise</div>
                 <div class="value-card-price">Custom pricing</div>
-                <div class="value-card-audience">"My organization needs multi-tenant, federated, compliant AI orchestration"</div>
-                <div class="value-card-desc">
-                    Everything in Business plus multi-tenancy, SSO/SAML, federation, on-premise deployment, dedicated support, and custom SLA.
-                </div>
+                <div class="value-card-audience">&ldquo;My organization needs multi-tenant, sovereign, federated deployment.&rdquo;</div>
+                <div class="value-card-desc">Everything in Business plus multi-tenancy, SSO/SAML, federation, on-premise + air-gapped deployment, dedicated support, custom SLA.</div>
                 <a href="https://hitlai.net/enterprise" class="btn btn-secondary">Contact Sales</a>
-            </div>
+            </article>
         </div>
 
-        <!-- Bundled services callout -->
         <div class="callout">
-            <div class="callout-title">Software with Expert Assistance</div>
-            <div class="callout-desc">Every Business and Enterprise plan includes expert assistance for implementation, workflow design, and ongoing optimization. You're not just buying software&mdash;you're getting a team.</div>
+            <div class="callout-title">Software with expert assistance</div>
+            <div class="callout-desc">Every Business and Enterprise plan includes expert hours for implementation, workflow design, and ongoing optimization. You&rsquo;re not just buying software &mdash; you&rsquo;re getting a team.</div>
         </div>
 
-        <!-- Feature comparison table -->
-        <div class="comparison-section">
-            <h2>Feature Comparison</h2>
+        <section class="comparison-section">
+            <h2>Feature comparison</h2>
             <div class="table-wrapper">
-                <table>
+                <table aria-label="Feature comparison across editions">
                     <thead>
                         <tr>
                             <th>Feature</th>
@@ -352,254 +181,92 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="category-row">
-                            <td colspan="4">Basics</td>
-                        </tr>
-                        <tr>
-                            <td>License</td>
-                            <td>MIT</td>
-                            <td>Commercial</td>
-                            <td>Commercial</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>Free</td>
-                            <td>$599&ndash;$2,499/mo</td>
-                            <td>Custom pricing</td>
-                        </tr>
-                        <tr>
-                            <td>Deployment</td>
-                            <td>Self-hosted</td>
-                            <td>Cloud or Self-hosted</td>
-                            <td>Cloud, Self, On-prem</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td colspan="4">Core Platform</td>
-                        </tr>
-                        <tr>
-                            <td>Workflow Engine</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Human Orchestration</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Visual Workflow Builder</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>5 AI Frameworks</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Native Adapters (28)</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>REST API &amp; Python SDK</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td colspan="4">Channel-Agnostic Entry Points</td>
-                        </tr>
-                        <tr>
-                            <td>6 Messaging Channels</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>File Processing (PDF, Excel, CSV, DOCX)</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Document Generation</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Browser Automation (5 actions)</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Cross-Channel Conversations</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>ML-Enhanced File Extraction</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Credential Vault for Browser Automation</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Browser Action Audit Trail</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>IP Allowlisting &amp; Rate Controls</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td colspan="4">Business Features</td>
-                        </tr>
-                        <tr>
-                            <td>10,000+ Tools (MCP + Self-Extending)</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Industry Packs (20+)</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Advanced Governance</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Bias Detection</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Analytics &amp; Monitoring</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Approval Workflows</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Bundled Expert Hours</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td colspan="4">Enterprise Features</td>
-                        </tr>
-                        <tr>
-                            <td>Multi-tenancy</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>SSO / SAML</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Federation</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>On-premise Deployment</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr>
-                            <td>Geographic Routing</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="dash">&mdash;</td>
-                            <td class="check">&#10003;</td>
-                        </tr>
-                        <tr class="category-row">
-                            <td colspan="4">Support</td>
-                        </tr>
-                        <tr>
-                            <td>SLA</td>
-                            <td>Community</td>
-                            <td>Business hours</td>
-                            <td>24/7</td>
-                        </tr>
-                        <tr>
-                            <td>Support Channel</td>
-                            <td>GitHub Discussions</td>
-                            <td>Email</td>
-                            <td>Dedicated</td>
-                        </tr>
+                        <tr class="category-row"><td colspan="4">Basics</td></tr>
+                        <tr><td>License</td><td>MIT</td><td>Commercial</td><td>Commercial</td></tr>
+                        <tr><td>Price</td><td>Free</td><td>$599&ndash;$2,499/mo</td><td>Custom pricing</td></tr>
+                        <tr><td>Deployment</td><td>Self-hosted</td><td>Cloud or self-hosted</td><td>Cloud, self-hosted, on-prem, air-gapped</td></tr>
+
+                        <tr class="category-row"><td colspan="4">Core platform</td></tr>
+                        <tr><td>Workflow engine</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Humans-as-peer agents</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Visual workflow builder</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>5 AI framework cascade</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Native adapters (29)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>REST API &amp; Python SDK</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>193 MCP tools</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+
+                        <tr class="category-row"><td colspan="4">Entry points</td></tr>
+                        <tr><td>6 messaging channels</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>File processing (PDF, Excel, CSV, DOCX)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Document generation</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Browser automation (5 actions)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Cross-channel conversations</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>ML-enhanced file extraction</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Credential vault for browser automation</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Browser action audit trail</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>IP allowlisting &amp; rate controls</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+
+                        <tr class="category-row"><td colspan="4">Business features</td></tr>
+                        <tr><td>Runtime adapter generation</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>20+ industry packs</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Advanced governance (Q/G/S/M at design time)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>5-layer security gateway</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Analytics &amp; monitoring</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Approval workflows + escalation paths</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+                        <tr><td>Bundled expert hours (2–8/mo)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+
+                        <tr class="category-row"><td colspan="4">Enterprise features</td></tr>
+                        <tr><td>Multi-tenancy</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>SSO / SAML</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>Federation</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>On-premise + air-gapped deployment</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>Local AI runtimes (Ollama, vLLM)</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>Geographic routing</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                        <tr><td>OpenClaw Runtime Gateway (govern external runtimes)</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+
+                        <tr class="category-row"><td colspan="4">Support</td></tr>
+                        <tr><td>SLA</td><td>Community</td><td>Business hours</td><td>24/7</td></tr>
+                        <tr><td>Support channel</td><td>GitHub Discussions</td><td>Email</td><td>Dedicated</td></tr>
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
 
-        <!-- Bottom CTAs -->
-        <div class="value-cards" style="margin-bottom: 2rem;">
-            <div class="value-card" style="text-align: center;">
+        <div class="value-cards" style="margin-top:48px">
+            <article class="value-card" style="text-align:center">
                 <div class="value-card-name">Ready to get started?</div>
-                <div class="value-card-desc" style="margin-bottom: 1rem;">Clone the Community Edition and start building workflows today.</div>
+                <div class="value-card-desc">Clone the Community Edition and start building workflows today.</div>
                 <a href="https://github.com/bodaty/aictrlnet-community" class="btn btn-primary">Get Started Free</a>
-            </div>
-            <div class="value-card" style="text-align: center;">
+            </article>
+            <article class="value-card" style="text-align:center">
                 <div class="value-card-name">Need team features?</div>
-                <div class="value-card-desc" style="margin-bottom: 1rem;">Try Business with a free trial. Includes expert assistance.</div>
+                <div class="value-card-desc">Try Business with a free trial. Includes expert hours.</div>
                 <a href="https://hitlai.net" class="btn btn-primary">Start Trial</a>
-            </div>
-            <div class="value-card" style="text-align: center;">
+            </article>
+            <article class="value-card" style="text-align:center">
                 <div class="value-card-name">Enterprise scale?</div>
-                <div class="value-card-desc" style="margin-bottom: 1rem;">Talk to our team about multi-tenancy, compliance, and federation.</div>
+                <div class="value-card-desc">Talk to our team about multi-tenancy, sovereign deployment, federation.</div>
                 <a href="https://hitlai.net/enterprise" class="btn btn-secondary">Contact Sales</a>
-            </div>
+            </article>
         </div>
 
-    </div>
+        <section class="closer">
+            <p class="closer-quote">They sell AI tools. We make all of them work together &mdash; <em>with your team.</em></p>
+        </section>
+    </main>
 
     <footer>
-        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
-        <p class="footer-links">
-            <a href="/">Home</a> &nbsp;|&nbsp;
-            <a href="/docs">Docs</a> &nbsp;|&nbsp;
-            <a href="/blog">Blog</a> &nbsp;|&nbsp;
-            <a href="/features">Features</a> &nbsp;|&nbsp;
-            <a href="/community">Community</a> &nbsp;|&nbsp;
-            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+        <p>AICtrlNet is an open-source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/docs">Docs</a>
+            <a href="/blog">Blog</a>
+            <a href="/features">Features</a>
+            <a href="/community">Community</a>
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a>
             <a href="https://hitlai.net">HitLai</a>
-        </p>
-        <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem;">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
+        </nav>
+        <p class="footer-meta">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
     </footer>
 </body>
 </html>
