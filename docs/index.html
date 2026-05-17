@@ -3,237 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - AICtrlNet</title>
-    <meta name="description" content="AICtrlNet documentation - Getting started, API reference, guides, and examples for the AI orchestration platform.">
+    <title>AICtrlNet Documentation — Getting started, API, guides, examples.</title>
+    <meta name="description" content="AICtrlNet documentation. Getting started, API reference, guides, examples, configuration, and contributing — for the open-core layer above the AI stack.">
+
+    <link rel="canonical" href="https://aictrlnet.com/docs/">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="color-scheme" content="dark">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AICtrlNet">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="AICtrlNet Documentation">
+    <meta property="og:description" content="Getting started, API reference, guides, examples, configuration.">
+    <meta property="og:url" content="https://aictrlnet.com/docs/">
+    <meta property="og:image" content="https://aictrlnet.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AICtrlNet Documentation">
+    <meta name="twitter:description" content="Everything you need to build with AICtrlNet.">
+    <meta name="twitter:image" content="https://aictrlnet.com/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
+        :root {
+            --bg:#0a0e1a;--bg-2:#0d1424;--bg-3:#131c30;
+            --line:rgba(34,211,238,0.10);--line-soft:rgba(255,255,255,0.06);
+            --ink:#f5f7fa;--ink-soft:#c9d1de;--ink-dim:#8a94a8;--ink-faint:#5a6478;
+            --accent:#22d3ee;--accent-2:#67e8f9;--accent-glow:rgba(34,211,238,0.30);
+            --good:#6ee7b7;
+            --font-display:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+            --font-body:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+            --ease:cubic-bezier(0.22,1,0.36,1);
         }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+        body{font-family:var(--font-body);background:var(--bg);color:var(--ink-soft);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;position:relative;overflow-x:hidden}
+        body::before{content:'';position:fixed;inset:-10%;background:radial-gradient(ellipse 760px 540px at 85% 8%,rgba(34,211,238,0.12) 0%,transparent 55%),radial-gradient(ellipse 620px 480px at 12% 88%,rgba(34,211,238,0.07) 0%,transparent 60%);z-index:-2;pointer-events:none;animation:mesh-drift 22s var(--ease) infinite alternate}
+        @keyframes mesh-drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-2%,1.5%,0) scale(1.04)}100%{transform:translate3d(1.5%,-1.5%,0) scale(1.02)}}
+        .skip-link{position:absolute;top:-40px;left:16px;background:var(--accent);color:var(--bg);padding:8px 16px;border-radius:4px;font-family:var(--font-display);font-weight:600;text-decoration:none;z-index:100}
+        .skip-link:focus-visible{top:16px}
+        :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            flex: 1;
-        }
+        nav.topnav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;max-width:1180px;margin:0 auto;padding-left:32px;padding-right:32px}
+        .topnav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+        .topnav-mark{width:36px;height:36px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;box-shadow:0 4px 16px rgba(34,211,238,0.08)}
+        .topnav-mark img{width:100%;height:100%;display:block;object-fit:cover}
+        .topnav-word{font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--ink);letter-spacing:-0.4px}
+        .topnav-links{display:flex;align-items:center;gap:28px;font-family:var(--font-display);font-size:13.5px}
+        .topnav-links a{color:var(--ink-soft);text-decoration:none;transition:color 200ms var(--ease)}
+        .topnav-links a:hover{color:var(--accent)}
+        .topnav-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;color:var(--ink)!important;transition:all 200ms var(--ease)}
+        .topnav-cta:hover{border-color:var(--accent);color:var(--accent)!important}
+        @media (max-width:700px){.topnav-links a:not(.topnav-cta){display:none}}
 
-        .nav {
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-        }
+        .container{max-width:1080px;margin:0 auto;padding:0 32px}
 
-        .nav a {
-            color: #9ca3af;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+        .hero{text-align:center;padding:48px 0 56px}
+        .badge-pill{display:inline-block;font-family:var(--font-display);font-weight:500;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--good);background:rgba(110,231,183,0.08);border:1px solid rgba(110,231,183,0.22);padding:5px 14px;border-radius:999px;margin-bottom:20px}
+        h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-1.3px;color:var(--ink);margin-bottom:18px;max-width:720px;margin-left:auto;margin-right:auto}
+        h1 em{font-style:normal;color:var(--accent)}
+        .hero-sub{font-size:1.08rem;line-height:1.65;color:var(--ink-soft);max-width:620px;margin:0 auto}
 
-        .nav a:hover {
-            color: #a5b4fc;
-        }
+        .docs-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:760px;margin:48px auto;list-style:none}
+        .doc-item{background:rgba(13,20,36,0.5);border:1px solid var(--line-soft);border-radius:10px;padding:22px 20px;text-decoration:none;color:var(--ink-soft);transition:all 250ms var(--ease);display:block}
+        .doc-item:hover{background:rgba(13,20,36,0.75);border-color:var(--accent);color:var(--ink);transform:translateY(-3px);box-shadow:0 12px 40px rgba(34,211,238,0.10)}
+        .doc-item-label{font-family:var(--font-display);font-weight:500;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+        .doc-item-name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;color:var(--ink);margin-bottom:6px;letter-spacing:-0.2px}
+        .doc-item-desc{font-size:13.5px;color:var(--ink-dim);line-height:1.5}
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-        }
+        .cta-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:6px;font-family:var(--font-display);font-size:14px;font-weight:600;text-decoration:none;transition:all 200ms var(--ease);border:1px solid transparent}
+        .btn-primary{background:var(--accent);color:var(--bg)}
+        .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 32px var(--accent-glow)}
+        .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line-soft)}
+        .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
-        .page-header h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .closer{padding:48px 0 24px;text-align:center}
+        .closer-quote{font-family:var(--font-display);font-weight:500;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.4;color:var(--ink);max-width:720px;margin:0 auto;letter-spacing:-0.3px}
+        .closer-quote em{font-style:italic;color:var(--accent)}
 
-        .page-header p {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+        footer{border-top:1px solid var(--line-soft);padding:36px 0 48px;text-align:center;font-family:var(--font-body);font-size:13.5px;color:var(--ink-dim);margin-top:48px}
+        .footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;margin:14px 0 18px;font-family:var(--font-display);font-size:13px}
+        footer a{color:var(--ink-soft);text-decoration:none}
+        footer a:hover{color:var(--accent)}
+        .footer-meta{font-size:11.5px;color:var(--ink-faint);margin-top:8px;letter-spacing:0.2px}
 
-        .badge {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.4);
-            color: #86efac;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .docs-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .doc-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #9ca3af;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: block;
-            text-align: center;
-        }
-
-        .doc-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(99, 102, 241, 0.4);
-            color: #e0e0e0;
-            transform: translateY(-2px);
-        }
-
-        .doc-item .icon {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #6b7280;
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #a5b4fc;
-        }
-
-        .footer-links {
-            margin-top: 0.5rem;
-        }
+        .reveal{opacity:0;transform:translateY(20px);transition:opacity 700ms var(--ease),transform 700ms var(--ease)}
+        .reveal.is-visible{opacity:1;transform:translateY(0)}
+        .reveal.stagger>*{opacity:0;transform:translateY(16px);transition:opacity 700ms var(--ease),transform 700ms var(--ease)}
+        .reveal.stagger.is-visible>*{opacity:1;transform:translateY(0)}
+        .reveal.stagger.is-visible>*:nth-child(1){transition-delay:0ms}
+        .reveal.stagger.is-visible>*:nth-child(2){transition-delay:60ms}
+        .reveal.stagger.is-visible>*:nth-child(3){transition-delay:120ms}
+        .reveal.stagger.is-visible>*:nth-child(4){transition-delay:180ms}
+        .reveal.stagger.is-visible>*:nth-child(5){transition-delay:240ms}
+        .reveal.stagger.is-visible>*:nth-child(6){transition-delay:300ms}
+        @media (prefers-reduced-motion:reduce){.reveal,.reveal.stagger>*{opacity:1!important;transform:none!important;transition:none!important}}
     </style>
 </head>
 <body>
-    <div class="container">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="nav"><a href="/">&larr; AICtrlNet Home</a></div>
-
-        <div class="page-header">
-            <div class="badge">Community Edition v1.0</div>
-            <h1>Documentation</h1>
-            <p>Everything you need to build AI workflows with governed orchestration.</p>
-        </div>
-
-        <div class="docs-preview">
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/getting-started.md" class="doc-item">
-                <span class="icon">&#128640;</span>
-                Getting Started
-            </a>
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/api.md" class="doc-item">
-                <span class="icon">&#128218;</span>
-                API Reference
-            </a>
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/guides.md" class="doc-item">
-                <span class="icon">&#128736;</span>
-                Guides
-            </a>
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/examples.md" class="doc-item">
-                <span class="icon">&#128187;</span>
-                Examples
-            </a>
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/ENV_VARS.md" class="doc-item">
-                <span class="icon">&#9881;</span>
-                Configuration
-            </a>
-            <a href="https://github.com/Bodaty/aictrlnet-community/blob/main/CONTRIBUTING.md" class="doc-item">
-                <span class="icon">&#129309;</span>
-                Contributing
+    <nav class="topnav" aria-label="Primary">
+        <a href="/" class="topnav-brand" aria-label="AICtrlNet — home">
+            <span class="topnav-mark"><img src="/logo-mark.png" alt="" width="36" height="36" loading="eager" decoding="async"></span>
+            <span class="topnav-word">AICtrlNet</span>
+        </a>
+        <div class="topnav-links">
+            <a href="/docs">Docs</a>
+            <a href="/editions">Editions</a>
+            <a href="/blog">Blog</a>
+            <a href="https://github.com/bodaty/aictrlnet-community" class="topnav-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
             </a>
         </div>
+    </nav>
+
+    <main id="main" class="container">
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="badge-pill">Open Core · MIT</div>
+            <h1 id="hero-title">Build the layer above <em>your AI stack.</em></h1>
+            <p class="hero-sub">Getting started, API reference, guides, examples &mdash; everything to build coordinated AI workflows with humans-as-peer agents.</p>
+        </section>
+
+        <ul class="docs-preview reveal stagger">
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/getting-started.md" class="doc-item">
+                <div class="doc-item-label">01</div>
+                <div class="doc-item-name">Getting started</div>
+                <div class="doc-item-desc">Docker pull, first workflow, first agent template — running in seconds.</div>
+            </a></li>
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/api.md" class="doc-item">
+                <div class="doc-item-label">02</div>
+                <div class="doc-item-name">API reference</div>
+                <div class="doc-item-desc">REST + Python SDK + MCP. 193 MCP tools across the platform.</div>
+            </a></li>
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/guides.md" class="doc-item">
+                <div class="doc-item-label">03</div>
+                <div class="doc-item-name">Guides</div>
+                <div class="doc-item-desc">Building agents, workflow patterns, framework cascade, runtime adapter generation.</div>
+            </a></li>
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/docs/examples.md" class="doc-item">
+                <div class="doc-item-label">04</div>
+                <div class="doc-item-name">Examples</div>
+                <div class="doc-item-desc">183 workflow templates, 43 role-configured agent templates, end-to-end demos.</div>
+            </a></li>
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/ENV_VARS.md" class="doc-item">
+                <div class="doc-item-label">05</div>
+                <div class="doc-item-name">Configuration</div>
+                <div class="doc-item-desc">Environment variables, deployment options, model providers, secrets.</div>
+            </a></li>
+            <li><a href="https://github.com/Bodaty/aictrlnet-community/blob/main/CONTRIBUTING.md" class="doc-item">
+                <div class="doc-item-label">06</div>
+                <div class="doc-item-name">Contributing</div>
+                <div class="doc-item-desc">Open source, MIT-licensed. PRs, issues, discussions — join the build.</div>
+            </a></li>
+        </ul>
 
         <div class="cta-group">
             <a href="https://github.com/Bodaty/aictrlnet-community" class="btn btn-primary">View on GitHub</a>
             <a href="/blog" class="btn btn-secondary">Read the Blog</a>
         </div>
 
-    </div>
+        <section class="closer">
+            <p class="closer-quote">They sell AI tools. We make all of them work together &mdash; <em>with your team.</em></p>
+        </section>
+    </main>
 
     <footer>
-        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
-        <p class="footer-links">
-            <a href="/">Home</a> &nbsp;|&nbsp;
-            <a href="/docs">Docs</a> &nbsp;|&nbsp;
-            <a href="/blog">Blog</a> &nbsp;|&nbsp;
-            <a href="/features">Features</a> &nbsp;|&nbsp;
-            <a href="/editions">Editions</a> &nbsp;|&nbsp;
-            <a href="/community">Community</a> &nbsp;|&nbsp;
-            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+        <p>AICtrlNet is an open-source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/docs">Docs</a>
+            <a href="/blog">Blog</a>
+            <a href="/features">Features</a>
+            <a href="/editions">Editions</a>
+            <a href="/community">Community</a>
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a>
             <a href="https://hitlai.net">HitLai</a>
-        </p>
-        <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem;">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
+        </nav>
+        <p class="footer-meta">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
     </footer>
+
+    <script>
+    (function () {
+        if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    })();
+    </script>
 </body>
 </html>
