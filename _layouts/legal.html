@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} — AICtrlNet</title>
+    <meta name="description" content="{{ page.description | default: page.title }} | Bodaty LLC, an Illinois limited liability company">
+
+    <link rel="canonical" href="https://aictrlnet.com{{ page.url }}">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="color-scheme" content="dark">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="AICtrlNet">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description | default: page.title }}">
+    <meta property="og:url" content="https://aictrlnet.com{{ page.url }}">
+    <meta property="og:image" content="https://aictrlnet.com/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: page.title }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg:#0a0e1a;--bg-2:#0d1424;--bg-3:#131c30;
+            --line:rgba(34,211,238,0.10);--line-soft:rgba(255,255,255,0.06);
+            --ink:#f5f7fa;--ink-soft:#c9d1de;--ink-dim:#8a94a8;--ink-faint:#5a6478;
+            --accent:#22d3ee;--accent-2:#67e8f9;--accent-glow:rgba(34,211,238,0.30);
+            --warn:#fbbf24;--good:#6ee7b7;--bad:#fca5a5;
+            --font-display:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+            --font-body:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+            --ease:cubic-bezier(0.22,1,0.36,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+        body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh}
+        a{color:var(--accent);text-decoration:none;transition:color 180ms var(--ease)}
+        a:hover{color:var(--accent-2);text-decoration:underline}
+        .skip-link{position:absolute;left:-9999px;top:auto}
+        .skip-link:focus{position:fixed;left:16px;top:16px;background:var(--accent);color:var(--bg);padding:10px 14px;border-radius:6px;font-family:var(--font-display);font-weight:600;z-index:1000}
+
+        .container{max-width:1080px;margin:0 auto;padding:0 24px}
+        .legal-container{max-width:900px;margin:0 auto;padding:0 24px}
+
+        .topnav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(14px);background:rgba(10,14,26,0.78);border-bottom:1px solid var(--line-soft);display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+        .topnav-brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;letter-spacing:-0.3px;color:var(--ink)}
+        .topnav-mark img{display:block;border-radius:6px}
+        .topnav-word{font-size:15px}
+        .topnav-links{display:flex;gap:6px;align-items:center}
+        .topnav-links a{font-family:var(--font-display);font-size:13px;color:var(--ink-soft);padding:8px 12px;border-radius:6px;transition:background 180ms var(--ease),color 180ms var(--ease)}
+        .topnav-links a:hover{background:rgba(34,211,238,0.08);color:var(--ink);text-decoration:none}
+        .topnav-cta{display:inline-flex;align-items:center;gap:6px;color:var(--accent)!important;border:1px solid var(--line);padding:8px 14px!important;border-radius:6px}
+        .topnav-cta:hover{background:rgba(34,211,238,0.08)}
+        @media (max-width:720px){.topnav-links a:not(.topnav-cta){display:none}}
+
+        /* Legal-doc header */
+        .legal-header{padding:56px 0 24px;border-bottom:1px solid var(--line-soft);margin-bottom:32px}
+        .legal-badge{display:inline-block;font-family:var(--font-display);font-weight:500;font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);background:rgba(34,211,238,0.10);border:1px solid var(--line);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+        .legal-header h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--ink);letter-spacing:-0.7px;line-height:1.18;margin-bottom:14px}
+        .legal-header h1 em{font-style:normal;color:var(--accent)}
+        .legal-meta{display:flex;flex-wrap:wrap;gap:18px;font-family:var(--font-display);font-size:12.5px;color:var(--ink-dim);padding:14px 18px;background:rgba(13,20,36,0.5);border:1px solid var(--line-soft);border-radius:8px;margin-top:18px}
+        .legal-meta strong{color:var(--ink);font-weight:600}
+
+        /* Cross-doc nav above legal content */
+        .legal-nav{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0;margin-bottom:24px;font-family:var(--font-display);font-size:13px}
+        .legal-nav a{padding:8px 14px;background:rgba(13,20,36,0.5);border:1px solid var(--line-soft);border-radius:6px;color:var(--ink-soft);transition:all 180ms var(--ease)}
+        .legal-nav a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+        .legal-nav a.active{border-color:var(--accent);color:var(--accent);background:rgba(34,211,238,0.06)}
+
+        /* Sync-note callout */
+        .sync-note{background:rgba(13,20,36,0.4);border:1px solid var(--line-soft);border-left:3px solid var(--ink-faint);border-radius:8px;padding:14px 18px;margin-bottom:32px;font-family:var(--font-display);font-size:12px;color:var(--ink-dim);line-height:1.5}
+        .sync-note code{font-family:var(--font-display);background:rgba(10,14,26,0.6);padding:1px 6px;border-radius:3px;color:var(--ink-soft)}
+
+        /* Long-form legal content styles */
+        .legal-content{font-size:15px;line-height:1.75;color:var(--ink-soft);padding-bottom:48px}
+        .legal-content h1,
+        .legal-content h2,
+        .legal-content h3,
+        .legal-content h4,
+        .legal-content h5,
+        .legal-content h6{font-family:var(--font-display);color:var(--ink);letter-spacing:-0.4px;font-weight:700;scroll-margin-top:80px}
+        .legal-content h1{display:none}
+        .legal-content h2{font-size:1.4rem;margin:42px 0 14px;padding-top:10px;border-top:1px solid var(--line-soft)}
+        .legal-content h2:first-of-type{border-top:none;padding-top:0}
+        .legal-content h3{font-size:1.1rem;margin:32px 0 12px;color:var(--ink)}
+        .legal-content h4{font-size:1rem;margin:22px 0 10px;color:var(--ink-soft);font-weight:600}
+        .legal-content p{margin:0 0 14px;color:var(--ink-soft)}
+        .legal-content p strong,
+        .legal-content li strong{color:var(--ink);font-weight:600}
+        .legal-content em{color:var(--ink)}
+        .legal-content ul,
+        .legal-content ol{margin:8px 0 18px 22px;padding:0;color:var(--ink-soft)}
+        .legal-content li{margin-bottom:6px;line-height:1.7}
+        .legal-content li::marker{color:var(--accent)}
+        .legal-content hr{border:none;border-top:1px solid var(--line-soft);margin:32px 0}
+        .legal-content blockquote{border-left:3px solid var(--accent);background:rgba(13,20,36,0.5);margin:18px 0;padding:14px 22px;color:var(--ink-soft);font-style:italic;border-radius:0 8px 8px 0}
+        .legal-content code{font-family:var(--font-display);background:rgba(10,14,26,0.7);border:1px solid var(--line-soft);padding:1px 6px;border-radius:4px;font-size:0.88em;color:var(--accent-2)}
+        .legal-content pre{background:rgba(10,14,26,0.85);border:1px solid var(--line-soft);border-left:3px solid var(--accent);border-radius:6px;padding:14px 18px;font-family:var(--font-display);font-size:13px;line-height:1.6;color:var(--ink-soft);overflow-x:auto;margin:16px 0}
+        .legal-content pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
+        .legal-content table{width:100%;border-collapse:collapse;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;font-size:13.5px;margin:16px 0;display:block;overflow-x:auto}
+        .legal-content table thead{display:table-header-group}
+        .legal-content table tbody{display:table-row-group}
+        .legal-content table tr{display:table-row}
+        .legal-content table th{background:rgba(0,0,0,0.25);padding:12px 14px;text-align:left;font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-dim);border-bottom:1px solid var(--line-soft);white-space:nowrap}
+        .legal-content table td{padding:12px 14px;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:top;line-height:1.55}
+        .legal-content table tr:last-child td{border-bottom:none}
+        .legal-content table strong{color:var(--ink)}
+
+        /* Footer */
+        footer{border-top:1px solid var(--line-soft);padding:36px 0 48px;text-align:center;font-family:var(--font-body);font-size:13px;color:var(--ink-dim);margin-top:48px}
+        .footer-links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin:12px 0 16px;font-family:var(--font-display);font-size:13px}
+        footer a{color:var(--ink-soft);text-decoration:none}
+        footer a:hover{color:var(--accent)}
+        .footer-meta{font-size:11px;color:var(--ink-faint);margin-top:6px;letter-spacing:0.2px;line-height:1.6}
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="topnav" aria-label="Primary">
+        <a href="/" class="topnav-brand" aria-label="AICtrlNet — home">
+            <span class="topnav-mark"><img src="/logo-mark.png" alt="" width="36" height="36" loading="eager" decoding="async"></span>
+            <span class="topnav-word">AICtrlNet</span>
+        </a>
+        <div class="topnav-links">
+            <a href="/features">Features</a>
+            <a href="/editions">Editions</a>
+            <a href="/runtime-governance">Runtime Governance</a>
+            <a href="/channels">Channels</a>
+            <a href="/docs">Docs</a>
+            <a href="/community">Community</a>
+            <a href="https://github.com/bodaty/aictrlnet-community" class="topnav-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+            </a>
+        </div>
+    </nav>
+
+    <main id="main" class="legal-container">
+
+        <header class="legal-header">
+            <div class="legal-badge">{{ page.badge | default: 'Legal' }}</div>
+            <h1>{{ page.title }}</h1>
+            <div class="legal-meta">
+                {% if page.effective_date %}<span><strong>Effective:</strong> {{ page.effective_date }}</span>{% endif %}
+                {% if page.last_updated %}<span><strong>Last updated:</strong> {{ page.last_updated }}</span>{% endif %}
+                {% if page.version %}<span><strong>Version:</strong> {{ page.version }}</span>{% endif %}
+                <span><strong>Contact:</strong> <a href="mailto:legal@aictrlnet.com">legal@aictrlnet.com</a></span>
+            </div>
+        </header>
+
+        <nav class="legal-nav" aria-label="Legal documents">
+            <a href="/legal/terms/" {% if page.url contains '/legal/terms' %}class="active"{% endif %}>Terms of Service</a>
+            <a href="/legal/privacy/" {% if page.url contains '/legal/privacy' %}class="active"{% endif %}>Privacy Policy</a>
+            <a href="/legal/dpa/" {% if page.url contains '/legal/dpa' %}class="active"{% endif %}>Data Processing Agreement</a>
+            <a href="/legal/sub-processors/" {% if page.url contains '/legal/sub-processors' %}class="active"{% endif %}>Sub-Processors</a>
+        </nav>
+
+        {% if page.sync_source %}
+        <div class="sync-note">
+            <strong>Source of truth:</strong> The canonical version of this document lives at <code>{{ page.sync_source }}</code> in the AICtrlNet platform repository. This page is the public-facing rendering and may be updated separately. In the event of inconsistency, the published canonical version controls for contractual purposes.
+        </div>
+        {% endif %}
+
+        <article class="legal-content">
+            {{ content }}
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/editions">Editions</a>
+                <a href="/legal/terms/">Terms</a>
+                <a href="/legal/privacy/">Privacy</a>
+                <a href="/legal/dpa/">DPA</a>
+                <a href="/legal/sub-processors/">Sub-Processors</a>
+            </div>
+            <p>&copy; 2026 Bodaty LLC. All rights reserved.</p>
+            <p class="footer-meta">AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
+            <p class="footer-meta">200 E. 5th Ave., Suite 121DE, Naperville, IL 60563 &middot; <a href="mailto:privacy@aictrlnet.com">privacy@aictrlnet.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
