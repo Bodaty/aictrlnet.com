@@ -574,6 +574,8 @@ For educational institutions using AICtrlNet:
 
 Bodaty does not collect, capture, purchase, receive, retain, or otherwise obtain biometric identifiers or biometric information as those terms are defined under the **Illinois Biometric Information Privacy Act (740 ILCS 14)** ("BIPA"), the **Texas Capture or Use of Biometric Identifier Act**, the **Washington Biometric Privacy Act**, or analogous laws in other jurisdictions. Specifically, the Service does not collect or process retinal or iris scans, fingerprints, voiceprints, scans of hand or face geometry, DNA, or any other biological characteristic used to identify an individual.
 
+**Customer-configured workflows.** Customers may build workflows on the Service that reference third-party biometric verification providers (e.g., identity verification or KYC vendors). In such cases, biometric identifiers flow directly between the data subject and the third-party provider; Bodaty does not capture, store, retain, or otherwise obtain those identifiers. Customers are solely responsible for selecting and contracting with such providers and for any BIPA, CUBI, or analogous compliance obligations arising from those workflows.
+
 If Customer separately chooses to send biometric data to the Service as Customer Content (for example, by configuring a workflow that processes a biometric image as input), Customer is the Controller of that biometric data and is solely responsible for obtaining the consents and complying with the notice, storage-limitation, and destruction obligations required by BIPA and analogous laws. Bodaty does not consent to receive biometric data and reserves the right to require Customer to remove such data and to disable the relevant workflow.
 
 ---
@@ -681,13 +683,17 @@ AI-generated content ("**Outputs**") is:
 
 We may use the following Foundation Model Providers and AI Sub-Processors for various features. Bodaty maintains a current, complete list of Sub-Processors at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors); the table below is illustrative and may not reflect the most recent additions.
 
-| Provider | Purpose | Region | Training Opt-Out / Flow-Down |
-|----------|---------|--------|-------------------------------|
-| Anthropic, PBC | Claude model inference | United States | Default no-training; contractually flowed down |
-| OpenAI, LLC | GPT model inference (where Customer enables) | United States | Default no-training (commercial / API tier); contractually flowed down |
-| Google LLC | Gemini model inference (where Customer enables) | United States, EU (where supported) | Default no-training; contractually flowed down |
-| Mistral AI / Cohere / AWS Bedrock | Additional model inference where Customer enables | Region varies | Default no-training; contractually flowed down |
-| Ollama / vLLM (self-hosted) | Local Foundation Model inference | Customer infrastructure | N/A (Customer-controlled) |
+| Provider | Edition tier | Purpose | Region | Training Opt-Out / Flow-Down |
+|----------|--------------|---------|--------|-------------------------------|
+| Anthropic, PBC | Community+ | Claude model inference | United States | Default no-training; contractually flowed down |
+| OpenAI, LLC | Community+ | GPT model inference (where Customer enables) | United States | Default no-training (commercial / API tier); contractually flowed down |
+| HuggingFace, Inc. | Community+ | Hosted open-source model inference (where Customer enables) | United States; EU | Default no-training; flowed down |
+| DeepSeek | Community+ | DeepSeek model inference (where Customer enables) | China-based provider; review transfer-impact assessment before enabling | SCCs Module Three; supplementary measures required |
+| Google LLC (Gemini) | Business+ | Gemini model inference (where Customer enables) | United States; EU (where supported) | Default no-training; contractually flowed down |
+| AWS Bedrock | Business+ | Multi-model Foundation Model gateway (Anthropic, Meta, Mistral, Cohere) | United States (primary); EU (where supported) | Default no-training; contractually flowed down |
+| Cohere, Inc. | Business+ | Cohere model inference (where Customer enables) | United States; Canada | Default no-training; flowed down |
+| Microsoft (Azure OpenAI) | Business+ | OpenAI models via Azure regional deployment | Customer-selected Azure region | Default no-training; contractually flowed down |
+| Ollama / vLLM (self-hosted) | Community+ | Local Foundation Model inference | Customer infrastructure | N/A (Customer-controlled — not an AI Sub-Processor) |
 
 **AI Sub-Processor Change Notice.** We provide at least **fifteen (15) days' prior notice** of any addition, replacement, or material expansion of an AI Sub-Processor, by updating the published Sub-Processors page and notifying account administrators by email. This is shorter than the thirty (30) days applied to non-AI Sub-Processors because the AI vendor stack changes more frequently.
 

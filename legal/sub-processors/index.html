@@ -175,14 +175,15 @@
         <section class="block">
             <div class="section-label">Current sub-processors</div>
             <h2 class="section-title">AI Sub-Processors <em>(15-day notice category)</em></h2>
-            <p class="section-desc">Foundation Model providers and AI inference infrastructure. Each is contractually committed to no-default-training of Customer data and either Data Privacy Framework (DPF) certified or bound by EU Standard Contractual Clauses (SCCs Module Three: Processor-to-Processor).</p>
+            <p class="section-desc">Foundation Model providers and AI inference infrastructure. Each is contractually committed to no-default-training of Customer data and either Data Privacy Framework (DPF) certified or bound by EU Standard Contractual Clauses (SCCs Module Three: Processor-to-Processor). Edition tier indicates the lowest paid tier where the adapter is available; Community Edition is open-source and self-hostable, in which case no AI Sub-Processor is engaged by Bodaty.</p>
             <div class="table-wrap">
                 <table class="sub-table" aria-label="Current AI sub-processors">
                     <thead>
                         <tr>
-                            <th style="width:22%">Sub-processor</th>
-                            <th style="width:30%">Purpose</th>
-                            <th style="width:24%">Categories of personal data</th>
+                            <th style="width:20%">Sub-processor</th>
+                            <th style="width:9%">Edition</th>
+                            <th style="width:25%">Purpose</th>
+                            <th style="width:22%">Categories of personal data</th>
                             <th style="width:11%">Region</th>
                             <th style="width:13%">Transfer mechanism</th>
                         </tr>
@@ -190,6 +191,7 @@
                     <tbody>
                         <tr>
                             <td><strong>Anthropic, PBC</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Community+</td>
                             <td>Claude Foundation Model inference</td>
                             <td>Customer prompts and AI outputs (no training)</td>
                             <td class="region">United States</td>
@@ -197,21 +199,64 @@
                         </tr>
                         <tr>
                             <td><strong>OpenAI, LLC</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Community+</td>
                             <td>GPT Foundation Model inference (where Customer enables)</td>
                             <td>Customer prompts and AI outputs (no training, commercial / API tier)</td>
                             <td class="region">United States</td>
                             <td class="mechanism">DPF + SCCs (Module Three)</td>
                         </tr>
                         <tr>
+                            <td><strong>HuggingFace, Inc.</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Community+</td>
+                            <td>HuggingFace Inference API for hosted open-source models (where Customer enables)</td>
+                            <td>Customer prompts and AI outputs (no training)</td>
+                            <td class="region">United States; EU</td>
+                            <td class="mechanism">DPF + SCCs (Module Three)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DeepSeek</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Community+</td>
+                            <td>DeepSeek Foundation Model inference (where Customer enables)</td>
+                            <td>Customer prompts and AI outputs — Controller should review transfer-impact assessment before enabling</td>
+                            <td class="region">China-based provider</td>
+                            <td class="mechanism">SCCs (Module Three); supplementary measures</td>
+                        </tr>
+                        <tr>
                             <td><strong>Google LLC (Gemini)</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Business+</td>
                             <td>Gemini Foundation Model inference (where Customer enables)</td>
                             <td>Customer prompts and AI outputs (no training)</td>
                             <td class="region">United States; EU (regional availability)</td>
                             <td class="mechanism">DPF + SCCs (Module Three)</td>
                         </tr>
+                        <tr>
+                            <td><strong>AWS Bedrock</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Business+</td>
+                            <td>Multi-model Foundation Model gateway (Anthropic, Meta, Mistral, Cohere, and others as Customer selects)</td>
+                            <td>Customer prompts and AI outputs (no training)</td>
+                            <td class="region">United States (primary); EU (where supported)</td>
+                            <td class="mechanism">DPF + SCCs (Module Three)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cohere, Inc.</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Business+</td>
+                            <td>Cohere Foundation Model inference (where Customer enables)</td>
+                            <td>Customer prompts and AI outputs (no training)</td>
+                            <td class="region">United States; Canada</td>
+                            <td class="mechanism">SCCs (Module Three)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft (Azure OpenAI)</strong><span class="ai-tag">AI</span></td>
+                            <td class="region">Business+</td>
+                            <td>OpenAI models via Azure regional deployment (where Customer enables)</td>
+                            <td>Customer prompts and AI outputs (no training)</td>
+                            <td class="region">Customer-selected Azure region</td>
+                            <td class="mechanism">DPF + SCCs (Module Three)</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
+            <p class="section-desc" style="margin-top:14px"><strong>Customer-controlled / self-hosted runtimes.</strong> Customer may also configure the Service to use locally hosted Foundation Model runtimes such as <strong>Ollama</strong> or <strong>vLLM</strong>. When operated on Customer-controlled infrastructure, these are not AI Sub-Processors under the DPA — Bodaty does not engage them on Customer's behalf.</p>
             <div class="legend">
                 <span class="legend-item"><span class="legend-tag">AI</span> = AI Sub-Processor (15-day notice under §6.4.3(a) of the DPA)</span>
             </div>
@@ -283,6 +328,8 @@
             <h2 class="section-title">Change history</h2>
             <div class="change-history">
                 <dl>
+                    <dt>May 26, 2026 (b)</dt>
+                    <dd>Expanded AI Sub-Processors list to align with live adapter inventory: added HuggingFace, DeepSeek (Community+); AWS Bedrock, Cohere, Microsoft (Azure OpenAI) (Business+). Added edition-tier column. Added explicit non-disclosure of Customer-controlled Ollama / vLLM self-hosted runtimes (not AI Sub-Processors).</dd>
                     <dt>May 26, 2026</dt>
                     <dd>Initial public publication of Annex C as a standalone page. Sub-processors listed reflect the production stack as of this date. Added explicit identification of AI Sub-Processors (Anthropic, OpenAI, Google) subject to the 15-day notice category under DPA §6.4.3(a).</dd>
                 </dl>

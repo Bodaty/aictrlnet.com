@@ -766,21 +766,20 @@ This Section 12.10 represents Bodaty's deliberate commitment to customer indepen
 
 **(a) Customer Ownership of Work Product.** All DWY Work Product, Customer Content, Workflows, AI Agent configurations, prompts, policies, audit logs, and integration mappings are owned by Customer under Section 12.7(a) and Section 7.2 and may be exported, reused, modified, and operated by Customer or any successor provider of Customer's choice. Bodaty disclaims any contractual, technological, or commercial restriction that would prevent Customer from doing so.
 
-**(b) Export Formats.** Customer may export, at any time during the Subscription Term and during the Post-Termination Access Window in Section 12.10(d):
-- (i) **Workflows and AI Agent configurations** in JSON conforming to the publicly documented AICtrlNet Workflow Specification;
-- (ii) **Prompts, policies, and HITL configuration** in JSON or YAML;
-- (iii) **Audit logs and execution history** in newline-delimited JSON (NDJSON) or CSV;
-- (iv) **Customer Content** stored in the Service in its native format or, where no native format applies, CSV or JSON.
+**(b) Data Export.** During the Subscription Term, Bodaty shall make available to Customer:
+- (i) **Workflow templates** created or modified by Customer, exportable in JSON, YAML, or BPMN format via the Workflow Templates API (Business and Enterprise editions);
+- (ii) **Audit logs, execution history, and compliance reports** accessible via the Service's REST APIs in JSON format; programmatic export to CSV is available for analytics and compliance check results;
+- (iii) **Other Customer Content** available upon written request to legal@aictrlnet.com, which Bodaty will make commercially reasonable efforts to fulfill within thirty (30) days in a mutually acceptable format.
+
+Customer is responsible for periodically exporting any data required for continuity. **Bodaty does not warrant any post-termination access window** beyond any grace period available under Section 4 (Subscription Plans and Payment Terms). Customers requiring guaranteed post-termination access should ensure their export practices and contractual addenda reflect this.
 
 **(c) Documentation Handover.** Bodaty will provide Customer with the final consolidated documentation package described in Section 12.9(c) regardless of the reason for termination.
 
-**(d) Post-Termination Read-Only Access Window.** Following termination of these Terms or downgrade to Community Edition for any reason other than Customer's uncured material breach of Section 5 (Acceptable Use Policy), Bodaty will provide Customer with **read-only export access** to the Service for **sixty (60) days** for Business tier Customers and **ninety (90) days** for Enterprise tier Customers (the "**Post-Termination Access Window**"). During the Post-Termination Access Window, Customer may export DWY Work Product and Customer Content but may not execute Workflows or invoke billable Service operations.
+**(d) No Lock-In Through Methods.** Bodaty will not embed in DWY Work Product any proprietary Bodaty Method that is not licensed to Customer under Section 12.7(b) or that would impair Customer's ability to operate the DWY Work Product on a successor platform after termination.
 
-**(e) No Lock-In Through Methods.** Bodaty will not embed in DWY Work Product any proprietary Bodaty Method that is not licensed to Customer under Section 12.7(b) or that would impair Customer's ability to operate the DWY Work Product on a successor platform after the Post-Termination Access Window.
+**(e) Migration Cooperation.** During the Subscription Term, Bodaty will cooperate in good faith with Customer's reasonable requests for migration assistance, including providing reasonably necessary technical information about the export formats described in Section 12.10(b) and Customer-specific configurations. Migration assistance after termination is available as a separate engagement at then-current rates.
 
-**(f) Migration Cooperation.** During the Subscription Term and the Post-Termination Access Window, Bodaty will cooperate in good faith with Customer's reasonable requests for migration assistance, including providing reasonably necessary technical information about export formats and Customer-specific configurations. Migration assistance beyond the Post-Termination Access Window is available as a separate engagement at then-current rates.
-
-**(g) Survival.** This Section 12.10, together with Sections 12.7 and 12.9, survives termination of these Terms.
+**(f) Survival.** This Section 12.10, together with Sections 12.7 and 12.9, survives termination of these Terms.
 
 ### 12.11 DWY-Specific Liability and Termination
 
@@ -930,9 +929,9 @@ The defense and indemnification obligations of Section 16.1A are conditional on 
 
 **(i) Human-in-the-Loop Review.** Customer applied the Human-in-the-Loop review required by Section 6.2 to the Output prior to any external use, publication, or transmission to a third party.
 
-**(ii) Default-On Guardrails.** Customer operated the Service with Bodaty-provided content guardrails, content filters, and safety controls in their default-on configuration. Customer did not disable, weaken, or bypass any such controls applicable to the Output.
+**(ii) Default-On Governance Controls.** Customer operated the Service with the Bodaty-provided runtime governance gate (which enforces per-action human review or auto-approval thresholds based on the Customer's Autonomy Policy) and other applicable safety controls in their default-on configuration in any Bodaty-operated environment; Customer did not disable, weaken, or bypass such controls. For Customer-operated (self-hosted) deployments, Customer is responsible for configuring the governance gate and any applicable content guardrails to a level appropriate to Customer's risk tolerance.
 
-**(iii) No Knowing Infringement-Prompts.** Neither Customer nor any Authorized User issued any prompt, instruction, or system message that could reasonably be expected to elicit an infringing Output, and Customer did not knowingly continue to use an Output after becoming aware of an infringement risk.
+**(iii) No Knowing Infringement-Prompts.** Neither Customer nor any Authorized User issued any prompt, instruction, or system message that could reasonably be expected to elicit an infringing Output, and Customer did not knowingly continue to use an Output after becoming aware of an infringement risk. Customer acknowledges that the Service does not provide automated prompt screening for intellectual property risk; Customer is solely responsible for reviewing prompts and prompt templates for content that a reasonable person would expect to elicit Output infringing a third party's intellectual property rights.
 
 **(iv) Prompt Notice.** Customer promptly notified Bodaty in writing of the Output IP Claim and tendered control of the defense to Bodaty in accordance with Section 16.3.
 
@@ -1033,7 +1032,7 @@ Section 16.1A does not apply to, and Bodaty has no defense or indemnification ob
 
 **(d) Refunds.** If Bodaty terminates for cause, no refund is due. If Customer terminates for cause due to Bodaty's uncured material breach, Customer is entitled to a pro-rata refund of prepaid fees for the remaining Subscription Term.
 
-**(e) Implementation Services on Termination.** Customer's data export and Post-Termination Access Window rights with respect to DWY Work Product are additionally governed by Section 12.10. Accrued unused DWY Hours expire immediately on termination with no refund per Section 12.11(d); DWY Work Product delivered prior to termination remains owned by Customer and licensed to Customer per Sections 12.6 and 12.7.
+**(e) Implementation Services on Termination.** Customer's data export rights with respect to DWY Work Product are governed by Section 12.10. Accrued unused DWY Hours expire immediately on termination with no refund per Section 12.11(d); DWY Work Product delivered prior to termination remains owned by Customer and licensed to Customer per Sections 12.6 and 12.7. Customer is responsible for completing any required export during the Subscription Term; Bodaty does not warrant any post-termination access window beyond any grace period under Section 4.
 
 ---
 

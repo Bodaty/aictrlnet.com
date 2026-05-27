@@ -314,7 +314,7 @@ The list of Sub-processors currently engaged by Processor as of the Effective Da
 
 Processor shall provide Controller with prior notice of any intended changes to its Sub-processors (additions or replacements):
 
-**(a) AI Sub-Processors.** For any addition, replacement, or material expansion of an **AI Sub-Processor** (defined as any Sub-processor that processes Controller Personal Data using machine-learning inference or training infrastructure, including Foundation Model Providers such as Anthropic, OpenAI, Google, Mistral, Cohere, AWS Bedrock), Processor shall provide at least **fifteen (15) days' prior notice**. The shorter notice period reflects the higher cadence of change in the AI vendor ecosystem.
+**(a) AI Sub-Processors.** For any addition, replacement, or material expansion of an **AI Sub-Processor** (defined as any Sub-processor that processes Controller Personal Data using machine-learning inference or training infrastructure, including Foundation Model Providers such as Anthropic, OpenAI, Google (Gemini), AWS Bedrock, Cohere, Azure OpenAI, HuggingFace, DeepSeek, and Mistral), Processor shall provide at least **fifteen (15) days' prior notice**. The shorter notice period reflects the higher cadence of change in the AI vendor ecosystem. Customer-controlled or self-hosted Foundation Model runtimes that Customer configures (e.g., Ollama or vLLM running on Customer infrastructure) are not AI Sub-Processors under this DPA because Processor does not engage them on Controller's behalf.
 
 **(b) Other Sub-Processors.** For any other Sub-processor change, Processor shall provide at least **thirty (30) days' prior notice**.
 
@@ -1305,11 +1305,22 @@ As of the Effective Date, Processor engages the following Sub-processors for the
 
 ### C.1.0 AI Sub-Processors (subject to Section 6.4.3(a) 15-day notice)
 
-| Sub-processor | Purpose | Data Processed | Location | Transfer Mechanism |
-|---------------|---------|----------------|----------|---------------------|
-| **Anthropic, PBC** | Claude Foundation Model inference | Customer prompts and Outputs (no training) | US | DPF (verify) + SCCs Module Three |
-| **OpenAI, LLC** | GPT Foundation Model inference (where Customer enables) | Customer prompts and Outputs (no training, commercial/API tier) | US | DPF (verify) + SCCs Module Three |
-| **Google LLC (Gemini)** | Gemini Foundation Model inference (where Customer enables) | Customer prompts and Outputs (no training) | US; EU | DPF (verify) + SCCs Module Three |
+The following Foundation Model Providers are engaged where Customer enables the corresponding adapter through the Service. Each is contractually committed (or otherwise represented) to no-default-training of Controller data. Adapters reside under `editions/community/src/adapters/implementations/ai/` (Community tier) and `editions/business/src/business_adapters/implementations/ai/` (Business tier).
+
+| Sub-processor | Purpose | Edition tier | Data Processed | Location | Transfer Mechanism |
+|---------------|---------|--------------|----------------|----------|---------------------|
+| **Anthropic, PBC** | Claude Foundation Model inference | Community+ | Customer prompts and Outputs (no training) | US | DPF (verify) + SCCs Module Three |
+| **OpenAI, LLC** | GPT Foundation Model inference | Community+ | Customer prompts and Outputs (no training, commercial/API tier) | US | DPF (verify) + SCCs Module Three |
+| **HuggingFace, Inc.** | HuggingFace Inference API for hosted open-source models | Community+ | Customer prompts and Outputs (no training) | US; EU | DPF (verify) + SCCs Module Three |
+| **DeepSeek (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.)** | DeepSeek Foundation Model inference (where Customer enables) | Community+ | Customer prompts and Outputs | China-based provider; Controller should review transfer-impact assessment before enabling | SCCs Module Three; supplementary measures required |
+| **Google LLC (Gemini)** | Gemini Foundation Model inference | Business+ | Customer prompts and Outputs (no training) | US; EU | DPF (verify) + SCCs Module Three |
+| **Amazon Web Services, Inc. (Bedrock)** | Multi-model Foundation Model gateway (Anthropic, Meta, Mistral, Cohere, and others as Customer selects) | Business+ | Customer prompts and Outputs (no training) | US (primary); EU (where supported) | DPF (verify) + SCCs Module Three |
+| **Cohere, Inc.** | Cohere Foundation Model inference | Business+ | Customer prompts and Outputs (no training) | US; Canada | SCCs Module Three |
+| **Microsoft Corporation (Azure OpenAI)** | OpenAI Foundation Models via Azure regional deployment | Business+ | Customer prompts and Outputs (no training) | Customer-selected Azure region | DPF (verify) + SCCs Module Three |
+
+**Customer-controlled / self-hosted runtimes.** Customer may configure the Service to use locally hosted Foundation Model runtimes such as **Ollama** or **vLLM**. When operated on Customer-controlled infrastructure, these are not AI Sub-Processors under this DPA and Processor does not engage them on Controller's behalf. When operated on Processor-controlled infrastructure for the Service, inference occurs within the infrastructure footprint already disclosed in Section C.1.1 (no separate sub-processor relationship is created).
+
+**Provider terms references.** Customer should consult each enabled provider's current data-processing terms before transmitting Personal Data through that adapter. Bodaty does not warrant the contents of third-party Foundation Model Provider terms beyond what is contractually flowed through Bodaty's own agreements with those providers.
 
 ### C.1.2 Database and Storage
 
@@ -1344,12 +1355,9 @@ As of the Effective Date, Processor engages the following Sub-processors for the
 
 ### C.1.6 AI and Machine Learning
 
-| Sub-processor | Purpose | Data Processed | Location |
-|---------------|---------|----------------|----------|
-| **OpenAI** | AI model inference (optional features) | Workflow content (with user consent) | US |
-| **Anthropic** | AI model inference (optional features) | Workflow content (with user consent) | US |
+The current AI Sub-Processor inventory is set forth in **Section C.1.0 above**. The shorter list previously appearing in this section has been consolidated into C.1.0 to align with the live adapter inventory in the codebase.
 
-**Note:** AI Sub-processors are only engaged when Controller enables AI-powered features. Controller may disable AI features to prevent data sharing with AI Sub-processors.
+**Note:** AI Sub-processors are only engaged when Controller enables the corresponding adapter or feature. Controller may disable AI features and adapters to prevent data sharing with AI Sub-Processors. For Customer-controlled or self-hosted Foundation Model runtimes (Ollama, vLLM), see the note at the end of Section C.1.0.
 
 ## C.2 Sub-processor Data Protection Agreements
 
