@@ -179,7 +179,7 @@ Or be the person who has to clean it up.
 
 ---
 
-**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 9+ years building AI systems, including several patented ones.
+**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 10 years building AI systems, including several patented ones.
 
 **References**:
 1. Moore, Geoffrey A. *Crossing the Chasm*. HarperBusiness, 1991 (revised 2014).
