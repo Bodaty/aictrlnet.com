@@ -269,7 +269,7 @@ That's orchestration. And without governance, it's just chaos with better tools.
 
 ---
 
-**About the author**: Bobby Koritala is the founder of AICtrlNet, a Governed AI Orchestration platform, and HitLai, its commercial product. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms. He has spent 9+ years building AI systems across healthcare, finance, and logistics, including several patented ones.
+**About the author**: Bobby Koritala is the founder of AICtrlNet, a Governed AI Orchestration platform, and HitLai, its commercial product. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms. He has spent 10 years building AI systems across healthcare, finance, and logistics, including several patented ones.
 
 **References**:
 1. Russell, S. and Norvig, P. "Artificial Intelligence: A Modern Approach." 4th Edition, 2020.

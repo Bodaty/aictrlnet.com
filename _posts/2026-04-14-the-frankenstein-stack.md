@@ -107,7 +107,7 @@ Not five vendors. Not five audit trails. One platform. One AI Dial.
 
 ---
 
-**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 9+ years building AI systems, including several patented ones.
+**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 10 years building AI systems, including several patented ones.
 
 **References**:
 1. Gartner. "Top Strategic Technology Trends 2024: AI TRiSM (Trust, Risk and Security Management)." October 2023.

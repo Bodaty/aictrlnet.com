@@ -137,7 +137,7 @@ Without that infrastructure, autonomous agents remain a developer tool — impre
 
 ---
 
-**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 9+ years building AI systems, including several patented ones.
+**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 10 years building AI systems, including several patented ones.
 
 **References**:
 1. VentureBeat. Coverage of the OpenClaw phenomenon and autonomous agent adoption, 2024-2025.

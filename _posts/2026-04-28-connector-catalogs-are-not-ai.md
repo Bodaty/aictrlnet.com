@@ -139,7 +139,7 @@ The connector catalog solved the problem of connecting apps. The next problem â€
 
 ---
 
-**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 9+ years building AI systems, including several patented ones.
+**About the author**: Bobby Koritala is the founder of AICtrlNet and HitLai. Previously, he led product development at Infogix (now part of Precisely), building enterprise data integrity platforms for financial services and healthcare. He has spent 10 years building AI systems, including several patented ones.
 
 **References**:
 1. Celonis. "Celonis Acquires Make." Press release, 2022. Reported acquisition price ~$1.45B.
