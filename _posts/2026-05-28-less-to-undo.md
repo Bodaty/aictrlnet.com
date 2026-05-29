@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Less to Undo: Your Biggest AI Advantage Is What You Don't Have Yet"
+title: "SMBs Aren't Behind on AI. They're Asymmetrically Advantaged."
 date: 2026-05-28
 author: Bobby Koritala
 categories: [ai, thought-leadership, smb, hitlai]
