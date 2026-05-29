@@ -164,7 +164,9 @@
         <nav class="legal-nav" aria-label="Legal documents">
             <a href="/legal/terms/" {% if page.url contains '/legal/terms' %}class="active"{% endif %}>Terms of Service</a>
             <a href="/legal/privacy/" {% if page.url contains '/legal/privacy' %}class="active"{% endif %}>Privacy Policy</a>
-            <a href="/legal/dpa/" {% if page.url contains '/legal/dpa' %}class="active"{% endif %}>Data Processing Agreement</a>
+            <a href="/legal/dpa/" {% if page.url == '/legal/dpa/' %}class="active"{% endif %}>DPA · Business</a>
+            <a href="/legal/dpa-enterprise/" {% if page.url contains '/legal/dpa-enterprise' %}class="active"{% endif %}>DPA · Enterprise</a>
+            <a href="/legal/community-dpa/" {% if page.url contains '/legal/community-dpa' %}class="active"{% endif %}>DPA · Community</a>
             <a href="/legal/sub-processors/" {% if page.url contains '/legal/sub-processors' %}class="active"{% endif %}>Sub-Processors</a>
         </nav>
 
@@ -186,6 +188,7 @@
                 <a href="/">Home</a>
                 <a href="/features">Features</a>
                 <a href="/editions">Editions</a>
+                <a href="/legal/">Legal</a>
                 <a href="/legal/terms/">Terms</a>
                 <a href="/legal/privacy/">Privacy</a>
                 <a href="/legal/dpa/">DPA</a>

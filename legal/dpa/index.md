@@ -1,24 +1,36 @@
 ---
 layout: legal
-title: Data Processing Agreement
-badge: Legal · DPA (Enterprise template)
-description: Bodaty LLC Data Processing Agreement — GDPR Article 28, UK GDPR, Swiss FADP, EU-U.S. DPF, SCCs Module Two, EU AI Act, Colorado AI Act
-effective_date: On Customer acceptance (or as specified)
-last_updated: May 1, 2026
+title: Data Processing Agreement (Business — Click-Through)
+badge: Legal · DPA · Business click-through
+description: Bodaty LLC Business-edition click-through DPA — GDPR Article 28, UK GDPR, Swiss FADP, EU-U.S. DPF, SCCs Modules Two and Three, EU AI Act, Colorado AI Act
+effective_date: On Customer acceptance of the Bodaty Terms of Service (or first Business-tier access)
+last_updated: May 29, 2026
 version: "2.1"
-sync_source: editions/enterprise/docs/DATA_PROCESSING_AGREEMENT.md
+sync_source: editions/business/docs/DATA_PROCESSING_AGREEMENT.md
 permalink: /legal/dpa/
 ---
 
-**Document ID:** DPA-ENT-2026-001
+**Document ID:** DPA-BIZ-2026-001 · **Effective:** On Customer acceptance of the Bodaty Terms of Service or first Business-tier access, whichever is earlier.
 
-This is Bodaty's Enterprise-tier negotiated DPA template. The Effective Date is the date Customer accepts this DPA, either by countersignature or by acceptance of the Principal Agreement (whichever is earlier).
+This is Bodaty's **Business-tier click-through Data Processing Agreement** — the default DPA for Business-edition subscribers (Starter, Growth, Scale).
+
+Looking for the **Enterprise negotiated template** (on-site audit, custom residency, countersignature)? See [`/legal/dpa-enterprise/`](/legal/dpa-enterprise/). Looking for the **Community free-tier DPA**? See [`/legal/community-dpa/`](/legal/community-dpa/).
+
+---
+
+## ABOUT THIS DPA
+
+This Data Processing Agreement ("**DPA**") governs Processor's Processing of Personal Data on behalf of Business-edition Customers of the AICtrlNet / HitLai Platform. It is a **click-through agreement**: by accepting the Bodaty Terms of Service or by continuing to use a Business-tier subscription, Customer accepts this DPA without further signature.
+
+Customers who require a negotiated, countersigned DPA — typically as a condition of procurement at companies of more than approximately 500 employees, or in regulated sectors — should use the **Enterprise Negotiated DPA Template** at [aictrlnet.com/legal/dpa-enterprise](https://aictrlnet.com/legal/dpa-enterprise) instead of this DPA. The Enterprise template adds: on-site audit rights, custom data residency commitments, dedicated DPO/security-team contacts, custom sub-processor objection windows, negotiated SCC parties and clauses, and a countersignature page.
+
+This DPA is incorporated by reference into the **Bodaty Terms of Service** at [aictrlnet.com/legal/terms](https://aictrlnet.com/legal/terms) (the "Principal Agreement"). Capitalized terms not defined in this DPA have the meanings given in the Principal Agreement or in applicable Data Protection Laws.
 
 ---
 
 ## PARTIES
 
-This Data Processing Agreement ("DPA" or "Agreement") is entered into by and between:
+This DPA is between:
 
 **BODATY LLC** ("Processor", "AICtrlNet", "Bodaty", "we", "us", or "our")
 An Illinois Limited Liability Company
@@ -29,80 +41,25 @@ Email: privacy@aictrlnet.com
 
 AND
 
-**[CUSTOMER LEGAL NAME]** ("Controller", "Customer", or "you")
-[Customer Address]
-[Customer Contact Email]
-
-Collectively referred to as the "Parties" and individually as a "Party."
-
----
-
-## RECITALS
-
-**WHEREAS**, Controller has entered into a Master Services Agreement, Enterprise License Agreement, or other applicable agreement (the "Principal Agreement") with Processor for the provision of the AICtrlNet/HitLai Enterprise platform and related services (the "Services");
-
-**WHEREAS**, the provision of the Services involves the Processing of Personal Data on behalf of the Controller;
-
-**WHEREAS**, the Parties wish to ensure compliance with applicable Data Protection Laws, including but not limited to the General Data Protection Regulation (EU) 2016/679 ("GDPR"), the California Consumer Privacy Act ("CCPA"), and other applicable privacy regulations;
-
-**WHEREAS**, Article 28 of the GDPR requires that Processing by a Processor be governed by a contract that sets out the subject-matter and duration of the Processing, the nature and purpose of the Processing, the type of Personal Data and categories of Data Subjects;
-
-**NOW, THEREFORE**, in consideration of the mutual obligations set forth herein, the Parties agree as follows:
+**The Customer** identified in the Bodaty account that accepted the Principal Agreement ("Controller", "Customer", or "you").
 
 ---
 
 ## 1. DEFINITIONS
 
-For the purposes of this DPA, the following terms shall have the meanings set forth below. Capitalized terms not defined herein shall have the meanings ascribed to them in the Principal Agreement or applicable Data Protection Laws.
+**"Controller"** means Customer.
 
-### 1.1 Core Definitions
+**"Data Protection Laws"** means all laws and regulations applicable to the Processing of Personal Data under this DPA, including: the EU General Data Protection Regulation 2016/679 ("**GDPR**"); the UK GDPR and Data Protection Act 2018; the California Consumer Privacy Act as amended by the CPRA ("**CCPA/CPRA**"); the Virginia Consumer Data Protection Act; the Colorado Privacy Act; the Connecticut Data Privacy Act; Brazil's LGPD; Canada's PIPEDA; and any other applicable national, federal, state, provincial, or local privacy legislation.
 
-**"Affiliate"** means any entity that directly or indirectly controls, is controlled by, or is under common control with the subject entity, where "control" means direct or indirect ownership or control of more than 50% of the voting interests of such entity.
+**"Personal Data"**, **"Processing"** (and its cognates), **"Data Subject"**, **"Personal Data Breach"**, **"Processor"**, **"Sub-processor"**, **"Special Categories of Personal Data"**, **"Supervisory Authority"**, and **"Standard Contractual Clauses" / "SCCs"** have the meanings given in the GDPR (and, where applicable, the UK GDPR and CCPA/CPRA).
 
-**"Controller"** means the natural or legal person, public authority, agency, or other body which, alone or jointly with others, determines the purposes and means of the Processing of Personal Data; for purposes of this DPA, the Customer.
+**"AI System"** means any machine-learning or artificial-intelligence component of the Services, including foundation-model inference, workflow prediction, risk scoring, anomaly detection, and natural-language processing features.
 
-**"Data Protection Laws"** means all applicable laws and regulations relating to data protection, data privacy, data security, or the Processing of Personal Data, including without limitation:
-- The General Data Protection Regulation (EU) 2016/679 ("GDPR")
-- The UK General Data Protection Regulation and Data Protection Act 2018 ("UK GDPR")
-- The California Consumer Privacy Act, as amended by the California Privacy Rights Act ("CCPA/CPRA")
-- The Virginia Consumer Data Protection Act ("VCDPA")
-- The Colorado Privacy Act ("CPA")
-- The Connecticut Data Privacy Act ("CTDPA")
-- Brazil's Lei Geral de Proteção de Dados ("LGPD")
-- Canada's Personal Information Protection and Electronic Documents Act ("PIPEDA")
-- Any other applicable national, federal, state, or local privacy legislation
+**"Automated Decision-Making"** means any decision based solely on automated Processing, including profiling, that produces legal effects concerning a Data Subject or similarly significantly affects them.
 
-**"Data Subject"** means an identified or identifiable natural person to whom Personal Data relates.
+**"Controller Inputs and Outputs"** means Personal Data, Customer Confidential Information, prompts, and AI System outputs submitted to or generated by the Services on behalf of Customer.
 
-**"EEA"** means the European Economic Area, consisting of the member states of the European Union plus Iceland, Liechtenstein, and Norway.
-
-**"Personal Data"** means any information relating to an identified or identifiable natural person ("Data Subject"); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier, or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that natural person.
-
-**"Personal Data Breach"** means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, Personal Data transmitted, stored, or otherwise Processed.
-
-**"Processing"** (and its cognates "Process," "Processed," "Processes") means any operation or set of operations which is performed on Personal Data or on sets of Personal Data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure, or destruction.
-
-**"Processor"** means a natural or legal person, public authority, agency, or other body which Processes Personal Data on behalf of the Controller; for purposes of this DPA, Bodaty LLC operating the AICtrlNet/HitLai platform.
-
-**"Services"** means the AICtrlNet/HitLai Enterprise platform, workflow automation services, AI governance tools, and any related services provided by Processor to Controller under the Principal Agreement.
-
-**"Special Categories of Personal Data"** (also known as "Sensitive Personal Data") means Personal Data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health, or data concerning a natural person's sex life or sexual orientation.
-
-**"Standard Contractual Clauses"** or **"SCCs"** means the standard contractual clauses for the transfer of Personal Data to third countries adopted by the European Commission, as may be amended, superseded, or replaced from time to time.
-
-**"Sub-processor"** means any Processor engaged by the Processor (or by any other Sub-processor of the Processor) who agrees to receive from the Processor (or from any other Sub-processor) Personal Data exclusively intended for the Processing activities to be carried out on behalf of the Controller in accordance with this DPA.
-
-**"Supervisory Authority"** means an independent public authority which is established by an EU/EEA Member State pursuant to Article 51 of the GDPR, or any equivalent regulatory authority under other applicable Data Protection Laws.
-
-### 1.2 AI-Specific Definitions
-
-**"AI System"** means any machine-learning-based or artificial intelligence system that is part of the Services, including but not limited to workflow prediction models, natural language processing features, automated decision-support systems, and risk assessment algorithms.
-
-**"Automated Decision-Making"** means any decision based solely on automated Processing, including profiling, which produces legal effects concerning a Data Subject or similarly significantly affects them.
-
-**"Model Training Data"** means any data, including Personal Data, that is used to train, fine-tune, validate, or improve AI Systems.
-
-**"Profiling"** means any form of automated Processing of Personal Data consisting of the use of Personal Data to evaluate certain personal aspects relating to a natural person, in particular to analyze or predict aspects concerning that natural person's performance at work, economic situation, health, personal preferences, interests, reliability, behavior, location, or movements.
+**"Services"** means the AICtrlNet / HitLai Business-edition platform and any related Services delivered to Customer under the Principal Agreement, including any Doing-With-You ("DWY") implementation hours bundled with Customer's subscription.
 
 ---
 
@@ -110,857 +67,300 @@ For the purposes of this DPA, the following terms shall have the meanings set fo
 
 ### 2.1 Subject Matter
 
-This DPA applies to all Processing of Personal Data by Processor on behalf of Controller in connection with the provision of the Services under the Principal Agreement.
+This DPA applies to all Processing of Personal Data by Processor on behalf of Controller in connection with the provision of the Business-edition Services.
 
 ### 2.2 Nature and Purpose of Processing
 
-The Processor shall Process Personal Data only as necessary to:
+Processor shall Process Personal Data only as necessary to:
 
-(a) Provide the AICtrlNet/HitLai Enterprise platform Services as described in the Principal Agreement;
+(a) provide the Business-edition workflow automation, AI governance, and human-in-the-loop ("HITL") collaboration features;
+(b) operate, maintain, secure, and support the Services;
+(c) enable authentication, authorization, audit logging, and compliance reporting;
+(d) deliver DWY implementation hours bundled with Customer's subscription;
+(e) respond to Controller's documented instructions consistent with the Principal Agreement; and
+(f) comply with applicable legal obligations.
 
-(b) Operate, maintain, and support the workflow automation and AI governance features;
+### 2.3 Description of Processing
 
-(c) Enable user authentication, access control, and audit logging;
+The complete description of Processing — including categories of Personal Data, categories of Data Subjects, processing operations, and AI-specific processing — is set forth in **Annex A** below.
 
-(d) Perform analytics to improve service performance (subject to Controller's instructions);
+### 2.4 Duration
 
-(e) Ensure security and prevent fraud, abuse, or unauthorized access;
-
-(f) Comply with applicable legal obligations; and
-
-(g) Respond to Controller's documented instructions consistent with the Principal Agreement.
-
-### 2.3 Processing Operations
-
-The Processing operations include but are not limited to:
-
-- Collection and storage of user account data
-- Processing of workflow data and automation rules
-- Execution of AI-powered workflow predictions and recommendations
-- Generation and storage of audit logs and compliance records
-- Processing for security monitoring and threat detection
-- Data integration with Controller's authorized third-party systems
-- Backup and disaster recovery operations
-- Technical support and incident response
+This DPA remains in effect for the duration of the Principal Agreement and continues until all Personal Data has been deleted or returned in accordance with Section 12 (Data Return and Deletion).
 
 ---
 
-## 3. DURATION OF PROCESSING
+## 3. CATEGORIES OF PERSONAL DATA
 
-### 3.1 Term
+### 3.1 Personal Data Processed
 
-This DPA shall remain in effect for the duration of the Principal Agreement and shall continue until all Personal Data has been deleted or returned in accordance with Section 13 (Data Return and Deletion).
+The Services Process the following categories of Personal Data, as further detailed in Annex A:
 
-### 3.2 Survival
+- Account and identity data (names, email addresses, user IDs, job titles)
+- Contact and communication data
+- Technical and usage data (IP addresses, device identifiers, session logs)
+- Workflow and business-process data submitted by Customer
+- AI governance and compliance data (risk-assessment inputs/outputs, audit trail records)
 
-The obligations of confidentiality and data protection under this DPA shall survive the termination or expiration of the Principal Agreement and shall remain in effect until all Personal Data has been deleted or returned, or until such obligations are no longer required by applicable Data Protection Laws.
+### 3.2 Special Categories of Personal Data
 
----
+Processor does not request or intentionally collect Special Categories of Personal Data. Customer acknowledges that such data may be incidentally included in workflow content uploaded by Customer's users. If Customer will use the Services to Process Special Categories of Personal Data, Customer is solely responsible for establishing a valid legal basis under Article 9 of the GDPR or equivalent.
 
-## 4. TYPES OF PERSONAL DATA PROCESSED
+### 3.3 Children's Data
 
-### 4.1 Categories of Personal Data
-
-The following categories of Personal Data may be Processed under this DPA:
-
-**Account and Identity Data:**
-- Names (first name, last name, display name)
-- Email addresses (business and personal)
-- User identifiers and usernames
-- Employee or contractor identification numbers
-- Job titles and department information
-- Profile photographs (if provided)
-- Authentication credentials (hashed passwords, MFA tokens)
-
-**Contact and Communication Data:**
-- Business addresses
-- Phone numbers
-- Communication preferences
-- In-platform messages and notifications
-
-**Technical and Usage Data:**
-- IP addresses
-- Device identifiers and browser fingerprints
-- Login timestamps and session data
-- Feature usage and interaction logs
-- API access logs
-- Error logs and diagnostic data
-
-**Workflow and Business Process Data:**
-- Workflow definitions and configurations
-- Task assignments and approvals
-- Business process data as defined by Controller
-- Comments, annotations, and attachments
-- Integration data from connected systems
-
-**AI Governance and Compliance Data:**
-- Risk assessment inputs and outputs
-- Compliance check results
-- Audit trail records
-- Policy enforcement logs
-
-### 4.2 Special Categories of Personal Data
-
-The Processor does not require, request, or intentionally collect Special Categories of Personal Data. However, Controller acknowledges that:
-
-(a) Such data may be incidentally included in workflow content or file attachments uploaded by Controller or its users;
-
-(b) If Special Categories of Personal Data are Processed, Controller is solely responsible for ensuring a valid legal basis under Article 9 of the GDPR or equivalent provisions under other Data Protection Laws;
-
-(c) Controller shall notify Processor in writing if the Services will be used to Process Special Categories of Personal Data, so that appropriate additional safeguards may be implemented.
-
-### 4.3 Children's Data
-
-The Services are not directed at children under 16 years of age, and Controller warrants that it will not use the Services to Process Personal Data of children without appropriate parental consent and legal basis as required by applicable Data Protection Laws.
+The Services are not directed at children under 16. Customer warrants it will not use the Services to Process Personal Data of children without appropriate parental consent and legal basis.
 
 ---
 
-## 5. CATEGORIES OF DATA SUBJECTS
+## 4. OBLIGATIONS OF THE PROCESSOR
 
-### 5.1 Data Subject Categories
+### 4.1 Documented Instructions
 
-Personal Data Processed under this DPA relates to the following categories of Data Subjects:
+Processor shall Process Personal Data only on Customer's documented instructions, including with regard to transfers of Personal Data to a third country, unless required to do so by law. Customer's instructions are set forth in this DPA, the Principal Agreement, Customer's use of the Services (configuration and settings), and any additional written instructions Customer provides. If Processor reasonably believes an instruction violates Data Protection Laws, Processor shall promptly notify Customer and may suspend the relevant Processing.
 
-- **Employees** of Controller and its Affiliates who use the Services
-- **Contractors and consultants** engaged by Controller
-- **Customers and clients** of Controller whose data is processed through workflows
-- **Vendors and suppliers** of Controller
-- **Business partners** and third-party users authorized by Controller
-- **Job applicants** and candidates (if HR workflows are utilized)
-- **Other individuals** whose Personal Data is submitted to the Services by Controller
+### 4.2 Confidentiality of Personnel
 
-### 5.2 Controller Responsibility
+Processor shall ensure that all personnel authorized to Process Personal Data are bound by appropriate confidentiality obligations, have received data-protection training, and Process Personal Data only as necessary to perform their job functions, applying the principle of least privilege.
 
-Controller is solely responsible for determining which categories of Data Subjects' Personal Data is submitted to the Services and for ensuring that such Processing is lawful under applicable Data Protection Laws.
+### 4.3 Security Measures
 
----
+Processor shall implement and maintain appropriate technical and organizational measures to ensure a level of security appropriate to the risk, as required by GDPR Article 32 and other applicable Data Protection Laws. These measures include, at minimum:
 
-## 6. OBLIGATIONS OF THE PROCESSOR
+(a) encryption of Personal Data in transit (TLS 1.2+) and at rest (AES-256);
+(b) role-based access control with multi-factor authentication on personnel access;
+(c) ongoing logging, monitoring, and alerting on security-relevant events;
+(d) periodic vulnerability scanning and patch management;
+(e) tested backup and disaster-recovery procedures;
+(f) secure software development lifecycle practices including code review and dependency scanning.
 
-### 6.1 Processing Instructions
+A fuller description of measures appears in **Annex B**.
 
-#### 6.1.1 Documented Instructions Only
+### 4.4 Sub-processor Management
 
-Processor shall Process Personal Data only on documented instructions from Controller, including with regard to transfers of Personal Data to a third country or an international organization, unless required to do so by applicable law to which the Processor is subject. In such a case, Processor shall inform Controller of that legal requirement before Processing, unless that law prohibits such information on important grounds of public interest.
+#### 4.4.1 Authorization
 
-#### 6.1.2 Controller Instructions
+Customer hereby provides general written authorization for Processor to engage Sub-processors to Process Personal Data on Customer's behalf, subject to this Section 4.4.
 
-Controller's instructions for Processing are set forth in:
-- This DPA and its Annexes
-- The Principal Agreement
-- Controller's written policies communicated to Processor
-- Controller's use of the Services (configuration and settings)
-- Any additional documented instructions provided by Controller
+#### 4.4.2 Current Sub-processors
 
-#### 6.1.3 Additional Instructions
+The authoritative list of current Sub-processors is maintained at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors). The list as of the Effective Date is summarized in **Annex C** for convenience; in case of inconsistency, the published list controls.
 
-If Controller provides instructions that Processor reasonably believes to be in violation of applicable Data Protection Laws, Processor shall promptly notify Controller. Processor may suspend the relevant Processing until Controller confirms or modifies its instructions.
+#### 4.4.3 Sub-processor Notification
 
-### 6.2 Confidentiality Obligations
+Processor shall provide Customer with prior notice of any intended Sub-processor change as follows:
 
-#### 6.2.1 Personnel Confidentiality
-
-Processor shall ensure that all personnel authorized to Process Personal Data:
-
-(a) Are bound by confidentiality obligations (whether contractual or statutory) with respect to the Personal Data;
-
-(b) Have received appropriate training on data protection requirements;
-
-(c) Process Personal Data only as necessary to perform their job functions; and
-
-(d) Are aware of the confidential nature of the Personal Data and the security requirements under this DPA.
-
-#### 6.2.2 Access Limitations
-
-Processor shall limit access to Personal Data to those personnel who require access to perform the Services and shall implement appropriate access controls based on the principle of least privilege.
-
-### 6.3 Security Measures
-
-#### 6.3.1 Technical and Organizational Measures
-
-Processor shall implement and maintain appropriate technical and organizational measures to ensure a level of security appropriate to the risk, as required by Article 32 of the GDPR and other applicable Data Protection Laws. These measures are described in detail in **Annex B** (Technical and Organizational Measures) and include, at a minimum:
-
-(a) **Pseudonymization and encryption** of Personal Data where appropriate;
-
-(b) **Ability to ensure ongoing confidentiality, integrity, availability, and resilience** of Processing systems and services;
-
-(c) **Ability to restore availability and access** to Personal Data in a timely manner in the event of a physical or technical incident;
-
-(d) **Regular testing, assessing, and evaluating** the effectiveness of technical and organizational measures for ensuring the security of Processing.
-
-#### 6.3.2 Security Standards
-
-Processor maintains security certifications and attestations including:
-- SOC 2 Type II certification
-- ISO 27001 certification (or equivalent)
-- Annual penetration testing by qualified third parties
-- Ongoing vulnerability management program
-
-#### 6.3.3 Security Updates
-
-Processor shall regularly review and update its security measures to address evolving threats and maintain compliance with industry standards and best practices.
-
-### 6.4 Sub-processor Management
-
-#### 6.4.1 Authorization
-
-Controller hereby provides general authorization for Processor to engage Sub-processors to Process Personal Data on Controller's behalf, subject to the requirements of this Section 6.4.
-
-#### 6.4.2 Current Sub-processors
-
-The list of Sub-processors currently engaged by Processor as of the Effective Date is set forth in **Annex C** (Sub-processors List).
-
-#### 6.4.3 Sub-processor Notification
-
-Processor shall provide Controller with prior notice of any intended changes to its Sub-processors (additions or replacements):
-
-**(a) AI Sub-Processors.** For any addition, replacement, or material expansion of an **AI Sub-Processor** (defined as any Sub-processor that processes Controller Personal Data using machine-learning inference or training infrastructure, including Foundation Model Providers such as Anthropic, OpenAI, Google (Gemini), AWS Bedrock, Cohere, Azure OpenAI, HuggingFace, DeepSeek, and Mistral), Processor shall provide at least **fifteen (15) days' prior notice**. The shorter notice period reflects the higher cadence of change in the AI vendor ecosystem. Customer-controlled or self-hosted Foundation Model runtimes that Customer configures (e.g., Ollama or vLLM running on Customer infrastructure) are not AI Sub-Processors under this DPA because Processor does not engage them on Controller's behalf.
+**(a) AI Sub-Processors.** For any addition, replacement, or material expansion of an AI Sub-Processor (defined as any Sub-processor that processes Controller Personal Data using machine-learning inference or training infrastructure, including Foundation Model Providers such as Anthropic, OpenAI, Google (Gemini), AWS Bedrock, Cohere, Azure OpenAI, HuggingFace, DeepSeek, and Mistral), Processor shall provide at least **fifteen (15) days' prior notice**. The shorter period reflects the higher cadence of change in the AI vendor ecosystem. Customer-controlled or self-hosted Foundation Model runtimes that Customer configures (e.g., Ollama or vLLM on Customer infrastructure) are not AI Sub-Processors under this DPA because Processor does not engage them on Controller's behalf.
 
 **(b) Other Sub-Processors.** For any other Sub-processor change, Processor shall provide at least **thirty (30) days' prior notice**.
 
-**(c) Notification Channels.** Notification shall be provided via:
-- Email to Controller's designated privacy contact
-- Updates to the Sub-processor list at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors)
-- In-platform notification within the Services
+**(c) Notification Channels.** Notification will be provided via update to [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors) and, where Customer has subscribed, by email to Customer's designated privacy contact.
 
-#### 6.4.4 Objection Right
+#### 4.4.4 Objection Right
 
-Controller may object to the engagement of a new Sub-processor on reasonable data protection grounds by providing written notice to Processor within fifteen (15) days of receiving notification. If Controller objects:
+Customer may object to a new Sub-processor on reasonable data-protection grounds by emailing privacy@aictrlnet.com within **fifteen (15) days** of notification. If the Parties cannot resolve the objection within thirty (30) days, Customer may terminate the affected Services by written notice to Processor without penalty; Customer shall not be entitled to a refund of any prepaid fees unless required by applicable law.
 
-(a) Processor shall work with Controller in good faith to address Controller's concerns;
+#### 4.4.5 Sub-processor Agreements
 
-(b) If the Parties cannot resolve the objection within thirty (30) days, Controller may terminate the affected Services without penalty by providing written notice to Processor;
+Processor shall (i) enter into a written agreement with each Sub-processor imposing data-protection obligations substantially similar to those in this DPA, (ii) remain liable to Customer for the performance of each Sub-processor's obligations, and (iii) ensure each Sub-processor provides sufficient guarantees of appropriate technical and organizational measures.
 
-(c) Controller shall not be entitled to a refund of any prepaid fees unless required by applicable law.
+### 4.5 Assistance with Data Subject Rights
 
-#### 6.4.5 Sub-processor Agreements
+Taking into account the nature of the Processing, Processor shall assist Customer by appropriate technical and organizational measures (insofar as possible) in responding to requests by Data Subjects exercising their rights under Data Protection Laws, including access, rectification, erasure, restriction, portability, objection, and rights related to Automated Decision-Making. If Processor receives a request from a Data Subject directly, Processor shall promptly (within five (5) business days) notify Customer and shall not respond to the Data Subject directly unless authorized by Customer or required by law. Reasonable assistance is provided at no additional charge; excessive, repetitive, or manifestly unfounded requests may incur reasonable administrative fees.
 
-Processor shall:
+### 4.6 Personal Data Breach Notification
 
-(a) Enter into a written agreement with each Sub-processor imposing data protection obligations substantially similar to those imposed on Processor under this DPA;
+In the event of a Personal Data Breach affecting Customer's Personal Data, Processor shall notify Customer without undue delay and in any event within **seventy-two (72) hours** of becoming aware of the Breach. Notification will be sent by email to Customer's designated security contact and through in-platform notification. The notification will include, to the extent known, the nature of the Breach (categories and approximate volume of Data Subjects and records concerned), Processor's contact for further information, the likely consequences, and the measures taken or proposed. Processor shall cooperate with Customer in investigating and mitigating the Breach. Customer is responsible for determining whether the Breach is notifiable to Supervisory Authorities or Data Subjects and for making such notifications within applicable timeframes (e.g., GDPR Article 33's 72 hours).
 
-(b) Remain fully liable to Controller for the performance of each Sub-processor's obligations; and
+> **Note on cadence.** The Enterprise Negotiated DPA Template commits Processor to a 48-hour breach notification window. The Business click-through cadence in this Section 4.6 is set at the GDPR Article 33 statutory ceiling. Customers requiring a 48-hour or shorter contractual commitment should use the Enterprise template.
 
-(c) Ensure that each Sub-processor provides sufficient guarantees to implement appropriate technical and organizational measures.
+### 4.7 Data Protection Impact Assessments
 
-### 6.5 Assistance with Data Subject Rights
+Taking into account the nature of Processing and the information available, Processor shall provide reasonable assistance to Customer with data protection impact assessments and prior consultations with Supervisory Authorities that Customer is required to carry out under GDPR Articles 35-36 or equivalent provisions.
 
-#### 6.5.1 Data Subject Requests
+### 4.8 Audit Rights
 
-Processor shall, taking into account the nature of the Processing, assist Controller by appropriate technical and organizational measures, insofar as this is possible, for the fulfillment of Controller's obligation to respond to requests by Data Subjects exercising their rights under applicable Data Protection Laws, including:
+Processor shall make available to Customer all information reasonably necessary to demonstrate compliance with the obligations set forth in this DPA. In place of on-site inspections (which are reserved for the Enterprise Negotiated DPA Template), Customer's audit right under this Business click-through DPA is satisfied by Processor making available, upon written request and subject to confidentiality obligations:
 
-- Right of access (Article 15 GDPR)
-- Right to rectification (Article 16 GDPR)
-- Right to erasure ("right to be forgotten") (Article 17 GDPR)
-- Right to restriction of Processing (Article 18 GDPR)
-- Right to data portability (Article 20 GDPR)
-- Right to object (Article 21 GDPR)
-- Rights related to automated decision-making (Article 22 GDPR)
+(a) Processor's then-current SOC 2 Type II report (or equivalent), once such report is available;
+(b) Summaries of penetration test results (redacted as necessary for security);
+(c) Annex B (Technical and Organizational Measures), updated from time to time at [aictrlnet.com/legal/dpa](https://aictrlnet.com/legal/dpa);
+(d) Annex C (Sub-processors List), maintained at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors);
+(e) Written responses to Customer's reasonable security and privacy questionnaires, limited to one (1) per twelve-month period unless triggered by a Personal Data Breach or material change in Processing.
 
-#### 6.5.2 Request Notification
-
-If Processor receives a request from a Data Subject directly, Processor shall promptly (and in any event within five (5) business days) notify Controller and shall not respond to the Data Subject directly unless authorized by Controller or required by applicable law.
-
-#### 6.5.3 Assistance Scope
-
-Processor shall provide Controller with:
-
-(a) Self-service tools within the Services to facilitate data access, export, and deletion;
-
-(b) Technical assistance to locate and retrieve Personal Data upon reasonable request;
-
-(c) Documentation of Processing activities relevant to Data Subject requests;
-
-(d) Assistance in responding to regulatory inquiries related to Data Subject rights.
-
-#### 6.5.4 Costs
-
-Processor shall provide reasonable assistance at no additional charge. If Controller's requests are excessive, repetitive, or manifestly unfounded, Processor may charge a reasonable fee based on administrative costs or refuse to act on the request.
-
-### 6.6 Personal Data Breach Notification
-
-#### 6.6.1 Breach Notification Timeline
-
-In the event of a Personal Data Breach affecting Controller's Personal Data, Processor shall:
-
-(a) Notify Controller without undue delay, and in any event within **forty-eight (48) hours** after becoming aware of the Personal Data Breach;
-
-(b) Provide initial notification via email to Controller's designated security contact and through the in-platform notification system;
-
-(c) Provide follow-up information as it becomes available if complete information cannot be provided within the initial notification period.
-
-#### 6.6.2 Breach Notification Content
-
-The notification shall include, to the extent known:
-
-(a) A description of the nature of the Personal Data Breach, including where possible:
-- The categories and approximate number of Data Subjects concerned
-- The categories and approximate number of Personal Data records concerned
-
-(b) The name and contact details of Processor's data protection officer or other contact point;
-
-(c) A description of the likely consequences of the Personal Data Breach;
-
-(d) A description of the measures taken or proposed to be taken to address the Personal Data Breach, including measures to mitigate its possible adverse effects.
-
-#### 6.6.3 Breach Cooperation
-
-Processor shall:
-
-(a) Cooperate with Controller and provide reasonable assistance to investigate the Personal Data Breach;
-
-(b) Take immediate steps to contain and mitigate the Personal Data Breach;
-
-(c) Preserve evidence related to the Personal Data Breach for forensic analysis;
-
-(d) Not communicate with any third party (including regulators, media, or affected Data Subjects) about the Personal Data Breach without Controller's prior written approval, unless required by applicable law.
-
-#### 6.6.4 Controller Obligations
-
-Controller acknowledges that:
-
-(a) Controller is responsible for determining whether a Personal Data Breach is notifiable to Supervisory Authorities and/or Data Subjects under applicable Data Protection Laws;
-
-(b) Controller shall make such notifications within the timeframes required by applicable law (e.g., 72 hours under GDPR Article 33);
-
-(c) Processor's notification to Controller does not constitute an admission of fault or liability.
-
-### 6.7 Data Protection Impact Assessments
-
-Processor shall, taking into account the nature of Processing and the information available to Processor, provide reasonable assistance to Controller with any data protection impact assessments (DPIAs) and prior consultations with Supervisory Authorities that Controller is required to carry out under Articles 35 and 36 of the GDPR or equivalent requirements under other Data Protection Laws.
-
-### 6.8 Audit Rights
-
-#### 6.8.1 Audit Information
-
-Processor shall make available to Controller all information reasonably necessary to demonstrate compliance with the obligations set forth in this DPA and shall allow for and contribute to audits, including inspections, conducted by Controller or another auditor mandated by Controller.
-
-#### 6.8.2 Audit Scope
-
-Audits may include:
-
-(a) Review of Processor's documented policies, procedures, and security controls;
-
-(b) Review of certifications, attestations, and third-party audit reports;
-
-(c) On-site inspections of Processor's facilities (with reasonable advance notice);
-
-(d) Interviews with Processor's relevant personnel;
-
-(e) Technical testing (subject to Processor's security policies).
-
-#### 6.8.3 Audit Procedures
-
-(a) Controller shall provide Processor with at least thirty (30) days' prior written notice of any audit, unless a shorter timeframe is required by a Supervisory Authority or in connection with a Personal Data Breach investigation;
-
-(b) Audits shall be conducted during normal business hours and shall not unreasonably interfere with Processor's business operations;
-
-(c) Controller and its auditors shall comply with Processor's reasonable security and confidentiality requirements;
-
-(d) Audit findings shall be treated as Confidential Information;
-
-(e) Controller shall limit on-site audits to no more than one (1) per twelve-month period, unless required by applicable law or triggered by a Personal Data Breach.
-
-#### 6.8.4 Third-Party Audit Reports
-
-Processor shall make available:
-
-(a) SOC 2 Type II report (or equivalent) upon Controller's written request, subject to confidentiality obligations;
-
-(b) Summaries of penetration test results (redacted as necessary for security purposes);
-
-(c) Other certifications and attestations maintained by Processor.
-
-#### 6.8.5 Audit Costs
-
-Controller shall bear its own costs associated with conducting audits. If an audit reveals a material non-compliance by Processor with this DPA, Processor shall bear the reasonable costs of the audit and shall promptly remediate the non-compliance at Processor's expense.
+Customers requiring on-site inspections must use the Enterprise Negotiated DPA Template.
 
 ---
 
-## 7. OBLIGATIONS OF THE CONTROLLER
+## 5. OBLIGATIONS OF THE CONTROLLER
 
-### 7.1 Lawfulness of Processing
+### 5.1 Lawfulness
 
-Controller represents and warrants that:
+Customer represents and warrants that (a) it has the authority to bind users and Affiliates that access the Services through Customer's account; (b) its instructions to Processor and its own Processing of Personal Data through the Services comply with applicable Data Protection Laws; (c) it has obtained all necessary consents or has another valid legal basis for the Processing; and (d) it shall not provide Personal Data to Processor in violation of Data Protection Laws.
 
-(a) Controller has the authority to bind its Affiliates to this DPA;
+### 5.2 Customer Configuration
 
-(b) Controller's instructions to Processor, and Controller's own Processing of Personal Data in connection with the Services, comply with all applicable Data Protection Laws;
+Customer is responsible for configuring the Services in accordance with security best practices, including the AI governance controls described in Section 9, multi-factor authentication, role assignments, and HITL approval policies appropriate to Customer's risk profile.
 
-(c) Controller has obtained all necessary consents or has another valid legal basis for the Processing of Personal Data through the Services;
+### 5.3 Data Subject Communications
 
-(d) Controller shall not provide Personal Data to Processor in violation of applicable Data Protection Laws or in a manner that would cause Processor to violate applicable Data Protection Laws.
+Customer is responsible for providing appropriate privacy notices to Data Subjects and for responding to Data Subject requests. Customer shall coordinate with Processor as necessary using the assistance described in Section 4.5.
 
-### 7.2 Documented Instructions
+### 5.4 Data Accuracy
 
-Controller shall provide documented instructions to Processor regarding the Processing of Personal Data. Controller acknowledges that Processor relies on Controller to determine that all instructions are lawful and appropriate.
-
-### 7.3 Data Accuracy
-
-Controller is responsible for the accuracy, quality, and integrity of Personal Data provided to Processor. Controller shall ensure that appropriate procedures are in place to maintain data accuracy and to update or correct Personal Data as necessary.
-
-### 7.4 Security Cooperation
-
-Controller shall:
-
-(a) Implement appropriate security measures within its own systems and processes;
-
-(b) Ensure that authorized users maintain the confidentiality of their authentication credentials;
-
-(c) Configure the Services in accordance with security best practices and Processor's recommendations;
-
-(d) Promptly notify Processor of any security incidents that may affect the Services.
-
-### 7.5 Data Subject Communications
-
-Controller is responsible for providing appropriate privacy notices to Data Subjects and for responding to Data Subject requests. Controller shall coordinate with Processor as necessary to fulfill these obligations.
+Customer is responsible for the accuracy, quality, and integrity of Personal Data provided to Processor and for updating or correcting Personal Data as necessary.
 
 ---
 
-## 8. SUB-PROCESSORS
+## 6. INTERNATIONAL DATA TRANSFERS
 
-### 8.1 Sub-processor List
+### 6.1 Data Location
 
-The current list of Sub-processors is set forth in **Annex C** (Sub-processors List) and is also available at [Processor's privacy portal URL].
+Processor stores and Processes Personal Data primarily in cloud regions located in the **United States** for Business-edition subscriptions. EU data residency is available only under the Enterprise Negotiated DPA Template.
 
-### 8.2 Sub-processor Categories
+### 6.2 Transfers Outside the EEA, UK, and Switzerland
 
-Processor engages Sub-processors in the following categories:
+Where Personal Data is transferred from the EEA, UK, or Switzerland to a country that has not received an adequacy decision, Processor shall ensure such transfers comply with applicable Data Protection Laws through one or more of the following mechanisms:
 
-- **Cloud Infrastructure Providers**: Hosting and computing services
-- **Database and Storage Services**: Data persistence and backup
-- **Security Services**: Authentication, monitoring, and threat detection
-- **Communication Services**: Email delivery and notifications
-- **Analytics Services**: Service performance and usage analytics
-- **Support Services**: Customer support and ticketing systems
+**(a) Standard Contractual Clauses.** The EU Standard Contractual Clauses (Commission Implementing Decision (EU) 2021/914), **Module Two: Controller-to-Processor**, are hereby incorporated by reference. For Sub-processor onward transfers, **Module Three: Processor-to-Processor** is hereby incorporated. SCC completion details and selections are set forth in **Annex D**.
 
-### 8.3 Sub-processor Due Diligence
+**(b) UK International Data Transfer Addendum.** For transfers from the UK, the International Data Transfer Addendum to the EU Commission SCCs (the "UK Addendum"), issued by the UK Information Commissioner's Office, is hereby incorporated by reference. Completion details are set forth in Annex D.
 
-Before engaging any Sub-processor, Processor conducts due diligence to ensure that the Sub-processor:
+**(c) Swiss Transfers.** For transfers from Switzerland, the EU SCCs apply with the modifications set forth in Annex D.
 
-(a) Can provide appropriate data protection and security guarantees;
+**(d) Data Privacy Framework.** Where applicable, Processor and/or its Sub-processors may rely on certification under the EU-U.S. Data Privacy Framework, the UK Extension to the EU-U.S. DPF, and/or the Swiss-U.S. Data Privacy Framework, with continuing certification verifiable at [dataprivacyframework.gov/list](https://www.dataprivacyframework.gov/list).
 
-(b) Has relevant certifications or attestations (e.g., SOC 2, ISO 27001);
+### 6.3 Supplementary Measures
 
-(c) Will comply with data localization requirements applicable to Controller;
-
-(d) Has appropriate contractual commitments in place.
-
-### 8.4 Controller-Specific Sub-processors
-
-Controller may request that Processor engage specific Sub-processors for Controller's Processing activities. Such requests shall be subject to Processor's approval and may incur additional fees.
+For international transfers, Processor implements: encryption of Personal Data in transit and at rest; access controls limiting data access to authorized personnel; policies prohibiting voluntary disclosure to government authorities except as required by law; and procedures to challenge government data-access requests to the extent permitted by law.
 
 ---
 
-## 9. INTERNATIONAL DATA TRANSFERS
+## 7. LIABILITY AND INDEMNIFICATION
 
-### 9.1 Data Location
+### 7.1 Limitation of Liability
 
-Processor stores and Processes Personal Data primarily in data centers located in:
+The limitations of liability and exclusions of damages set forth in the Principal Agreement (including any aggregate liability cap) apply to this DPA, except as otherwise required by applicable Data Protection Laws. Neither Party excludes or limits liability for damages arising from (i) death or personal injury caused by negligence; (ii) fraud or fraudulent misrepresentation; (iii) willful misconduct or gross negligence; or (iv) any liability that cannot be limited under applicable law.
 
-- **Primary Region**: United States (AWS US regions)
-- **EU Region**: European Union (AWS EU regions) - available upon request
-- **Additional Regions**: As specified in the Principal Agreement
+### 7.2 Allocation
 
-Controller may select its preferred data residency region where supported by the Services.
+Each Party shall be liable for damages caused by Processing that infringes applicable Data Protection Laws, subject to the limitations in Section 7.1. Processor is liable for damages caused by Processing only where Processor (a) has not complied with obligations of Data Protection Laws specifically directed to Processors or (b) has acted outside of or contrary to Customer's lawful instructions.
 
-### 9.2 Transfers Outside EEA/UK
+### 7.3 No Regulatory Fines Indemnification
 
-When Personal Data is transferred from the EEA, UK, or Switzerland to countries that have not received an adequacy decision from the European Commission (or UK equivalent), Processor shall ensure that such transfers are made in compliance with applicable Data Protection Laws through one or more of the following mechanisms:
-
-#### 9.2.1 Standard Contractual Clauses
-
-(a) The Standard Contractual Clauses (Module Two: Controller to Processor) adopted by the European Commission Decision 2021/914/EU are hereby incorporated by reference into this DPA;
-
-(b) For transfers from the UK, the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses ("UK Addendum") is incorporated by reference;
-
-(c) For transfers from Switzerland, the applicable transfer mechanism recognized under the Swiss Federal Act on Data Protection (FADP) shall apply;
-
-(d) See **Annex D** for Standard Contractual Clauses reference and completion details.
-
-#### 9.2.2 Additional Safeguards
-
-Processor implements the following additional safeguards for international transfers:
-
-(a) Encryption of Personal Data in transit and at rest;
-
-(b) Access controls limiting data access to authorized personnel;
-
-(c) Policies prohibiting voluntary disclosure to government authorities except as required by law;
-
-(d) Procedures to challenge government data access requests to the extent permitted by law;
-
-(e) Transparency reporting on government data requests (where permitted).
-
-#### 9.2.3 Adequacy Decisions
-
-Where applicable, Processor may rely on adequacy decisions issued by the European Commission, the UK, or other competent authorities.
-
-#### 9.2.4 Data Privacy Framework
-
-Where applicable, Processor and/or its Sub-processors may participate in the EU-U.S. Data Privacy Framework, the UK Extension to the EU-U.S. Data Privacy Framework, and/or the Swiss-U.S. Data Privacy Framework, as certified by the U.S. Department of Commerce.
-
-### 9.3 Transfer Impact Assessments
-
-Upon Controller's reasonable request, Processor shall cooperate in conducting transfer impact assessments to evaluate whether the legal framework in the destination country provides adequate protection for Personal Data.
+Processor does not indemnify Customer for administrative fines, penalties, or other regulatory sanctions assessed against Customer under Data Protection Laws. Customers requiring contractual indemnification for regulatory fines must use the Enterprise Negotiated DPA Template.
 
 ---
 
-## 10. LIABILITY AND INDEMNIFICATION
+## 8. TERM AND TERMINATION
 
-### 10.1 Liability Allocation
-
-Each Party shall be liable for damages caused by Processing that infringes applicable Data Protection Laws, subject to the limitations set forth in the Principal Agreement.
-
-### 10.2 Processor Liability
-
-Processor shall be liable for damages caused by Processing only where:
-
-(a) Processor has not complied with obligations of Data Protection Laws specifically directed to Processors; or
-
-(b) Processor has acted outside of or contrary to lawful instructions of Controller.
-
-### 10.3 Controller Liability
-
-Controller shall be liable for damages arising from:
-
-(a) Controller's instructions that infringe applicable Data Protection Laws;
-
-(b) Controller's failure to fulfill its obligations as Controller under applicable Data Protection Laws;
-
-(c) Controller's Processing of Personal Data outside the scope of this DPA.
-
-### 10.4 Indemnification
-
-#### 10.4.1 Processor Indemnification
-
-Processor shall indemnify, defend, and hold harmless Controller from and against any third-party claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising from:
-
-(a) Processor's material breach of this DPA;
-
-(b) Processor's Processing of Personal Data in violation of applicable Data Protection Laws;
-
-(c) Any Personal Data Breach caused by Processor's failure to implement appropriate security measures.
-
-#### 10.4.2 Controller Indemnification
-
-Controller shall indemnify, defend, and hold harmless Processor from and against any third-party claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising from:
-
-(a) Controller's instructions that cause Processor to violate applicable Data Protection Laws;
-
-(b) Controller's failure to obtain necessary consents or legal basis for Processing;
-
-(c) Controller's breach of its obligations under this DPA.
-
-### 10.5 Limitation of Liability
-
-(a) The limitations of liability set forth in the Principal Agreement shall apply to this DPA, except as otherwise required by applicable Data Protection Laws;
-
-(b) Neither Party excludes or limits liability for damages arising from: (i) death or personal injury caused by negligence; (ii) fraud or fraudulent misrepresentation; (iii) willful misconduct or gross negligence; or (iv) any liability that cannot be limited by applicable law.
+This DPA becomes effective on the Effective Date and remains in effect until the termination or expiration of the Principal Agreement, subject to Section 12 (Data Return and Deletion). Provisions that by their nature should survive termination — including confidentiality, liability allocation, and data-return obligations — shall survive.
 
 ---
 
-## 11. TERM AND TERMINATION
+## 9. AI-SPECIFIC DATA PROCESSING TERMS
 
-### 11.1 Term
+### 9.1 AI System Transparency
 
-This DPA shall become effective on the Effective Date and shall remain in effect until the termination or expiration of the Principal Agreement, unless earlier terminated in accordance with this Section 11.
+Processor maintains documentation of AI Systems used within the Services, including: a description of the AI functionality and its purpose; the types of data used as inputs; the outputs produced; known limitations or biases; and human oversight mechanisms. This documentation is available at [aictrlnet.com/legal](https://aictrlnet.com/legal) and in product documentation. For AI-powered features that significantly affect Data Subjects or Customer's business processes, Processor shall, upon Customer's reasonable request, provide meaningful information about the logic involved in automated decision-making and explanations of AI-generated recommendations (to the extent possible without revealing trade secrets).
 
-### 11.2 Termination for Breach
+### 9.2 Model Training Opt-Out (No-Training-By-Default)
 
-Either Party may terminate this DPA upon written notice if the other Party materially breaches this DPA and fails to cure such breach within thirty (30) days of receiving written notice thereof.
+**Processor shall not, and shall contractually require its Sub-processors not to, use Controller Inputs and Outputs to: (a) train, fine-tune, or otherwise improve any general-purpose AI model owned by Processor or any Sub-processor; (b) develop new AI models; (c) benchmark or evaluate AI models for purposes other than providing the Services to Customer; or (d) deliver services to other customers.**
 
-### 11.3 Effect of Termination
+The foregoing prohibition applies by default and persists unless Customer affirmatively opts in via in-Service controls. Processor shall ensure that all AI Sub-processor agreements include a substantively equivalent no-training-by-default prohibition flowed through the inference chain.
 
-Upon termination or expiration of this DPA:
+Notwithstanding the above, Processor may use aggregated and anonymized data (which does not constitute Personal Data) for service improvement, security and threat detection, benchmarking, and research and development.
 
-(a) Processor shall cease all Processing of Personal Data, except as necessary to comply with Section 13 (Data Return and Deletion);
+### 9.3 Automated Decision-Making and Human Oversight
 
-(b) The provisions of this DPA that by their nature should survive termination shall survive, including but not limited to confidentiality obligations, liability provisions, and data return/deletion obligations.
+For any Automated Decision-Making that produces legal effects or similarly significantly affects Data Subjects, **Customer shall ensure human oversight** using the HITL approval workflows and AI governance controls provided by the Services. Processor shall not implement fully automated decisions with significant effects without Customer's explicit configuration. Customer is responsible for configuring approval workflows, confidence thresholds, and audit logging appropriate to its risk profile.
+
+### 9.4 AI Governance Controls (Customer-Configurable)
+
+Customer may configure the following AI governance controls in the Services: AI feature toggles (enable/disable specific AI features); confidence thresholds for AI recommendations; HITL approval workflows for AI-generated actions; audit logging for AI-assisted decisions; and bias monitoring (where supported by the deployed feature set). The availability and configuration surface of these controls may vary by feature.
+
+### 9.5 AI Output Ownership
+
+As between the Parties, Customer owns all right, title, and interest in and to AI System outputs ("**Outputs**") generated from Customer Inputs through the Services. Processor receives no rights in Outputs except a limited, revocable license to host, transmit, store, and process Outputs solely as necessary to provide the Services. Processor shall not (a) use Outputs to train AI models, (b) sell or license Outputs to third parties, (c) use Outputs to deliver services to other customers, or (d) retain Outputs beyond the period necessary to provide the Services (subject to Section 12).
+
+### 9.6 Cross-Border AI Inference
+
+Customer acknowledges that AI Sub-Processors may host inference infrastructure in regions different from the data-residency region Customer expects. When Customer's prompts or AI inputs are routed to an AI Sub-Processor's inference endpoint outside the EEA, UK, or Switzerland (as applicable), such routing constitutes an international data transfer. Processor relies on (a) the EU-U.S. DPF, UK Extension, and Swiss-U.S. DPF where the relevant AI Sub-Processor is certified, and (b) the EU SCCs (Modules Two and Three) as the contractual fallback in all cases.
+
+### 9.7 Regulatory Compliance for AI
+
+#### 9.7.1 EU AI Act
+
+The EU AI Act becomes fully applicable on **August 2, 2026** (with General-Purpose AI Model obligations already in force since August 2, 2025). Where applicable, Processor shall classify AI Systems according to risk categories, implement appropriate risk-management measures, maintain technical documentation, provide transparency information, and support Customer's compliance obligations as a deployer of AI Systems.
+
+#### 9.7.2 Colorado AI Act
+
+For decisions falling within the scope of the Colorado Artificial Intelligence Act (effective **June 30, 2026**), where Customer is a deployer subject to the Act, Processor shall provide the technical and procedural support reasonably necessary for Customer's compliance, including pre-use notice generation, adverse-action notice generation, and risk-assessment documentation. Customer is the deployer and bears primary compliance responsibility.
+
+#### 9.7.3 Evolving AI Regulations
+
+Processor monitors evolving AI regulations globally and shall: update the Services as necessary to maintain compliance; notify Customer of material regulatory changes affecting AI features; and provide reasonable assistance to Customer in meeting AI regulatory obligations.
 
 ---
 
-## 12. AI-SPECIFIC DATA PROCESSING TERMS
+## 10. DWY (DOING-WITH-YOU) IMPLEMENTATION HOURS
 
-### 12.1 AI System Transparency
+### 10.1 Scope
 
-#### 12.1.1 AI Feature Disclosure
+The Business-edition Services bundle a fixed allocation of DWY implementation hours per subscription tier (Starter: 2 hours; Growth: 5 hours; Scale: 8 hours), as specified in the Principal Agreement. During DWY engagements, Processor's implementation personnel may access Customer's tenant of the Services for the purpose of co-implementing workflows, configuring AI governance controls, and transferring knowledge to Customer's team.
 
-Processor shall provide clear documentation of all AI Systems used within the Services, including:
+### 10.2 Processor Personnel Access
 
-(a) A description of the AI functionality and its purpose;
+Where DWY work requires Processor personnel to access Personal Data within Customer's tenant, such access is performed under this DPA as Processing on Customer's behalf. Processor personnel performing DWY work are bound by confidentiality obligations, complete data-protection training, and access Personal Data only as necessary to perform the DWY engagement. All DWY access is logged in the Services' audit trail and is reviewable by Customer.
 
-(b) The types of data used as inputs to the AI System;
+### 10.3 No New Sub-Processor Relationship
 
-(c) The outputs produced by the AI System;
-
-(d) Any limitations or known biases of the AI System;
-
-(e) Human oversight mechanisms in place.
-
-#### 12.1.2 Explainability
-
-For AI-powered features that significantly affect Data Subjects or Controller's business processes, Processor shall:
-
-(a) Provide meaningful information about the logic involved in automated decision-making;
-
-(b) Offer explanations of AI-generated recommendations or decisions upon request;
-
-(c) Document the factors and weightings used in AI models (to the extent possible without revealing trade secrets).
-
-### 12.2 Model Training Opt-Out
-
-#### 12.2.1 Customer Content Exclusion
-
-**Processor shall not, and shall contractually require its Sub-processors not to, use Controller Personal Data, Controller Confidential Information, prompts, or AI System outputs ("Controller Inputs and Outputs") to:**
-
-(a) train, fine-tune, or otherwise improve any general-purpose AI model owned by Processor or any Sub-processor;
-
-(b) develop new AI models;
-
-(c) benchmark or evaluate AI models for purposes other than providing the Services to Controller; or
-
-(d) deliver services to other customers.
-
-The foregoing prohibition applies by default and persists unless Controller affirmatively opts in via the in-Service controls or a separately executed AI Improvement Addendum. Processor shall ensure that all AI Sub-processor agreements include a substantively equivalent prohibition with no-training-by-default flowed down through the inference chain.
-
-#### 12.2.2 Default Position
-
-By default, Controller's data is:
-
-(a) **NOT** used for training Processor's foundation models or general AI systems;
-
-(b) **NOT** shared with third parties for AI training purposes;
-
-(c) **NOT** used to improve Services for other customers;
-
-(d) Used ONLY to provide the Services to Controller as documented in this DPA.
-
-#### 12.2.3 Opt-In for AI Improvement
-
-If Controller wishes to contribute to AI model improvement, Controller may opt-in through:
-
-(a) Written consent specifying the scope of data that may be used;
-
-(b) Configuration settings within the Services (where available);
-
-(c) A separate AI training addendum executed by the Parties.
-
-#### 12.2.4 Aggregated and Anonymized Data
-
-Notwithstanding the above, Processor may use aggregated and anonymized data (which does not constitute Personal Data) for:
-
-(a) Service improvement and optimization;
-
-(b) Security and threat detection;
-
-(c) Benchmarking and analytics;
-
-(d) Research and development.
-
-### 12.3 Automated Decision-Making
-
-#### 12.3.1 Scope
-
-The Services may include automated decision-making features, including:
-
-(a) Workflow routing and task assignment recommendations;
-
-(b) Risk scoring and compliance assessments;
-
-(c) Anomaly detection and security alerts;
-
-(d) Predictive analytics for business processes.
-
-#### 12.3.2 Human Oversight Requirements
-
-For any Automated Decision-Making that produces legal effects or similarly significantly affects Data Subjects:
-
-(a) **Controller shall ensure human oversight** of such decisions;
-
-(b) Processor provides tools and features to enable human review and override of AI recommendations;
-
-(c) Controller is responsible for configuring appropriate approval workflows;
-
-(d) Processor shall not implement fully automated decisions with significant effects without Controller's explicit configuration and consent.
-
-#### 12.3.3 Data Subject Rights for Automated Decisions
-
-Where Automated Decision-Making is used, Controller shall ensure that Data Subjects can:
-
-(a) Obtain human intervention;
-
-(b) Express their point of view;
-
-(c) Contest the decision.
-
-Processor shall provide technical capabilities to support these rights within the Services.
-
-### 12.4 AI Governance Controls
-
-#### 12.4.1 Controller Configuration
-
-Controller may configure the following AI governance controls within the Services:
-
-(a) **AI Feature Toggles**: Enable or disable specific AI features;
-
-(b) **Confidence Thresholds**: Set minimum confidence levels for AI recommendations;
-
-(c) **Approval Workflows**: Require human approval for AI-generated actions;
-
-(d) **Audit Logging**: Track all AI-assisted decisions;
-
-(e) **Bias Monitoring**: Enable bias detection and reporting.
-
-#### 12.4.2 AI Audit Trail
-
-Processor maintains comprehensive audit logs for AI-related Processing, including:
-
-(a) Inputs provided to AI Systems;
-
-(b) Outputs generated by AI Systems;
-
-(c) Human overrides or modifications;
-
-(d) Configuration changes to AI features.
-
-### 12.5 Regulatory Compliance for AI
-
-#### 12.5.1 EU AI Act Compliance
-
-Where applicable, Processor shall:
-
-(a) Classify AI Systems according to risk categories under the EU AI Act;
-
-(b) Implement appropriate risk management measures;
-
-(c) Maintain technical documentation as required;
-
-(d) Provide transparency information to Controller;
-
-(e) Support Controller's compliance obligations as a deployer of AI Systems.
-
-#### 12.5.2 Evolving AI Regulations
-
-Processor shall monitor evolving AI regulations globally and shall:
-
-(a) Update the Services as necessary to maintain compliance;
-
-(b) Notify Controller of material regulatory changes affecting the AI features;
-
-(c) Provide reasonable assistance to Controller in meeting AI regulatory obligations.
-
-#### 12.5.3 Colorado AI Act
-
-For decisions falling within the scope of the Colorado Artificial Intelligence Act (effective June 30, 2026), where Controller is a deployer subject to the Act, Processor shall provide the technical and procedural support reasonably necessary for Controller's compliance, including pre-use notice generation, adverse-action notice generation, and risk-assessment documentation. Controller is the deployer and bears primary compliance responsibility.
-
-#### 12.5.4 EU AI Act Full Applicability
-
-The EU AI Act becomes fully applicable on August 2, 2026 (with high-risk AI provisions effective on that date and General-Purpose AI Model obligations already in force since August 2, 2025). Processor's obligations under Section 12.5.1 shall be interpreted in light of the full set of obligations applicable as of the Effective Date of this DPA.
-
-### 12.6 AI Output Ownership
-
-As between the Parties, Controller owns all right, title, and interest in and to AI System outputs ("**Outputs**") generated from Controller Inputs through the Services. Processor receives no rights in Outputs except a limited, revocable license to host, transmit, store, and process Outputs solely as necessary to provide the Services. Processor shall not:
-
-(a) use Outputs to train AI models;
-
-(b) sell or license Outputs to third parties;
-
-(c) use Outputs to deliver services to other customers; or
-
-(d) retain Outputs beyond the period necessary to provide the Services to Controller, subject to Section 13 (Data Return and Deletion).
-
-### 12.7 Cross-Border AI Inference
-
-Controller acknowledges that AI Sub-Processors may host inference infrastructure in regions different from the data residency region selected by Controller. When Controller's prompts or AI inputs are routed to an AI Sub-Processor's inference endpoint outside the EEA, UK, or Switzerland (as applicable), such routing constitutes an international data transfer.
-
-Processor relies on:
-
-(a) the **EU-U.S. Data Privacy Framework**, the **UK Extension to the EU-U.S. DPF**, and the **Swiss-U.S. Data Privacy Framework** where the relevant AI Sub-Processor is certified, with continuing certification verifiable at [dataprivacyframework.gov/list](https://www.dataprivacyframework.gov/list); and
-
-(b) the **EU Standard Contractual Clauses (Module Two: Controller-to-Processor; Module Three: Processor-to-Processor)** as the contractual fallback in all cases, including where the AI Sub-Processor is not DPF-certified.
-
-Controller may select an in-region AI Sub-Processor where the Services support such selection, subject to availability of the requested model in the requested region. Where Controller has selected an in-region AI Sub-Processor and the routing nonetheless results in cross-border inference (e.g., model failover), Processor shall promptly notify Controller and document the basis under (a) or (b) above.
+DWY work does not create a new Sub-processor relationship. DWY personnel are Processor personnel acting under Processor's existing obligations under this DPA.
 
 ---
 
-## 13. DATA RETURN AND DELETION
+## 11. RELATIONSHIP TO PRINCIPAL AGREEMENT
 
-### 13.1 Data Export
-
-At any time during the term of the Principal Agreement, Controller may export Personal Data from the Services using:
-
-(a) Self-service export tools within the Services;
-
-(b) API access for programmatic data extraction;
-
-(c) Processor's data export assistance (subject to reasonable fees for extensive requests).
-
-### 13.2 Post-Termination Options
-
-Upon termination or expiration of the Principal Agreement, Controller shall have the option to:
-
-#### 13.2.1 Data Return
-
-Request that Processor return all Personal Data in a commonly used, machine-readable format (such as JSON or CSV) within thirty (30) days of termination;
-
-#### 13.2.2 Data Deletion
-
-Request that Processor delete all Personal Data within thirty (30) days of termination, or upon completion of data return if requested;
-
-#### 13.2.3 Default Action
-
-If Controller does not provide instructions within thirty (30) days of termination, Processor shall delete all Personal Data.
-
-### 13.3 Deletion Certification
-
-Upon request, Processor shall provide written certification confirming that all Personal Data has been deleted in accordance with this Section 13.
-
-### 13.4 Retention Exceptions
-
-Processor may retain Personal Data (or portions thereof) after termination only where:
-
-(a) Required by applicable law or regulation;
-
-(b) Required for backup and disaster recovery purposes (in which case data shall be deleted upon normal backup rotation cycles);
-
-(c) Necessary to resolve pending disputes or legal proceedings.
-
-Processor shall inform Controller of any such retention and the legal basis therefor.
-
-### 13.5 Deletion Standards
-
-Processor shall delete Personal Data using methods that render the data irretrievable, in accordance with industry standards such as NIST SP 800-88.
+This DPA is incorporated into and forms part of the Principal Agreement. In the event of a conflict between this DPA and the Principal Agreement, this DPA prevails with respect to data-protection matters. In the event of a conflict between this DPA and the EU SCCs incorporated under Section 6.2(a) (where the SCCs apply), the SCCs prevail.
 
 ---
 
-## 14. GENERAL PROVISIONS
+## 12. DATA RETURN AND DELETION
 
-### 14.1 Relationship to Principal Agreement
+### 12.1 Data Export
 
-This DPA is incorporated into and forms part of the Principal Agreement. In the event of any conflict between the terms of this DPA and the Principal Agreement, the terms of this DPA shall prevail with respect to data protection matters.
+During the Subscription Term, Customer may export the following data using the means Processor makes generally available to Business-edition subscribers:
 
-### 14.2 Entire Agreement
+- **(i) Workflow templates** created or modified by Customer, exportable via the Workflow Templates API in the formats and under the conditions described in the Bodaty Terms of Service §12.10(b) (Business and Enterprise editions);
+- **(ii) Audit logs, execution history, and compliance reports** accessible via the Services' REST APIs in JSON format; programmatic export to CSV is available for analytics and compliance check results;
+- **(iii) Other Customer Content** available upon written request to legal@aictrlnet.com, which Processor will make commercially reasonable efforts to fulfill within thirty (30) days in a mutually acceptable format.
 
-This DPA, together with its Annexes and the Principal Agreement, constitutes the entire agreement between the Parties regarding its subject matter and supersedes all prior agreements, understandings, and communications, whether written or oral, regarding data protection.
+Customer is responsible for periodically exporting any data required for continuity. Processor does not warrant any post-termination access window beyond any grace period available under the Principal Agreement.
 
-### 14.3 Amendments
+### 12.2 Post-Termination Default
 
-This DPA may be amended only by a written instrument signed by both Parties. Notwithstanding the foregoing, Processor may update the Annexes to this DPA (including the Sub-processor list and security measures) from time to time to reflect changes in the Services or regulatory requirements, provided that such updates do not materially diminish the protections afforded to Personal Data.
+If Customer does not provide instructions within thirty (30) days of termination of the Principal Agreement, Processor shall delete all Personal Data using methods that render the data irretrievable, in accordance with industry standards such as NIST SP 800-88. Customer may instead request return of Personal Data in a commonly used, machine-readable format (such as JSON or CSV) within thirty (30) days of termination; in that case, deletion will proceed promptly after return is complete.
 
-### 14.4 Severability
+### 12.3 Deletion Certification
 
-If any provision of this DPA is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect, and the Parties shall negotiate in good faith to replace the invalid provision with a valid provision that achieves the original intent.
+Upon request, Processor shall provide written certification confirming that all Personal Data has been deleted in accordance with this Section 12. Processor may retain Personal Data (or portions thereof) after termination only where required by law, for routine backup-rotation cycles, or to resolve pending disputes or legal proceedings; in such cases Processor shall inform Customer of the retention and the legal basis.
 
-### 14.5 Assignment
+---
 
-Neither Party may assign this DPA without the prior written consent of the other Party, except that Processor may assign this DPA to an Affiliate or in connection with a merger, acquisition, or sale of all or substantially all of its assets.
+## 13. GENERAL PROVISIONS
 
-### 14.6 Notices
+### 13.1 Amendments
 
-Notices under this DPA shall be sent to:
+Processor may update this DPA from time to time to reflect changes in applicable law, the Services, or Sub-processor arrangements. Material changes will be notified by email to Customer's account administrator and/or by in-Service notification, and shall take effect no earlier than thirty (30) days after notification. Material changes do not include updates to Annexes B and C (which may be updated more frequently consistent with Sections 4.4 and 4.8). Updates that materially diminish the protections afforded to Personal Data require Customer's consent.
 
-**To Processor:**
+### 13.2 Governing Law
+
+This DPA shall be governed by the laws specified in the Principal Agreement (Illinois, USA), provided that (a) where the GDPR applies, the governing law shall not affect Data Subjects' rights to bring claims in the Member State of their habitual residence; and (b) disputes regarding data-protection compliance may be referred to the competent Supervisory Authority.
+
+### 13.3 Notices
+
+Notices to Processor shall be sent to:
+
 Bodaty LLC
 Attn: Privacy Team
 200 E. 5th Ave., Suite 121DE
@@ -968,432 +368,205 @@ Naperville, IL 60563
 United States
 Email: privacy@aictrlnet.com
 
-**To Controller:**
-[As specified in the Principal Agreement or as updated in writing]
+Notices to Customer shall be sent to the email address associated with Customer's Bodaty account or, where Customer has designated a privacy contact, to that address.
 
-### 14.7 Governing Law
+### 13.4 Severability
 
-This DPA shall be governed by and construed in accordance with the laws specified in the Principal Agreement, provided that:
+If any provision of this DPA is held invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect, and the Parties shall replace the invalid provision with a valid provision that achieves the original intent.
 
-(a) Where the GDPR applies, the governing law shall not affect Data Subjects' rights under the GDPR to bring claims in the Member State of their habitual residence;
+### 13.5 Order of Precedence
 
-(b) Disputes regarding data protection compliance may be referred to the competent Supervisory Authority.
+In the event of conflict between documents, the following order of precedence applies: (1) EU SCCs (where applicable); (2) this DPA; (3) the Principal Agreement; (4) any other referenced documents.
 
-### 14.8 Dispute Resolution
+### 13.6 No Third-Party Beneficiaries
 
-Disputes arising under this DPA shall be resolved in accordance with the dispute resolution provisions of the Principal Agreement.
-
-### 14.9 No Third-Party Beneficiaries
-
-Except for Data Subjects' rights under applicable Data Protection Laws and as provided in the Standard Contractual Clauses, this DPA does not confer any rights on third parties.
-
-### 14.10 Order of Precedence
-
-In the event of a conflict between documents, the following order of precedence shall apply:
-
-1. Standard Contractual Clauses (where applicable)
-2. This DPA
-3. The Principal Agreement
-4. Any other referenced documents
-
----
-
-## SIGNATURES
-
-**IN WITNESS WHEREOF**, the Parties have executed this Data Processing Agreement as of the Effective Date.
-
----
-
-### BODATY GROUP LLC (Processor)
-
-**Signature:** ________________________________
-
-**Name:** ________________________________
-
-**Title:** ________________________________
-
-**Date:** ________________________________
-
----
-
-### [CUSTOMER LEGAL NAME] (Controller)
-
-**Signature:** ________________________________
-
-**Name:** ________________________________
-
-**Title:** ________________________________
-
-**Date:** ________________________________
+Except for Data Subjects' rights under applicable Data Protection Laws and as provided in the SCCs, this DPA does not confer any rights on third parties.
 
 ---
 
 # ANNEX A: DESCRIPTION OF PROCESSING
 
-## A.1 Subject Matter of Processing
+## A.1 Subject Matter
 
-Processing of Personal Data in connection with the provision of the AICtrlNet/HitLai Enterprise platform and related services.
+Processing of Personal Data in connection with the provision of the AICtrlNet / HitLai Business-edition platform.
 
-## A.2 Duration of Processing
+## A.2 Duration
 
-From the Effective Date of the Principal Agreement until termination or expiration thereof, plus any additional period required for data return, deletion, or legal retention.
+From the Effective Date of the Principal Agreement until termination, plus any additional period required for data return, deletion, or legal retention.
 
 ## A.3 Nature and Purpose of Processing
 
 | Purpose | Description |
 |---------|-------------|
-| **Service Provision** | Providing workflow automation, AI governance, and enterprise collaboration features |
-| **User Management** | Account creation, authentication, authorization, and access control |
-| **Workflow Processing** | Executing workflows, task assignments, approvals, and notifications |
-| **AI Features** | Risk assessment, predictive analytics, compliance monitoring, and intelligent automation |
-| **Security Operations** | Authentication, access logging, threat detection, and security monitoring |
-| **Integration Processing** | Data synchronization with Controller's authorized third-party systems |
-| **Support Services** | Technical support, troubleshooting, and incident response |
-| **Analytics** | Service performance monitoring and usage analytics (subject to Controller configuration) |
-| **Compliance** | Audit logging, compliance reporting, and regulatory support |
-| **Backup and Recovery** | Data backup, disaster recovery, and business continuity |
+| **Service Provision** | Providing workflow automation, AI governance, and collaboration features |
+| **User Management** | Account creation, authentication, authorization, access control |
+| **Workflow Processing** | Executing workflows, task assignments, approvals, notifications |
+| **AI Features** | Risk assessment, predictive analytics, compliance monitoring, intelligent automation |
+| **Security Operations** | Authentication, access logging, threat detection, security monitoring |
+| **Integration Processing** | Data synchronization with Customer's authorized third-party systems |
+| **DWY Implementation** | Co-implementation of workflows and AI governance configuration with Customer |
+| **Support Services** | Technical support, troubleshooting, incident response |
+| **Backup and Recovery** | Data backup, disaster recovery, business continuity |
 
 ## A.4 Types of Personal Data
 
 | Category | Data Elements |
 |----------|---------------|
-| **Identity Data** | Names, usernames, employee IDs, job titles, profile photos |
+| **Identity Data** | Names, usernames, employee IDs, job titles |
 | **Contact Data** | Email addresses, phone numbers, business addresses |
 | **Account Data** | User credentials (hashed), authentication tokens, account settings |
 | **Technical Data** | IP addresses, device identifiers, browser data, session information |
 | **Usage Data** | Feature usage logs, interaction data, preferences |
-| **Workflow Data** | Task data, approvals, comments, attachments, business process data |
-| **Communication Data** | In-platform messages, notifications, collaboration content |
+| **Workflow Data** | Task data, approvals, comments, attachments, business-process data |
+| **Communication Data** | In-platform messages, notifications |
 | **Audit Data** | Access logs, change logs, compliance records |
-| **AI Processing Data** | Inputs to AI systems, outputs and recommendations, feedback data |
+| **AI Processing Data** | Inputs to AI Systems, outputs and recommendations |
 
 ## A.5 Categories of Data Subjects
 
 | Category | Description |
 |----------|-------------|
-| **Controller's Employees** | Individuals employed by Controller who use the Services |
-| **Controller's Contractors** | Independent contractors and consultants engaged by Controller |
-| **Business Partners** | Third-party users authorized by Controller (vendors, suppliers, partners) |
-| **Customers/Clients** | Controller's customers or clients whose data is processed through workflows |
-| **Job Applicants** | Candidates (if HR workflows are utilized) |
-| **Other Individuals** | Any other individuals whose data is submitted to the Services by Controller |
+| **Customer's Employees** | Individuals employed by Customer who use the Services |
+| **Customer's Contractors** | Independent contractors and consultants engaged by Customer |
+| **Business Partners** | Third-party users authorized by Customer |
+| **Customer's Customers** | Individuals whose data is processed through Customer's workflows |
+| **Other Individuals** | Any other individuals whose data is submitted to the Services by Customer |
 
-## A.6 Processing Operations
+## A.6 Special Categories of Personal Data
 
-| Operation | Description |
-|-----------|-------------|
-| **Collection** | Receiving Personal Data from Controller, users, and integrated systems |
-| **Storage** | Storing Personal Data in secure cloud infrastructure |
-| **Organization** | Structuring and indexing data for efficient retrieval |
-| **Retrieval** | Accessing Personal Data to provide Services |
-| **Use** | Processing Personal Data to execute workflows and deliver features |
-| **Disclosure** | Sharing with authorized Sub-processors; providing access to authorized users |
-| **Combination** | Linking data from multiple sources within the Services |
-| **Erasure** | Deleting Personal Data upon request or termination |
-| **Backup** | Creating and maintaining backup copies for disaster recovery |
-| **Transfer** | Transmitting Personal Data between systems and data centers |
+Not intentionally processed. Customer acknowledges that incidental Processing may occur if Special Categories are included in workflow content uploaded by Customer's users; in that case Customer is responsible for ensuring a valid legal basis under GDPR Article 9 or equivalent.
 
-## A.7 Special Categories of Personal Data
-
-| Type | Processing Status |
-|------|-------------------|
-| **Health Data** | Not intentionally processed; may be incidentally included in workflow content |
-| **Biometric Data** | Not processed |
-| **Genetic Data** | Not processed |
-| **Political Opinions** | Not processed |
-| **Religious/Philosophical Beliefs** | Not processed |
-| **Trade Union Membership** | Not processed |
-| **Sexual Orientation/Life** | Not processed |
-| **Criminal Convictions** | Not processed |
-
-**Note:** If Controller's use case requires Processing of Special Categories of Personal Data, Controller must notify Processor in advance and ensure appropriate legal basis and safeguards are in place.
-
-## A.8 AI Processing Specifics
+## A.7 AI Processing Specifics
 
 | AI Feature | Data Processed | Purpose | Human Oversight |
 |------------|----------------|---------|-----------------|
-| **Workflow Prediction** | Historical workflow data, user behavior | Suggest optimal workflow routing | Controller-configurable thresholds |
-| **Risk Assessment** | Workflow content, compliance data | Identify compliance risks | Required human review |
+| **Workflow Prediction** | Historical workflow data, user behavior | Suggest optimal workflow routing | Customer-configurable thresholds |
+| **Risk Assessment** | Workflow content, compliance data | Identify compliance risks | Required human review (HITL) |
 | **Anomaly Detection** | Usage patterns, access logs | Security threat detection | Alert-based review |
-| **NLP Processing** | Text content from workflows | Content classification, extraction | Optional review |
+| **NLP Processing** | Text content from workflows | Content classification and extraction | Optional review |
 | **Recommendation Engine** | User preferences, usage data | Personalized suggestions | User-controllable |
 
 ---
 
 # ANNEX B: TECHNICAL AND ORGANIZATIONAL MEASURES
 
-## B.1 Overview
+Processor implements and maintains the following technical and organizational measures to protect Personal Data in accordance with GDPR Article 32 and industry best practices. These measures are reviewed and updated periodically; the current statement of measures is maintained at [aictrlnet.com/legal/dpa](https://aictrlnet.com/legal/dpa).
 
-Processor implements and maintains the following technical and organizational measures to protect Personal Data in accordance with Article 32 of the GDPR and industry best practices. These measures are regularly reviewed and updated to address evolving threats and maintain compliance with security standards.
+## B.1 Organizational Security
 
-## B.2 Organizational Security Measures
+- Documented information-security program aligned with ISO 27001 and SOC 2 control objectives
+- Security policies covering data protection, access control, and incident response
+- Background checks and confidentiality obligations for personnel with access to Personal Data
+- Mandatory security-awareness training on hire and annually thereafter
+- Vendor and Sub-processor risk assessment including data-protection requirements in contracts
 
-### B.2.1 Information Security Management
+## B.2 Physical and Cloud-Infrastructure Security
 
-| Measure | Description |
-|---------|-------------|
-| **Security Program** | Formal information security program aligned with ISO 27001 and SOC 2 frameworks |
-| **Security Policies** | Comprehensive policies covering data protection, access control, incident response, and more |
-| **Security Team** | Dedicated security team responsible for security operations and compliance |
-| **Risk Assessment** | Regular risk assessments to identify and mitigate security threats |
-| **Security Governance** | Executive oversight of security program with regular reporting |
+- Enterprise-grade cloud infrastructure (AWS / Google Cloud Platform) with SOC 2 and ISO 27001 certifications inherited from the provider
+- Physical access controls, surveillance, fire suppression, climate control, and power redundancy provided by the underlying cloud provider
+- Secure disposal of physical media containing Personal Data
 
-### B.2.2 Personnel Security
+## B.3 Access Control
 
-| Measure | Description |
-|---------|-------------|
-| **Background Checks** | Pre-employment screening for personnel with access to Personal Data |
-| **Confidentiality Agreements** | All personnel sign confidentiality/NDA agreements |
-| **Security Training** | Mandatory security awareness training upon hire and annually thereafter |
-| **Role-Based Training** | Additional training for personnel in sensitive roles |
-| **Termination Procedures** | Prompt access revocation and exit procedures for departing personnel |
+- Multi-factor authentication required for personnel access to production systems
+- SAML 2.0 / OIDC integration available for Customer enterprise SSO
+- Role-based access control with least-privilege enforcement
+- Quarterly access certification and recertification
+- Automatic session timeout and concurrent session controls
+- Strong password requirements; password hashing using bcrypt or Argon2
 
-### B.2.3 Third-Party Management
+## B.4 Encryption
 
-| Measure | Description |
-|---------|-------------|
-| **Vendor Assessment** | Security assessment of all vendors and Sub-processors |
-| **Contractual Requirements** | Data protection and security requirements in all vendor contracts |
-| **Ongoing Monitoring** | Regular review of vendor security posture and compliance |
-| **Incident Notification** | Contractual requirements for prompt security incident notification |
+- TLS 1.2+ enforced for all data in transit; HTTPS-only public endpoints
+- AES-256 encryption for all stored Personal Data
+- Cloud-provider key-management services for encryption keys
 
-## B.3 Physical Security Measures
+## B.5 Network Security
 
-| Measure | Description |
-|---------|-------------|
-| **Data Center Security** | Enterprise-grade data centers (AWS/GCP) with SOC 2 and ISO 27001 certifications |
-| **Physical Access Controls** | Multi-factor authentication for physical facility access |
-| **Surveillance** | 24/7 video monitoring of data center facilities |
-| **Environmental Controls** | Fire suppression, climate control, and power redundancy |
-| **Secure Disposal** | Secure destruction of physical media containing Personal Data |
+- Web Application Firewall and network firewalls
+- Network segmentation isolating production, development, and administrative environments
+- Distributed denial-of-service mitigation
+- Encrypted VPN for administrative access
 
-## B.4 Technical Security Measures
+## B.6 Application Security
 
-### B.4.1 Access Control
+- Secure Software Development Lifecycle practices
+- Mandatory code review for production changes
+- Automated static application security testing (SAST)
+- Dependency scanning for known vulnerabilities
+- Periodic third-party penetration testing
+- Responsible-disclosure / coordinated-vulnerability-disclosure program
 
-| Measure | Description |
-|---------|-------------|
-| **Authentication** | Multi-factor authentication (MFA) required for all user accounts |
-| **Single Sign-On** | SAML 2.0 / OIDC integration for enterprise SSO |
-| **Role-Based Access Control** | Granular permissions based on job function and need-to-know |
-| **Least Privilege** | Access limited to minimum necessary for job functions |
-| **Access Reviews** | Quarterly access certification and recertification |
-| **Session Management** | Automatic session timeout and concurrent session controls |
-| **Password Policy** | Strong password requirements; password hashing using bcrypt/Argon2 |
+## B.7 Logging and Monitoring
 
-### B.4.2 Encryption
+- Comprehensive logging of security-relevant events
+- Log retention of at least twelve (12) months for security logs
+- Real-time alerting for security anomalies
+- Audit trails for compliance and investigation
 
-| Measure | Description |
-|---------|-------------|
-| **Encryption in Transit** | TLS 1.2+ for all data transmission; HTTPS enforced |
-| **Encryption at Rest** | AES-256 encryption for all stored Personal Data |
-| **Key Management** | Hardware Security Modules (HSMs) for encryption key management |
-| **Certificate Management** | Automated certificate renewal; certificate pinning where applicable |
+## B.8 Availability and Resilience
 
-### B.4.3 Network Security
+- Multi-zone deployment with automatic failover where supported by region
+- Daily backups; backups encrypted at rest
+- Documented disaster-recovery procedures; periodic recovery testing
+- Documented incident response procedures
 
-| Measure | Description |
-|---------|-------------|
-| **Firewalls** | Web Application Firewall (WAF) and network firewalls |
-| **Network Segmentation** | Isolation of production, development, and administrative environments |
-| **Intrusion Detection** | Network and host-based intrusion detection/prevention systems |
-| **DDoS Protection** | Distributed denial-of-service mitigation |
-| **VPN** | Encrypted VPN for administrative access |
+## B.9 Compliance and Certification
 
-### B.4.4 Application Security
+| Standard | Status |
+|----------|--------|
+| **SOC 2 Type II** | In progress (target completion within twelve months of GA) |
+| **ISO 27001** | Not yet certified; controls aligned to framework |
+| **GDPR** | Compliant under this DPA |
+| **CCPA/CPRA** | Compliant under this DPA |
+| **HIPAA** | Not available under the Business-edition click-through DPA. Customers requiring a Business Associate Agreement must use the Enterprise Negotiated DPA Template. |
+| **PCI DSS** | Bodaty does not Process payment card data on Customer's behalf; payment processing for Bodaty's own billing is handled by a PCI-compliant payment processor. |
 
-| Measure | Description |
-|---------|-------------|
-| **Secure Development** | Secure Software Development Lifecycle (SSDLC) practices |
-| **Code Review** | Mandatory security code review for all changes |
-| **Static Analysis** | Automated static application security testing (SAST) |
-| **Dynamic Analysis** | Regular dynamic application security testing (DAST) |
-| **Dependency Scanning** | Automated scanning for vulnerable dependencies |
-| **Penetration Testing** | Annual third-party penetration testing |
-| **Bug Bounty** | Responsible disclosure program for security researchers |
+> **Aspirational items disclosure.** Items shown as "in progress" or "not yet certified" are aspirational and will be updated as certifications complete. Customers requiring contractually committed certifications should use the Enterprise Negotiated DPA Template, where certification commitments may be negotiated and dated.
 
-### B.4.5 Data Protection
+## B.10 Updates
 
-| Measure | Description |
-|---------|-------------|
-| **Data Classification** | Classification system for Personal Data sensitivity levels |
-| **Data Minimization** | Collection and retention of only necessary Personal Data |
-| **Pseudonymization** | Pseudonymization techniques where appropriate |
-| **Data Masking** | Masking of sensitive data in non-production environments |
-| **Secure Deletion** | Cryptographic erasure and secure deletion procedures |
-
-## B.5 Availability and Resilience
-
-### B.5.1 Business Continuity
-
-| Measure | Description |
-|---------|-------------|
-| **Redundancy** | Multi-region deployment with automatic failover |
-| **High Availability** | 99.9% uptime SLA with redundant infrastructure |
-| **Load Balancing** | Distributed load balancing across availability zones |
-| **Auto-Scaling** | Automatic scaling to handle traffic spikes |
-
-### B.5.2 Backup and Recovery
-
-| Measure | Description |
-|---------|-------------|
-| **Backup Frequency** | Daily full backups; continuous incremental backups |
-| **Backup Encryption** | All backups encrypted at rest |
-| **Geographic Distribution** | Backups stored in geographically separate location |
-| **Recovery Testing** | Quarterly disaster recovery testing |
-| **RTO/RPO** | Recovery Time Objective: 4 hours; Recovery Point Objective: 1 hour |
-
-### B.5.3 Incident Management
-
-| Measure | Description |
-|---------|-------------|
-| **Incident Response Plan** | Documented incident response procedures |
-| **Incident Team** | Dedicated security incident response team |
-| **24/7 Monitoring** | Round-the-clock security monitoring |
-| **Incident Classification** | Severity-based incident classification and escalation |
-| **Post-Incident Review** | Root cause analysis and remediation for all incidents |
-
-## B.6 Monitoring and Logging
-
-| Measure | Description |
-|---------|-------------|
-| **Comprehensive Logging** | Logging of all security-relevant events |
-| **Log Protection** | Tamper-evident logging with integrity verification |
-| **Log Retention** | Security logs retained for minimum 12 months |
-| **SIEM** | Security Information and Event Management system |
-| **Alerting** | Real-time alerting for security anomalies |
-| **Audit Trails** | Complete audit trails for compliance and investigation |
-
-## B.7 Vulnerability Management
-
-| Measure | Description |
-|---------|-------------|
-| **Vulnerability Scanning** | Weekly automated vulnerability scanning |
-| **Patch Management** | Risk-based patching with critical patches within 72 hours |
-| **Threat Intelligence** | Subscription to threat intelligence feeds |
-| **Security Updates** | Regular security updates for all systems |
-
-## B.8 Compliance and Certification
-
-| Certification/Standard | Status |
-|------------------------|--------|
-| **SOC 2 Type II** | Certified; annual renewal |
-| **ISO 27001** | Certified; triennial renewal with annual surveillance audits |
-| **GDPR Compliance** | Compliant |
-| **CCPA/CPRA Compliance** | Compliant |
-| **HIPAA** | Available upon request (BAA required) |
-| **PCI DSS** | Level 1 Service Provider (for payment processing components) |
-
-## B.9 Measure Updates
-
-Processor reserves the right to update these Technical and Organizational Measures from time to time to reflect improvements in security practices and technology, provided that such updates do not materially diminish the overall security of Personal Data.
+Processor may update these measures from time to time to reflect improvements in security practices and technology, provided that updates do not materially diminish the overall security of Personal Data.
 
 ---
 
-# ANNEX C: SUB-PROCESSORS LIST
+# ANNEX C: SUB-PROCESSORS LIST (SUMMARY)
 
-## C.1 Current Sub-processors
+The authoritative, current list of Sub-processors is maintained at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors). The summary below reflects the inventory as of the Document Version date; in case of inconsistency, the published list controls.
 
-As of the Effective Date, Processor engages the following Sub-processors for the Processing of Personal Data. The current authoritative list is maintained at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors); in the event of inconsistency between this Annex and the published list, the published list controls.
-
-### C.1.1 Infrastructure and Hosting
+## C.1 Infrastructure and Hosting
 
 | Sub-processor | Purpose | Data Processed | Location | Transfer Mechanism |
 |---------------|---------|----------------|----------|---------------------|
-| **Amazon Web Services, Inc.** | Cloud infrastructure, computing, and storage | All Personal Data | US (primary); EU (upon request) | DPF (verify) + SCCs Module Two |
-| **Google Cloud Platform** | Secondary cloud infrastructure; AI/ML services | Workflow data, AI inputs/outputs | US; EU | DPF (verify) + SCCs Module Two |
+| **Amazon Web Services, Inc.** | Cloud infrastructure, computing, and storage | All Personal Data | US (Business-tier primary region) | DPF (verify) + SCCs Module Two |
+| **Google Cloud Platform** | Secondary cloud infrastructure; AI/ML services | Workflow data, AI inputs/outputs | US | DPF (verify) + SCCs Module Two |
 
-### C.1.0 AI Sub-Processors (subject to Section 6.4.3(a) 15-day notice)
+## C.2 AI Sub-Processors (subject to Section 4.4.3(a) 15-day notice)
 
-The following Foundation Model Providers are engaged where Customer enables the corresponding adapter through the Service. Each is contractually committed (or otherwise represented) to no-default-training of Controller data. Adapters reside under `editions/community/src/adapters/implementations/ai/` (Community tier) and `editions/business/src/business_adapters/implementations/ai/` (Business tier).
+The following Foundation Model Providers are engaged where Customer enables the corresponding adapter through the Service. Each is contractually committed (or otherwise represented) to no-default-training of Controller data. Adapters reside under `editions/community/src/adapters/implementations/ai/` (Community-tier providers, available to Business subscribers) and `editions/business/src/business_adapters/implementations/ai/` (Business-tier providers).
 
 | Sub-processor | Purpose | Edition tier | Data Processed | Location | Transfer Mechanism |
 |---------------|---------|--------------|----------------|----------|---------------------|
 | **Anthropic, PBC** | Claude Foundation Model inference | Community+ | Customer prompts and Outputs (no training) | US | DPF (verify) + SCCs Module Three |
 | **OpenAI, LLC** | GPT Foundation Model inference | Community+ | Customer prompts and Outputs (no training, commercial/API tier) | US | DPF (verify) + SCCs Module Three |
 | **HuggingFace, Inc.** | HuggingFace Inference API for hosted open-source models | Community+ | Customer prompts and Outputs (no training) | US; EU | DPF (verify) + SCCs Module Three |
-| **DeepSeek (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.)** | DeepSeek Foundation Model inference (where Customer enables) | Community+ | Customer prompts and Outputs | China-based provider; Controller should review transfer-impact assessment before enabling | SCCs Module Three; supplementary measures required |
+| **DeepSeek (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.)** | DeepSeek Foundation Model inference (where Customer enables) | Community+ | Customer prompts and Outputs | China-based provider; Customer should review transfer-impact assessment before enabling | SCCs Module Three; supplementary measures required |
 | **Google LLC (Gemini)** | Gemini Foundation Model inference | Business+ | Customer prompts and Outputs (no training) | US; EU | DPF (verify) + SCCs Module Three |
 | **Amazon Web Services, Inc. (Bedrock)** | Multi-model Foundation Model gateway (Anthropic, Meta, Mistral, Cohere, and others as Customer selects) | Business+ | Customer prompts and Outputs (no training) | US (primary); EU (where supported) | DPF (verify) + SCCs Module Three |
 | **Cohere, Inc.** | Cohere Foundation Model inference | Business+ | Customer prompts and Outputs (no training) | US; Canada | SCCs Module Three |
 | **Microsoft Corporation (Azure OpenAI)** | OpenAI Foundation Models via Azure regional deployment | Business+ | Customer prompts and Outputs (no training) | Customer-selected Azure region | DPF (verify) + SCCs Module Three |
 
-**Customer-controlled / self-hosted runtimes.** Customer may configure the Service to use locally hosted Foundation Model runtimes such as **Ollama** or **vLLM**. When operated on Customer-controlled infrastructure, these are not AI Sub-Processors under this DPA and Processor does not engage them on Controller's behalf. When operated on Processor-controlled infrastructure for the Service, inference occurs within the infrastructure footprint already disclosed in Section C.1.1 (no separate sub-processor relationship is created).
+**Customer-controlled / self-hosted runtimes.** Customer may configure the Service to use locally hosted Foundation Model runtimes such as **Ollama** or **vLLM**. When operated on Customer-controlled infrastructure, these are not AI Sub-Processors under this DPA and Processor does not engage them on Controller's behalf.
 
 **Provider terms references.** Customer should consult each enabled provider's current data-processing terms before transmitting Personal Data through that adapter. Bodaty does not warrant the contents of third-party Foundation Model Provider terms beyond what is contractually flowed through Bodaty's own agreements with those providers.
 
-### C.1.2 Database and Storage
+## C.3 Database, Storage, Security, Communication, Analytics
 
-| Sub-processor | Purpose | Data Processed | Location |
-|---------------|---------|----------------|----------|
-| **MongoDB Atlas** | Database services | Workflow data, user data | US; EU |
-| **Redis Labs** | Caching and session management | Session data, temporary data | US; EU |
-| **Amazon S3** | Object storage for file attachments | File attachments, documents | US; EU |
+The current list of Sub-processors in these categories (e.g., MongoDB Atlas, Redis Labs, Amazon S3, Cloudflare, Auth0, Datadog, Twilio SendGrid, Twilio, Mixpanel, Zendesk, Intercom) is maintained at [aictrlnet.com/legal/sub-processors](https://aictrlnet.com/legal/sub-processors).
 
-### C.1.3 Security Services
+## C.4 Sub-Processor Agreements
 
-| Sub-processor | Purpose | Data Processed | Location |
-|---------------|---------|----------------|----------|
-| **Cloudflare, Inc.** | CDN, DDoS protection, WAF | IP addresses, request data | Global (edge locations) |
-| **Auth0 (Okta)** | Identity and access management | Authentication data | US; EU |
-| **Datadog, Inc.** | Infrastructure monitoring | System logs, performance data | US; EU |
-
-### C.1.4 Communication Services
-
-| Sub-processor | Purpose | Data Processed | Location |
-|---------------|---------|----------------|----------|
-| **Twilio SendGrid** | Transactional email delivery | Email addresses, notification content | US |
-| **Twilio** | SMS notifications (optional) | Phone numbers, message content | US |
-
-### C.1.5 Analytics and Support
-
-| Sub-processor | Purpose | Data Processed | Location |
-|---------------|---------|----------------|----------|
-| **Mixpanel** | Product analytics | Usage data (anonymized/pseudonymized) | US |
-| **Zendesk** | Customer support ticketing | Support ticket content, contact data | US; EU |
-| **Intercom** | In-app messaging and support | User identifiers, message content | US |
-
-### C.1.6 AI and Machine Learning
-
-The current AI Sub-Processor inventory is set forth in **Section C.1.0 above**. The shorter list previously appearing in this section has been consolidated into C.1.0 to align with the live adapter inventory in the codebase.
-
-**Note:** AI Sub-processors are only engaged when Controller enables the corresponding adapter or feature. Controller may disable AI features and adapters to prevent data sharing with AI Sub-Processors. For Customer-controlled or self-hosted Foundation Model runtimes (Ollama, vLLM), see the note at the end of Section C.1.0.
-
-## C.2 Sub-processor Data Protection Agreements
-
-All Sub-processors have entered into data processing agreements with Processor that:
-
-- Impose data protection obligations substantially similar to those in this DPA
-- Restrict Processing to what is necessary to provide the relevant services
-- Require implementation of appropriate technical and organizational measures
-- Require Sub-processor notification of any Personal Data Breaches
-- Provide for data return or deletion upon termination
-
-## C.3 Sub-processor Updates
-
-Processor maintains an up-to-date list of Sub-processors at:
-
-**URL:** [https://www.aictrlnet.com/legal/sub-processors]
-
-Controller may subscribe to notifications of Sub-processor changes at:
-
-**Email:** privacy@aictrlnet.com (subscription request)
-**Portal:** [https://www.aictrlnet.com/privacy-portal]
-
-## C.4 Controller-Specific Sub-processors
-
-Controller may request the engagement of additional Sub-processors specific to Controller's deployment. Such requests are subject to Processor's approval and may incur additional fees.
-
-## C.5 Data Center Locations
-
-| Provider | Region | Location | Certification |
-|----------|--------|----------|---------------|
-| AWS | us-east-1 | Virginia, USA | SOC 2, ISO 27001 |
-| AWS | us-west-2 | Oregon, USA | SOC 2, ISO 27001 |
-| AWS | eu-west-1 | Ireland | SOC 2, ISO 27001 |
-| AWS | eu-central-1 | Frankfurt, Germany | SOC 2, ISO 27001 |
-| GCP | us-central1 | Iowa, USA | SOC 2, ISO 27001 |
-| GCP | europe-west1 | Belgium | SOC 2, ISO 27001 |
+All Sub-processors have entered into data-processing agreements with Processor that impose data-protection obligations substantially similar to those in this DPA, restrict Processing to what is necessary, require implementation of appropriate technical and organizational measures, require notification of Personal Data Breaches, and provide for data return or deletion upon termination.
 
 ---
 
@@ -1401,168 +574,38 @@ Controller may request the engagement of additional Sub-processors specific to C
 
 ## D.1 Applicability
 
-This Annex D applies when Personal Data is transferred from the European Economic Area (EEA), United Kingdom (UK), or Switzerland to countries that have not received an adequacy decision from the relevant authority.
+This Annex D applies when Personal Data is transferred from the EEA, UK, or Switzerland to a country that has not received an adequacy decision.
 
-## D.2 EU Standard Contractual Clauses
+## D.2 EU SCCs (Commission Implementing Decision (EU) 2021/914)
 
-### D.2.1 Incorporation
+The EU SCCs are incorporated by reference. The following selections apply for Business-tier click-through use:
 
-The Parties agree that the Standard Contractual Clauses adopted by the European Commission Decision (EU) 2021/914 of 4 June 2021 ("EU SCCs") are hereby incorporated by reference into this DPA.
-
-### D.2.2 Module Selection
-
-For transfers from Controller (data exporter) to Processor (data importer):
-
-**Module Two: Transfer Controller to Processor** applies.
-
-### D.2.3 Clause Selections
-
-| Clause | Selection |
-|--------|-----------|
-| **Clause 7 (Docking Clause)** | Included - allows additional parties to accede |
-| **Clause 9 (Sub-processors)** | Option 2 (General Written Authorization) selected |
-| **Clause 11 (Redress)** | Option (a) - independent dispute resolution not required |
+| Item | Selection |
+|------|-----------|
+| **Module** | Module Two (Controller-to-Processor) for direct Customer-to-Bodaty transfers; Module Three (Processor-to-Processor) for Sub-processor onward transfers |
+| **Clause 7 (Docking Clause)** | Not included for click-through DPA (Customers requiring docking must use the Enterprise Negotiated DPA Template) |
+| **Clause 9 (Sub-processors)** | Option 2 (General Written Authorization) selected; see Sections 4.4.1 and 4.4.3 |
+| **Clause 11 (Redress)** | Option (a) — independent dispute-resolution body not required |
 | **Clause 17 (Governing Law)** | Laws of Ireland (for EEA transfers) |
 | **Clause 18 (Forum)** | Courts of Ireland (for EEA transfers) |
-
-### D.2.4 Annex Completion
-
-**Annex I.A - List of Parties:**
-- Data Exporter: Controller (as identified in this DPA)
-- Data Importer: Processor (Bodaty LLC)
-
-**Annex I.B - Description of Transfer:**
-- As set forth in Annex A of this DPA
-
-**Annex I.C - Competent Supervisory Authority:**
-- The Irish Data Protection Commission (for EEA transfers)
-- Or as specified by Controller based on its establishment
-
-**Annex II - Technical and Organizational Measures:**
-- As set forth in Annex B of this DPA
-
-**Annex III - Sub-processors:**
-- As set forth in Annex C of this DPA
+| **Annex I.A (Parties)** | Data Exporter: Customer (as identified in Customer's Bodaty account). Data Importer: Bodaty LLC. |
+| **Annex I.B (Description of Transfer)** | As set forth in Annex A of this DPA |
+| **Annex I.C (Competent Supervisory Authority)** | The Irish Data Protection Commission (for EEA transfers); or as otherwise required based on Customer's establishment |
+| **Annex II (Technical and Organizational Measures)** | As set forth in Annex B of this DPA |
+| **Annex III (Sub-processors)** | As set forth in Annex C of this DPA |
 
 ## D.3 UK International Data Transfer Addendum
 
-### D.3.1 Incorporation
-
-For transfers of Personal Data from the United Kingdom, the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses (the "UK Addendum"), issued by the UK Information Commissioner's Office and laid before Parliament on 2 February 2022, is hereby incorporated by reference.
-
-### D.3.2 Table Completion
-
-| Table | Selection |
-|-------|-----------|
-| **Table 1: Parties** | As specified in Section D.2.4 above |
-| **Table 2: Selected SCCs** | Module Two, as specified in Section D.2.2 |
-| **Table 3: Appendix Information** | As specified in Annexes A, B, and C of this DPA |
-| **Table 4: Ending the Addendum** | Neither Party may end the UK Addendum as set out in Section 19 |
-
-### D.3.3 Governing Law
-
-The UK Addendum shall be governed by the laws of England and Wales.
+For transfers from the UK, the UK Addendum to the EU SCCs (issued by the UK ICO, laid before Parliament 2 February 2022) is incorporated by reference, with completion details corresponding to Section D.2 above. The UK Addendum is governed by the laws of England and Wales.
 
 ## D.4 Swiss Data Transfer Provisions
 
-### D.4.1 Applicability
+For transfers from Switzerland, the EU SCCs apply with the following modifications: references to the GDPR are interpreted as references to the Swiss Federal Act on Data Protection (FADP); references to "EU Member State" include Switzerland; the competent supervisory authority is the Swiss Federal Data Protection and Information Commissioner; governing law is Swiss law; the courts of Switzerland have jurisdiction.
 
-For transfers of Personal Data from Switzerland, the EU SCCs apply with the following modifications:
-
-- References to the GDPR shall be interpreted as references to the Swiss Federal Act on Data Protection (FADP);
-- References to "EU Member State" shall include Switzerland;
-- The competent supervisory authority shall be the Swiss Federal Data Protection and Information Commissioner (FDPIC);
-- The governing law shall be Swiss law;
-- The courts of Switzerland shall have jurisdiction.
-
-## D.5 Additional Safeguards
-
-### D.5.1 Supplementary Measures
-
-In addition to the SCCs, Processor implements the following supplementary measures to protect Personal Data transfers:
-
-**Technical Measures:**
-- Encryption of Personal Data in transit using TLS 1.2+
-- Encryption of Personal Data at rest using AES-256
-- Pseudonymization where feasible
-- Multi-factor authentication for all access
-
-**Organizational Measures:**
-- Data minimization practices
-- Access limited to personnel with need-to-know
-- Personnel confidentiality obligations and training
-- Policies against voluntary disclosure to government authorities
-
-**Contractual Measures:**
-- Prohibition on government access requests being fulfilled without legal process
-- Commitment to challenge government requests where permitted
-- Notification to Controller of government requests (where legally permitted)
-- Commitment to transparency reporting
-
-### D.5.2 Transfer Impact Assessment Support
-
-Upon reasonable request, Processor shall cooperate with Controller in conducting transfer impact assessments to evaluate:
-
-- The laws and practices of the destination country
-- The effectiveness of the transfer mechanism
-- Whether supplementary measures are required
-
-## D.6 Alternative Transfer Mechanisms
-
-### D.6.1 Data Privacy Framework
-
-Where Processor and/or its Sub-processors have certified to the EU-U.S. Data Privacy Framework, UK Extension, or Swiss-U.S. Data Privacy Framework, Controller may rely on such certification as an alternative transfer mechanism.
-
-### D.6.2 Adequacy Decisions
-
-Where the European Commission, UK, or Swiss authorities have issued an adequacy decision for a particular country, transfers to that country may rely on the adequacy decision.
-
-### D.6.3 Binding Corporate Rules
-
-Where applicable, transfers may rely on approved Binding Corporate Rules.
-
-## D.7 Updates to Transfer Mechanisms
+## D.5 Updates to Transfer Mechanisms
 
 If any transfer mechanism relied upon under this Annex D is invalidated or superseded by a court decision or regulatory guidance, the Parties shall cooperate in good faith to implement an alternative lawful transfer mechanism.
 
 ---
 
-# EXECUTION PAGE
-
-This Data Processing Agreement is executed as of the date last signed below (the "Effective Date").
-
----
-
-## BODATY GROUP LLC
-
-By: ________________________________
-
-Name: ________________________________
-
-Title: ________________________________
-
-Date: ________________________________
-
-Address: ________________________________
-
-Email: ________________________________
-
----
-
-## [CUSTOMER LEGAL NAME]
-
-By: ________________________________
-
-Name: ________________________________
-
-Title: ________________________________
-
-Date: ________________________________
-
-Address: ________________________________
-
-Email: ________________________________
-
----
-
-*This Data Processing Agreement has been prepared in accordance with GDPR Article 28 requirements and incorporates best practices from leading technology companies' data processing agreements. For questions or clarifications, please contact privacy@aictrlnet.com.*
+*This Business-edition click-through DPA has been prepared in accordance with GDPR Article 28 requirements and aligned with industry click-through DPA practices (HubSpot, Snowflake, Databricks). For questions or to request the Enterprise Negotiated DPA Template, please contact privacy@aictrlnet.com.*
