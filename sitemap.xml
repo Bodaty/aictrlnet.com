@@ -45,4 +45,49 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/governed-ai-orchestration-for-enterprises/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/ai-agent-orchestration-multiple-providers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/human-in-the-loop-ai-agent-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/govern-monitor-ai-agents-in-production/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/ai-workflow-orchestration-audit-trails-access-controls/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/centrally-manage-secure-ai-agents-across-teams/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/ai-governance-real-time-monitoring-risk-assessment/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aictrlnet.com/faq/orchestrate-ai-agents-customizable-approval-workflows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
