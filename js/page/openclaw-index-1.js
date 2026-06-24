@@ -1,0 +1,1 @@
+location.replace('/runtime-governance/');
