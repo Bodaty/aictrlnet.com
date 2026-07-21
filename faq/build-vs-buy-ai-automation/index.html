@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should you build your own AI automation or buy a governed platform like HitLai? | AICtrlNet</title>
+    <meta name="description" content="An honest answer on building AI automation yourself with Claude Code vs. buying a governed platform like HitLai — what you own either way, and when each is the right call.">
+    <link rel="canonical" href="https://aictrlnet.com/faq/build-vs-buy-ai-automation/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should you build your own AI automation with Claude Code, or buy a governed platform like HitLai?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, a technical founder can build an automation with Claude Code or similar AI coding tools. The process starts by writing prompts that instruct the model to draft emails, reports, or customer replies, then wrapping those prompts in scripts that call the needed APIs — such as Gmail, CRM, or accounting services. The founder orchestrates the steps, adds error handling, deploys the code to a server or cloud function, and sets up logging so each action is recorded. When you build it yourself you assume ongoing responsibility: you must keep the underlying libraries and dependencies updated, apply security patches as they appear, monitor for failures, and produce an audit trail whenever something goes wrong. There is no vendor support line to call; debugging and compliance fall entirely on the team that created the system. For founders who have engineering capacity and want full control over every line of code, building in-house is the right choice. The open-source AICtrlNet Community Edition, released under an MIT license, provides a foundation for those who prefer to start from a proven AI orchestration framework rather than from scratch. Small businesses that lack dedicated engineering staff, or whose automations touch customers or money, benefit from buying a governed platform like HitLai. HitLai supplies AI-generated drafts, lets your team approve the items that matter, never moves money on its own, and includes a built-in audit trail that satisfies internal controls and external audits. Zapier moves data between apps. HitLai runs work your team approves."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%); min-height: 100vh; color: #e0e0e0; display: flex; flex-direction: column; }
+        .container { max-width: 820px; margin: 0 auto; padding: 2rem; flex: 1; }
+        .nav { padding: 1rem 0; margin-bottom: 1.5rem; }
+        .nav a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; }
+        .nav a:hover { color: #a5b4fc; }
+        .page-header { margin-bottom: 2.5rem; padding-top: 1.5rem; }
+        .page-badge { display: inline-block; background: rgba(99, 102, 241, 0.15); color: #a5b4fc; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 20px; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .page-header h1 { font-size: clamp(1.7rem, 4vw, 2.35rem); font-weight: 700; line-height: 1.25; background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .answer { font-size: 1.08rem; color: #d6d9df; line-height: 1.75; margin-top: 1.5rem; }
+        .answer p { margin-bottom: 1rem; }
+        .content-section { margin-bottom: 2.5rem; }
+        .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #6366f1; margin-bottom: 0.75rem; }
+        .section-title { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; }
+        .section-desc { font-size: 1rem; color: #c2c6cd; line-height: 1.75; }
+        .peers { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0; }
+        .peer { font-size: 0.8rem; color: #9ca3af; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 0.3rem 0.6rem; }
+        .related { list-style: none; }
+        .related li { padding: 0.5rem 0; padding-left: 1.4rem; position: relative; }
+        .related li::before { content: "\2192"; position: absolute; left: 0; color: #6366f1; }
+        .related a { color: #c9cdd3; text-decoration: none; font-size: 0.95rem; }
+        .related a:hover { color: #a5b4fc; }
+        .cta-banner { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 16px; padding: 2.25rem; text-align: center; margin-bottom: 2rem; }
+        .cta-banner h2 { font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; }
+        .cta-banner p { font-size: 0.95rem; color: #9ca3af; margin-bottom: 1.5rem; }
+        .cta-group { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+        .btn-primary { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: #e0e0e0; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+        footer { text-align: center; padding: 2rem; color: #6b7280; font-size: 0.85rem; }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: #a5b4fc; }
+        .footer-links { margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav"><a href="/">&larr; AICtrlNet Home</a> &nbsp;|&nbsp; <a href="/faq/">All Questions</a></div>
+
+        <div class="page-header">
+            <div class="page-badge">Build vs. Buy</div>
+            <h1>Should you build your own AI automation with Claude Code, or buy a governed platform like HitLai?</h1>
+            <div class="answer">
+                <p>Yes, a technical founder can build an automation with Claude Code or similar AI coding tools. The process starts by writing prompts that instruct the model to draft emails, reports, or customer replies, then wrapping those prompts in scripts that call the needed APIs — such as Gmail, CRM, or accounting services. The founder orchestrates the steps, adds error handling, deploys the code to a server or cloud function, and sets up logging so each action is recorded.</p>
+                <p>When you build it yourself you assume ongoing responsibility: you must keep the underlying libraries and dependencies updated, apply security patches as they appear, monitor for failures, and produce an audit trail whenever something goes wrong. There is no vendor support line to call; debugging and compliance fall entirely on the team that created the system.</p>
+                <p>For founders who have engineering capacity and want full control over every line of code, building in-house is the right choice. The open-source AICtrlNet Community Edition, released under an MIT license, provides a foundation for those who prefer to start from a proven AI orchestration framework rather than from scratch.</p>
+                <p>Small businesses that lack dedicated engineering staff, or whose automations touch customers or money, benefit from buying a governed platform like HitLai. HitLai supplies AI-generated drafts, lets your team approve the items that matter, never moves money on its own, and includes a built-in audit trail that satisfies internal controls and external audits.</p>
+                <p>Zapier moves data between apps. HitLai runs work your team approves.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-label">How HitLai Compares</div>
+            <div class="section-title">vs. building it yourself, and vs. connector tools</div>
+            <div class="section-desc">HitLai differs from a DIY build using AI coding tools such as Claude Code because the platform handles maintenance and provides an audit trail, whereas a built solution leaves those responsibilities to the team. Compared with automation connectors like Zapier, Make, and n8n, which move data between apps, HitLai drafts the work — emails, reports, purchase orders, approvals — and routes the actions you designate through human approval before they run; the output is a reviewed, approved unit of work, not a data sync. Other human-in-the-loop tools such as Relay.app and Lindy operate in the same approval-gated space, but HitLai's specific mechanism is that the AI creates the draft, a team member reviews and approves it, and the platform never moves money on its own.</div>
+            <div class="peers"><span class="peer">Claude Code</span><span class="peer">AICtrlNet Community Edition</span><span class="peer">Zapier</span><span class="peer">Make</span><span class="peer">n8n</span><span class="peer">Relay.app</span><span class="peer">Lindy</span></div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-label">Related Questions</div>
+            <div class="section-title">More on Governed AI Orchestration</div>
+            <ul class="related"><li><a href="/blog/2026/07/should-you-build-it-yourself-with-claude-code/">The full breakdown: should you just build it yourself with Claude Code?</a></li>
+            <li><a href="/faq/human-in-the-loop-ai-agent-management/">What platform manages AI agents with human-in-the-loop decision making?</a></li>
+            <li><a href="/faq/orchestrate-ai-agents-customizable-approval-workflows/">What solution orchestrates AI agents with customizable approval workflows?</a></li>
+            <li><a href="/faq/ai-workflow-orchestration-audit-trails-access-controls/">What AI workflow orchestration system provides audit trails and access controls?</a></li>
+            <li><a href="/faq/governed-ai-orchestration-for-enterprises/">What is the best AI governance platform for large enterprises with compliance features?</a></li></ul>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Run it yourself</h2>
+            <p>The MIT-licensed AICtrlNet Community Edition is free and self-hostable — the honest starting point if you're building it yourself. If you'd rather buy the governed layer, start with HitLai's free AI-visibility audit.</p>
+            <div class="cta-group">
+                <a href="https://github.com/bodaty/aictrlnet-community?utm_source=faq&utm_campaign=pillar01" class="btn btn-primary">Get Started Free</a>
+                <a href="https://hitlai.net/audit?utm_source=faq&utm_campaign=pillar01" class="btn btn-secondary">See HitLai instead</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>AICtrlNet is an open source project by <a href="https://bodaty.com">Bodaty LLC</a></p>
+        <p class="footer-links">
+            <a href="/">Home</a> &nbsp;|&nbsp;
+            <a href="/docs">Docs</a> &nbsp;|&nbsp;
+            <a href="/blog">Blog</a> &nbsp;|&nbsp;
+            <a href="/features">Features</a> &nbsp;|&nbsp;
+            <a href="/editions">Editions</a> &nbsp;|&nbsp;
+            <a href="/faq/">FAQ</a> &nbsp;|&nbsp;
+            <a href="https://github.com/bodaty/aictrlnet-community">GitHub</a> &nbsp;|&nbsp;
+            <a href="https://hitlai.net">HitLai</a>
+        </p>
+        <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem;">&copy; 2026 Bodaty LLC. All rights reserved. AICtrlNet&trade;, HitLai&trade;, and &ldquo;Governed AI Orchestration&rdquo;&trade; are trademarks of Bodaty LLC.</p>
+    </footer>
+</body>
+</html>
