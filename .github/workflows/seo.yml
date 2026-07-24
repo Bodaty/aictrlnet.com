@@ -1,0 +1,28 @@
+name: seo
+on:
+  push:
+    branches: [main]
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GH Pages deploy + sitemap drift check
+        run: |
+          posts=$(ls _posts/*.md | wc -l | tr -d ' ')
+          live=0
+          for i in $(seq 1 30); do
+            live=$(curl -s https://aictrlnet.com/sitemap.xml | grep -c 'aictrlnet.com/blog/2' || true)
+            [ "$live" -ge "$posts" ] && exit 0
+            sleep 20
+          done
+          echo "live sitemap has $live post URLs, repo has $posts — sitemap drift or deploy delay"
+          exit 1
+      - name: IndexNow ping
+        env:
+          KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          urls=$(curl -s https://aictrlnet.com/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' | jq -R . | jq -cs .)
+          curl -s -w "\nHTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"aictrlnet.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://aictrlnet.com/$KEY.txt\",\"urlList\":$urls}"
