@@ -1,0 +1,18 @@
+# AICtrlNet
+
+> Open-core governed AI orchestration platform by Bodaty LLC. Coordinates AI agents, humans, and enterprise systems under unified governance. Model-independent across Claude, OpenAI, Gemini, and local runtimes (Ollama, vLLM). MIT-licensed Community Edition.
+
+## Core pages
+
+- [Features](https://aictrlnet.com/features/): governance, orchestration, human-in-the-loop
+- [Editions](https://aictrlnet.com/editions/): Community (MIT), Business, Enterprise
+- [Docs](https://aictrlnet.com/docs/): developer documentation
+- [FAQ](https://aictrlnet.com/faq/): buyer questions answered directly
+- [Blog](https://aictrlnet.com/blog/): essays on governed AI orchestration
+- [Runtime Governance](https://aictrlnet.com/runtime-governance/): governing AI agents at runtime
+
+## Related
+
+- [HitLai](https://hitlai.net/): the SMB product built on AICtrlNet
+- [Bodaty](https://bodaty.com/): the company
+- [GitHub](https://github.com/bodaty): source code and releases
