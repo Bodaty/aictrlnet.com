@@ -4,7 +4,7 @@ title: "Alternatives to Zapier with Human Approval Steps: The Honest List (Inclu
 date: 2026-08-03
 author: Bobby Koritala
 categories: [ai, automation, smb, hitlai]
-excerpt: "An honest map of the approval-step automation category — Zapier's own built-in approvals, Relay.app, n8n, Lindy, and HitLai — and how to choose between them."
+excerpt: "An honest map of the approval-step automation category — Zapier's own built-in approvals, n8n, Lindy, and HitLai — updated for Relay.app's August 2026 shutdown."
 ---
 
 *Disclosure up front: we make [HitLai](https://hitlai.net/?utm_source=blog&utm_campaign=pillar02), one of the tools on this list. The list is honest anyway — it includes our competitors' genuine strengths, and the option of not switching at all.*
@@ -17,9 +17,15 @@ First, what a human approval step actually is — because the term gets stretche
 
 The honest first entry on any "alternatives to Zapier" list is Zapier. It now ships a built-in Human in the Loop capability: a Request Approval action pauses the Zap while one or more reviewers approve, decline, or change the data submitted for review; a Collect Data action pauses to gather input; and a trigger fires when an approval is requested so you can log or route it. Approval notifications can go to email or Slack. It's available on Pro plans and higher, each Human in the Loop action counts as a task, and reviewers need access to the Zap itself. If your stack already runs on Zapier and you need occasional approvals on a handful of steps, adding the built-in step is far less disruptive than migrating. The honest reason people still switch: in Zapier, approvals are steps added to a data-pipeline product. In the tools below, the pause is closer to the point of the product.
 
-## Relay.app: approvals as a first-class feature
+## Relay.app: shutting down (August–September 2026)
 
-Relay.app is the tool most often recommended for this search, and the recommendation is deserved. Human-in-the-loop steps are the centerpiece of the product rather than an add-on: a run pauses at an approval step, the assignee gets an interactive Slack or email notification with the relevant context inline, and they can approve, reject, or edit the result before the run continues — including straight from Slack, without opening the app. Human-in-the-loop features are included in every Relay.app plan at no extra cost. If what you want is team-oriented, app-to-app automation with collaborative approvals woven through it, Relay.app is a strong choice.
+Relay.app was the tool most often recommended for this search, and the recommendation was deserved — human-in-the-loop steps were the centerpiece of the product rather than an add-on: a run paused at an approval step, the assignee got an interactive Slack or email notification with the context inline, and they could approve, reject, or edit the result before the run continued, including straight from Slack.
+
+On July 16, 2026, Relay.app announced it is winding down. Free accounts lose access on August 15, 2026 and paying customers on September 14, 2026; new signups and free-to-paid upgrades are already switched off.
+
+We've rewritten this entry rather than quietly deleting it, because if you searched for approval-step automation any time in the past year, Relay.app is probably what you were told to use. If you're on it now, export before your cut-off date rather than after: workflows, sequences and MCP servers come out as JSON along with your AI prompts, run history exports, and tables come out as CSVs. Annual customers are receiving automatic prorated refunds for the unused period.
+
+Where to go next depends on what you were using it for — see the choosing guide below, and [the fuller migration answer](/faq/relay-app-shutting-down-alternatives/) if you're moving now.
 
 ## n8n: approval gates for technical teams
 
@@ -38,12 +44,12 @@ Zapier moves data between apps. HitLai runs work your team approves.
 ## How to choose, honestly
 
 - **You're on Zapier and need occasional approvals:** stay, and use the built-in Human in the Loop step (Pro plan or higher).
-- **You want team workflows with collaborative approvals throughout:** Relay.app, whose approval experience is the best-developed in the category.
+- **You're coming off Relay.app and need team workflows with collaborative approvals:** that's the job HitLai does. Approval workflows are ordered and multi-step, each step routes to a named person, a role, or a group, steps carry timeouts and conditions, a reviewer can approve, reject, or delegate, and requests arrive over Slack, Microsoft Teams, Discord, or email — approve or reject straight from Slack. You can also keep what already works: Zapier, n8n and Make run as nodes inside a HitLai workflow, so this doesn't have to be a rebuild. If approvals were only occasional and you're already deep in Zapier, its built-in step is the smaller move.
 - **You have engineering skill and want to self-host, especially around AI agents:** n8n, with its tool-level gates.
 - **You want a personal AI assistant that always asks first:** Lindy's per-action confirmation.
 - **The work touches customers or money, and you need accountability — a record of who approved what:** that's the job HitLai was built for.
 
-The category exists because trust, not capability, is now the constraint on automation. Any of these tools can pause for a human. The question worth asking before you pick one is what you'll be able to say afterward: when a customer, a partner, or an auditor asks why something went out, the answer "a specific person reviewed it, here's the record" is worth more than any feature list.
+The category exists because trust, not capability, is now the constraint on automation. Any of these tools can pause for a human. The question worth asking before you pick one is what you'll be able to say afterward: when a customer, a partner, or an auditor asks why something went out, the answer "a specific person reviewed it, here's the record" is worth more than any feature list. Relay.app's wind-down adds a second question worth asking: whatever you pick, can you get your workflows back out of it? Keep them exportable.
 
 ---
 
