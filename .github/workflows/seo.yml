@@ -9,15 +9,42 @@ jobs:
       - uses: actions/checkout@v4
       - name: Wait for GH Pages deploy + sitemap drift check
         run: |
+          # Minimum total sitemap URLs. Bump deliberately when pages are intentionally removed.
+          MIN_TOTAL=70
+          # Structural pages that must never silently vanish. A permalink-style page
+          # (trailing slash, no .html) is exactly what a naive extension filter drops —
+          # that regression shipped 2026-08-10 and the old post-only check did not catch it.
+          CRITICAL="/ /blog/ /faq/ /legal/privacy/ /legal/terms/"
+
           posts=$(grep -L "^published: false" _posts/*.md | wc -l | tr -d ' ')
-          live=0
           for i in $(seq 1 30); do
-            live=$(curl -s https://aictrlnet.com/sitemap.xml | grep -c 'aictrlnet.com/blog/2' || true)
-            [ "$live" -ge "$posts" ] && exit 0
+            sm=$(curl -s https://aictrlnet.com/sitemap.xml)
+            live=$(printf '%s' "$sm" | grep -c 'aictrlnet.com/blog/2' || true)
+            total=$(printf '%s' "$sm" | grep -c '<loc>' || true)
+            [ "$live" -ge "$posts" ] && [ "$total" -ge "$MIN_TOTAL" ] && break
             sleep 20
           done
-          echo "live sitemap has $live post URLs, repo has $posts — sitemap drift or deploy delay"
-          exit 1
+
+          fail=0
+          if [ "$live" -lt "$posts" ]; then
+            echo "::error::sitemap has $live post URLs, repo has $posts"; fail=1
+          fi
+          if [ "$total" -lt "$MIN_TOTAL" ]; then
+            echo "::error::sitemap has $total URLs, floor is $MIN_TOTAL — pages were dropped"; fail=1
+          fi
+          for p in $CRITICAL; do
+            if ! printf '%s' "$sm" | grep -q "<loc>https://aictrlnet.com${p}</loc>"; then
+              echo "::error::critical page missing from sitemap: $p"; fail=1
+            fi
+          done
+          # Assets are not pages; a stylesheet in the sitemap wastes crawl budget.
+          if printf '%s' "$sm" | grep -qE '<loc>[^<]+\.(css|js|json|txt)</loc>'; then
+            echo "::error::non-HTML asset present in sitemap:"
+            printf '%s' "$sm" | grep -oE '<loc>[^<]+\.(css|js|json|txt)</loc>'; fail=1
+          fi
+
+          echo "sitemap: total=$total posts=$live (repo posts=$posts)"
+          exit $fail
       - name: IndexNow ping
         env:
           KEY: ${{ secrets.INDEXNOW_KEY }}
