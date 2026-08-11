@@ -40,3 +40,7 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  # local-build only; GH Pages never sees these
+  - vendor
+  - .jekyll-cache
+  - node_modules
