@@ -24,6 +24,21 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
+<nav class="post-more" aria-label="More posts">
+  {% if page.previous or page.next %}
+  <ul class="post-adjacent">
+    {% if page.previous %}<li>&larr; <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a></li>{% endif %}
+    {% if page.next %}<li><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a> &rarr;</li>{% endif %}
+  </ul>
+  {% endif %}
+  <h2>More from the archive</h2>
+  <ul>
+    {% for p in site.posts limit: 10 %}{% unless p.url == page.url %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+    {% endunless %}{% endfor %}
+  </ul>
+  <p><a href="/blog/">All posts &rarr;</a></p>
+</nav>
+
 <!-- Mermaid diagram support -->
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js" integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT" crossorigin="anonymous"></script>
 <script src="/js/page/_layouts-post-1.js" defer></script>
