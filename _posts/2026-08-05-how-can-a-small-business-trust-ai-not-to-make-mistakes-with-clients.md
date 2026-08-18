@@ -17,7 +17,7 @@ That reframing changes what you're shopping for. The question isn't "which AI ma
 
 It helps to name the failure modes, because each one is caught by a different control:
 
-- **Wrong facts.** AI systems state invented specifics with complete confidence — a policy you don't have, a discount you never offered, a deadline you can't meet. This is the famous one: in 2024 a Canadian tribunal ordered Air Canada to honor a bereavement discount its chatbot had invented. The airline, not the software, was on the hook for what a customer was told.
+- **Wrong facts.** AI systems state invented specifics with complete confidence — a policy you don't have, a discount you never offered, a deadline you can't meet. This is the famous one: in 2024 [a Canadian tribunal ordered Air Canada](https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html) to honor a bereavement discount its chatbot had invented. The airline, not the software, was on the hook for what a customer was told.
 - **Wrong recipient.** The right email to the wrong client, or a message that reveals one customer's information to another.
 - **Wrong amount.** A quote missing a digit, an invoice doubled, a refund that shouldn't exist.
 - **Wrong tone.** Technically accurate, relationally ruinous — the collections email sent to your oldest customer the week after a funeral.
@@ -58,5 +58,10 @@ A vendor who can answer all six plainly is selling you controls. A vendor who an
 ## Trust is built, not granted
 
 Notice that nothing above requires believing AI has become reliable. That's the point. Your clients don't experience your tools; they experience what reaches them — and with these controls, what reaches them has a person's judgment on it. The businesses getting real leverage from AI aren't the trusting ones. They're the ones who made trust unnecessary: draft-first, real gates, hard limits, and a record. Mistakes still happen. They just happen in drafts, where they cost minutes instead of clients.
+
+## Sources
+
+- **The chatbot case** — [*Moffatt v. Air Canada*, 2024 BCCRT 149](https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html) (B.C. Civil Resolution Tribunal, 14 February 2024). The tribunal found the airline had not taken reasonable care to ensure its chatbot was accurate, and rejected the argument that the chatbot was responsible for its own statements.
+- **What changed in law and insurance since** — covered with primary sources in our companion piece, [when your AI makes an expensive mistake, who pays](/blog/2026/08/when-your-ai-makes-an-expensive-mistake-who-pays/).
 
 *Disclosure: we make [HitLai](https://hitlai.net?utm_source=blog&utm_campaign=pillar03), a governed AI platform for small businesses built on exactly these controls — the AI drafts real work (quotes, replies, invoices) from your business's own data, a trust dial sets which actions pause for approval, it never moves money on its own, and every approval lands in a timestamped, tamper-evident audit trail. If you'd rather see the mechanics than take our word: the orchestration core, [AICtrlNet Community Edition](https://github.com/bodaty/aictrlnet-community?utm_source=blog&utm_campaign=pillar03), is free and MIT-licensed. Or start by seeing what AI engines already say about your business — the [AI-visibility audit](https://hitlai.net/audit?utm_source=blog&utm_campaign=pillar03) is free.*

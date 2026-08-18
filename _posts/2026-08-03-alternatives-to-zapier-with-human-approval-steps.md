@@ -15,13 +15,13 @@ First, what a human approval step actually is — because the term gets stretche
 
 ## Before you switch: Zapier now has approval steps of its own
 
-The honest first entry on any "alternatives to Zapier" list is Zapier. It now ships a built-in Human in the Loop capability: a Request Approval action pauses the Zap while one or more reviewers approve, decline, or change the data submitted for review; a Collect Data action pauses to gather input; and a trigger fires when an approval is requested so you can log or route it. Approval notifications can go to email or Slack. It's available on Pro plans and higher, each Human in the Loop action counts as a task, and reviewers need access to the Zap itself. If your stack already runs on Zapier and you need occasional approvals on a handful of steps, adding the built-in step is far less disruptive than migrating. The honest reason people still switch: in Zapier, approvals are steps added to a data-pipeline product. In the tools below, the pause is closer to the point of the product.
+The honest first entry on any "alternatives to Zapier" list is Zapier. It now ships a [built-in Human in the Loop capability](https://help.zapier.com/hc/en-us/articles/38731463206029-Request-approval-to-keep-your-workflow-running-with-Human-in-the-Loop): a Request Approval action pauses the Zap while one or more reviewers approve, decline, or change the data submitted for review; a Collect Data action pauses to gather input; and a trigger fires when an approval is requested so you can log or route it. Approval notifications can go to email or Slack. It's available on Pro plans and higher, each Human in the Loop action counts as a task, and reviewers need access to the Zap itself. If your stack already runs on Zapier and you need occasional approvals on a handful of steps, adding the built-in step is far less disruptive than migrating. The honest reason people still switch: in Zapier, approvals are steps added to a data-pipeline product. In the tools below, the pause is closer to the point of the product.
 
 ## Relay.app: shutting down (August–September 2026)
 
 Relay.app was the tool most often recommended for this search, and the recommendation was deserved — human-in-the-loop steps were the centerpiece of the product rather than an add-on: a run paused at an approval step, the assignee got an interactive Slack or email notification with the context inline, and they could approve, reject, or edit the result before the run continued, including straight from Slack.
 
-On July 16, 2026, Relay.app announced it is winding down. Free accounts lose access on August 15, 2026 and paying customers on September 14, 2026; new signups and free-to-paid upgrades are already switched off.
+On July 16, 2026, [Relay.app announced it is winding down](https://docs.relay.app/). Free accounts lose access on August 15, 2026 and paying customers on September 14, 2026; new signups and free-to-paid upgrades are already switched off.
 
 We've rewritten this entry rather than quietly deleting it, because if you searched for approval-step automation any time in the past year, Relay.app is probably what you were told to use. If you're on it now, export before your cut-off date rather than after: workflows, sequences and MCP servers come out as JSON along with your AI prompts, run history exports, and tables come out as CSVs. Annual customers are receiving automatic prorated refunds for the unused period.
 
@@ -29,11 +29,11 @@ Where to go next depends on what you were using it for — see the choosing guid
 
 ## n8n: approval gates for technical teams
 
-n8n is the option for teams with engineering skill who want to run the automation themselves — it's source-available and self-hostable. Its human-in-the-loop design has a detail worth admiring: the gate is enforced at the tool level, not just the workflow level, so an AI agent can freely do safe things like search a knowledge base while risky actions — sending an email, updating a record, deleting data — wait for a person. Approval requests can go out over Gmail, Outlook, Slack, Telegram, WhatsApp, Microsoft Teams, or Discord, and the response can be an approve/deny button, free text, or a custom form the reviewer edits before submitting. The trade is the standard self-hosting trade: total control, and you're the one maintaining it.
+n8n is the option for teams with engineering skill who want to run the automation themselves — it's source-available and self-hostable. Its human-in-the-loop design has a detail worth admiring: [the gate is enforced at the tool level](https://docs.n8n.io/advanced-ai/human-in-the-loop-tools/), not just the workflow level, so an AI agent can freely do safe things like search a knowledge base while risky actions — sending an email, updating a record, deleting data — wait for a person. Approval requests can go out over Gmail, Outlook, Slack, Telegram, WhatsApp, Microsoft Teams, or Discord, and the response can be an approve/deny button, free text, or a custom form the reviewer edits before submitting. The trade is the standard self-hosting trade: total control, and you're the one maintaining it.
 
 ## Lindy: an AI assistant that asks first
 
-Lindy sells AI agents — the "AI employee" framing — rather than pipelines. Its approval mechanic is a per-action toggle: turn on Ask for Confirmation for any action with side effects (sending an email, updating a record, creating a calendar event) and the agent prepares the work, parks it as a draft in the task view, and waits. You approve from the task view or from the email it sends you, and only then does the action execute. For a solo operator who wants an assistant that never acts unilaterally, it's a clean model.
+Lindy sells AI agents — the "AI employee" framing — rather than pipelines. Its approval mechanic is [a per-action toggle](https://docs.lindy.ai/testing/human-in-the-loop): turn on Ask for Confirmation for any action with side effects (sending an email, updating a record, creating a calendar event) and the agent prepares the work, parks it as a draft in the task view, and waits. You approve from the task view or from the email it sends you, and only then does the action execute. For a solo operator who wants an assistant that never acts unilaterally, it's a clean model.
 
 ## HitLai: governed work, not just gated steps
 
@@ -56,3 +56,12 @@ The category exists because trust, not capability, is now the constraint on auto
 ---
 
 **Where to go next.** See how visible your business is to AI answer engines — run the [free AI-visibility audit](https://hitlai.net/audit?utm_source=blog&utm_campaign=pillar02). Building it yourself instead? [AICtrlNet Community Edition](https://github.com/bodaty/aictrlnet-community?utm_source=blog&utm_campaign=pillar02) is free and MIT-licensed. The short version of this post lives in our FAQ: [What are the alternatives to Zapier with human approval steps?](/faq/alternatives-to-zapier-with-human-approval-steps/) — and for the head-to-head, [How does HitLai compare to Relay.app?](/faq/hitlai-vs-relay-app/)
+
+## Sources
+
+Each vendor's approval mechanic is described from its own documentation, not from our reading of its marketing:
+
+- **Zapier** — [Request approval to keep your workflow running with Human in the Loop](https://help.zapier.com/hc/en-us/articles/38731463206029-Request-approval-to-keep-your-workflow-running-with-Human-in-the-Loop). The Request Approval action pauses the Zap until a reviewer approves, declines, or edits the submitted data; reviewers can be notified by email or Slack.
+- **Relay.app** — [the shutdown notice and export instructions](https://docs.relay.app/). Announced 16 July 2026; free accounts end 15 August 2026, paying customers 14 September 2026; workflows, sequences and MCP servers export as JSON, tables as CSV.
+- **n8n** — [Human-in-the-loop for AI tool calls](https://docs.n8n.io/advanced-ai/human-in-the-loop-tools/). The review step is attached to the *tool*, so an agent can use safe tools freely while risky ones wait for a person; responses can be approve/deny, free text, or a custom form.
+- **Lindy** — [Human in the Loop](https://docs.lindy.ai/testing/human-in-the-loop). Ask for Confirmation appears on actions with side effects; the agent parks the work and waits for approval from the task view or the notification email.

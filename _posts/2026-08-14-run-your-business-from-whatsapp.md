@@ -43,7 +43,7 @@ That distinction is the entire safety story, and it is why the design starts wit
 
 In practice the connection is a six-digit code, sent from inside the app, that expires and works once. After that the person's own WhatsApp number *is* their credential. No new password, because there is no new account.
 
-One thing worth setting expectations on honestly: for WhatsApp specifically, the business does a one-time setup first — WhatsApp Business number, credentials from Meta — the same paperwork any company does to send WhatsApp messages at all. That part is not thirty seconds. The *per-person* connection after it is. On Telegram and Slack, there's no equivalent first step.
+One thing worth setting expectations on honestly: for WhatsApp specifically, the business does a one-time setup first — WhatsApp Business number, [credentials from Meta](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started) — the same paperwork any company does to send WhatsApp messages at all. That part is not thirty seconds. The *per-person* connection after it is. On Telegram and Slack, there's no equivalent first step.
 
 ## The handoff you already do, without the retelling
 
@@ -78,3 +78,7 @@ That's the pitch, and it's smaller than it sounds: your team already coordinates
 ---
 
 *Bodaty builds HitLai, an AI orchestration platform for small and mid-sized businesses. The Community Edition is open source.*
+
+## Sources
+
+- **The one-time WhatsApp setup** — [Meta, *WhatsApp Cloud API — Get Started*](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started). Registering a business phone number, creating the Meta app and generating a permanent access token is the same onboarding any company completes before it can send WhatsApp messages at all; it is not specific to us.
