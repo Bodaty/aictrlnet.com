@@ -4,8 +4,8 @@ title: Privacy Policy
 badge: Legal · Privacy Policy
 description: AICtrlNet and HitLai Privacy Policy — GDPR, CCPA, CPRA, EU AI Act, Colorado AI Act
 effective_date: May 1, 2026
-last_updated: May 1, 2026
-version: "2.0"
+last_updated: August 19, 2026
+version: "2.1"
 sync_source: editions/community/docs/PRIVACY_POLICY.md
 permalink: /legal/privacy/
 ---
@@ -621,7 +621,7 @@ We implement comprehensive security measures to protect your data:
 We operate the following compliance programs:
 - **GDPR compliance program** — active, including DPA availability for Business and Enterprise customers
 - **CCPA / CPRA compliance program** — active, including ADMT risk assessments for in-scope automated decision-making
-- **HIPAA-ready architecture** — available for eligible Enterprise customers under Business Associate Agreement (BAA)
+- **HIPAA** — Bodaty executes a Business Associate Agreement where Bodaty acts as a business associate, and a BAA is required before Bodaty Processes any Protected Health Information. **Eligibility is determined by deployment configuration, not by subscription tier.** A BAA is available for on-premises and dedicated deployments in which Protected Health Information is processed locally and is not disclosed to any third-party artificial-intelligence model provider. Protected Health Information must not be submitted to the multi-tenant hosted Service on any tier unless Bodaty has executed a BAA covering that deployment. Contact privacy@aictrlnet.com.
 - **NIST AI Risk Management Framework alignment** — operational roadmap; full attestation contingent on third-party assessment
 - **ISO 42001 (AI Management Systems) alignment** — operational roadmap; full attestation contingent on third-party assessment
 - **SOC 2 Type II audit** — engagement scoped; certification target is a future date and is not yet attested. Bodaty does not represent SOC 2 Type II compliance until a final report is issued.
@@ -860,8 +860,13 @@ Enterprise customers receive:
 - Custom data retention policies
 - Geographic data residency options
 - Enhanced audit logging and access controls
-- HIPAA Business Associate Agreements (where applicable)
 - Custom security assessments and documentation
+
+### For Customers Processing Protected Health Information
+
+If you are a HIPAA covered entity or business associate, a Business Associate Agreement with Bodaty is required before Bodaty processes any Protected Health Information on your behalf.
+
+**BAA availability follows your deployment configuration, not your subscription tier.** A BAA is available for on-premises and dedicated deployments in which Protected Health Information is processed locally and is not disclosed to any third-party AI model provider — including on Business-tier subscriptions. Protected Health Information must not be submitted to the multi-tenant hosted Service on any tier unless a BAA covering that deployment has been executed. See Section 11.4, and contact privacy@aictrlnet.com to begin.
 
 ### For Open Source Users
 

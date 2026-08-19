@@ -4,8 +4,8 @@ title: Data Processing Agreement (Business — Click-Through)
 badge: Legal · DPA · Business click-through
 description: Bodaty LLC Business-edition click-through DPA — GDPR Article 28, UK GDPR, Swiss FADP, EU-U.S. DPF, SCCs Modules Two and Three, EU AI Act, Colorado AI Act
 effective_date: On Customer acceptance of the Bodaty Terms of Service (or first Business-tier access)
-last_updated: May 29, 2026
-version: "2.1"
+last_updated: August 19, 2026
+version: "2.2"
 sync_source: editions/business/docs/DATA_PROCESSING_AGREEMENT.md
 permalink: /legal/dpa/
 ---
@@ -519,7 +519,7 @@ Processor implements and maintains the following technical and organizational me
 | **ISO 27001** | Not yet certified; controls aligned to framework |
 | **GDPR** | Compliant under this DPA |
 | **CCPA/CPRA** | Compliant under this DPA |
-| **HIPAA** | Not available under the Business-edition click-through DPA. Customers requiring a Business Associate Agreement must use the Enterprise Negotiated DPA Template. |
+| **HIPAA** | Available under a separate Business Associate Agreement, which is required before Bodaty Processes any Protected Health Information. Availability is determined by **deployment configuration, not subscription tier**: a BAA is available for on-premises and dedicated deployments in which PHI is Processed locally and is not disclosed to any third-party AI model provider, including on Business-tier Subscriptions. PHI must not be submitted to the multi-tenant hosted Service unless a BAA covering that deployment has been executed. Contact privacy@aictrlnet.com. |
 | **PCI DSS** | Bodaty does not Process payment card data on Customer's behalf; payment processing for Bodaty's own billing is handled by a PCI-compliant payment processor. |
 
 > **Aspirational items disclosure.** Items shown as "in progress" or "not yet certified" are aspirational and will be updated as certifications complete. Customers requiring contractually committed certifications should use the Enterprise Negotiated DPA Template, where certification commitments may be negotiated and dated.
