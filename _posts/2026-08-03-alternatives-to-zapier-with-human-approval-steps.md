@@ -4,8 +4,11 @@ title: "Alternatives to Zapier with Human Approval Steps: The Honest List (Inclu
 date: 2026-08-03
 author: Bobby Koritala
 categories: [ai, automation, smb, hitlai]
-excerpt: "An honest map of the approval-step automation category — Zapier's own built-in approvals, n8n, Lindy, and HitLai — updated for Relay.app's August 2026 shutdown."
+excerpt: "An honest map of the approval-step automation category — Zapier's own built-in approvals, n8n, Lindy, and HitLai — updated November 2026, after Relay.app shut down."
+last_modified_at: 2026-11-24
 ---
+
+*Updated November 24, 2026: Relay.app has now shut down, and its entry below is rewritten to say so.*
 
 *Disclosure up front: we make [HitLai](https://hitlai.net/?utm_source=blog&utm_campaign=pillar02), one of the tools on this list. The list is honest anyway — it includes our competitors' genuine strengths, and the option of not switching at all.*
 
@@ -17,15 +20,13 @@ First, what a human approval step actually is — because the term gets stretche
 
 The honest first entry on any "alternatives to Zapier" list is Zapier. It now ships a [built-in Human in the Loop capability](https://help.zapier.com/hc/en-us/articles/38731463206029-Request-approval-to-keep-your-workflow-running-with-Human-in-the-Loop): a Request Approval action pauses the Zap while one or more reviewers approve, decline, or change the data submitted for review; a Collect Data action pauses to gather input; and a trigger fires when an approval is requested so you can log or route it. Approval notifications can go to email or Slack. It's available on Pro plans and higher, each Human in the Loop action counts as a task, and reviewers need access to the Zap itself. If your stack already runs on Zapier and you need occasional approvals on a handful of steps, adding the built-in step is far less disruptive than migrating. The honest reason people still switch: in Zapier, approvals are steps added to a data-pipeline product. In the tools below, the pause is closer to the point of the product.
 
-## Relay.app: shutting down (August–September 2026)
+## Relay.app: shut down in September 2026
 
 Relay.app was the tool most often recommended for this search, and the recommendation was deserved — human-in-the-loop steps were the centerpiece of the product rather than an add-on: a run paused at an approval step, the assignee got an interactive Slack or email notification with the context inline, and they could approve, reject, or edit the result before the run continued, including straight from Slack.
 
-On July 16, 2026, [Relay.app announced it is winding down](https://docs.relay.app/). Free accounts lose access on August 15, 2026 and paying customers on September 14, 2026; new signups and free-to-paid upgrades are already switched off.
+Relay.app announced its wind-down on July 16, 2026, and [it has now shut down](https://docs.relay.app/). Free accounts closed on August 15 and paying accounts on September 14, 2026. Its own notice says all accounts, workflows and run history have been permanently deleted, so there is nothing left to export.
 
-We've rewritten this entry rather than quietly deleting it, because if you searched for approval-step automation any time in the past year, Relay.app is probably what you were told to use. If you're on it now, export before your cut-off date rather than after: workflows, sequences and MCP servers come out as JSON along with your AI prompts, run history exports, and tables come out as CSVs. Annual customers are receiving automatic prorated refunds for the unused period.
-
-Where to go next depends on what you were using it for — see the choosing guide below, and [the fuller migration answer](/faq/relay-app-shutting-down-alternatives/) if you're moving now.
+We've kept this entry rather than quietly deleting it, because if you searched for approval-step automation any time in the past year, Relay.app is probably what you were told to use, and it still sets the standard to judge a replacement by: a real pause that stops the run until a person decides, with enough context inline to decide well. If you're rebuilding workflows you had there, see the choosing guide below, and [the fuller migration answer](/faq/relay-app-shutting-down-alternatives/).
 
 ## n8n: approval gates for technical teams
 
@@ -37,7 +38,7 @@ Lindy sells AI agents — the "AI employee" framing — rather than pipelines. I
 
 ## HitLai: governed work, not just gated steps
 
-[HitLai](https://hitlai.net/?utm_source=blog&utm_campaign=pillar02) — ours — starts from the same conviction as everything above: the pause is the feature. The difference is the frame. HitLai's AI drafts the work itself — quotes, customer replies, invoices, purchase orders — from your business's own data. You set the trust dial at the company, the department, the workflow, or the individual agent, and every action crosses that gate before it happens. Approval workflows are ordered and multi-step: each step routes to a named person, a role, or a group, carrying timeouts and conditions, and a reviewer can approve, reject, or delegate — from Slack, Teams, Discord, or email. Every decision lands in a timestamped, tamper-evident audit trail, each one chained to the last with a SHA-256 hash, so "who approved this and when" still has an answer months later.
+[HitLai](https://hitlai.net/?utm_source=blog&utm_campaign=pillar02) — ours — starts from the same conviction as everything above: the pause is the feature. The difference is the frame. HitLai's AI drafts the work itself — quotes, customer replies, invoices, purchase orders — from your business's own data. You set the trust dial at the company, the department, the workflow, or the individual agent, and every action is checked against the level you set before it happens: routine work can run on its own while anything customer-facing waits for a person. Approval workflows are ordered and multi-step: each step routes to a named person, a role, or a group, carrying timeouts and conditions, and a reviewer can approve, reject, or delegate — from Slack, Teams, Discord, or email. Every decision lands in a timestamped, tamper-evident audit trail, each one chained to the last with a SHA-256 hash, so "who approved this and when" still has an answer months later.
 
 **And integration is never the roadblock.** Native connectors for the tools you already run — Slack, Teams, Salesforce, HubSpot, Stripe, QuickBooks, Jira, Gmail and more. Your existing Zapier, n8n, Make, Power Automate and IFTTT automations run *as a step* inside a HitLai workflow, so moving doesn't mean rebuilding. And when a connector doesn't exist, HitLai builds one on the fly — against the API, or straight through the browser. There's no catalogue to run out of. And if you're the build-it-yourself type, the orchestration core is open source: [AICtrlNet Community Edition](https://github.com/bodaty/aictrlnet-community?utm_source=blog&utm_campaign=pillar02) is MIT-licensed and self-hostable.
 
@@ -48,10 +49,10 @@ Zapier moves data between apps. HitLai runs work your team approves.
 - **Zapier** has the longest app list in the category — and your Zaps run as a step inside HitLai, so that list isn't a reason to stay put.
 - **n8n** is the self-hosting favourite, with gates enforced at the tool level. HitLai's orchestration core is MIT-licensed and self-hostable too — genuinely open source, not source-available with commercial strings.
 - **Lindy** sells an assistant that asks before it acts. HitLai ships one as well: your own agent with a personality and a memory, driving the same platform your team runs on, with every action crossing the same gate.
-- **Relay.app** is winding down — if you're on it, export before your date.
+- **Relay.app** shut down in September 2026 and deleted its accounts and workflows. Its approval step is still the bar to judge the others by.
 - **HitLai** is the answer when the work touches customers or money and you need roles, multi-step sign-off, delegation, and a record you can hand an auditor.
 
-The category exists because trust, not capability, is now the constraint on automation. Any of these tools can pause for a human. The question worth asking before you pick one is what you'll be able to say afterward: when a customer, a partner, or an auditor asks why something went out, the answer "a specific person reviewed it, here's the record" is worth more than any feature list. Relay.app's wind-down adds a second question worth asking: whatever you pick, can you get your workflows back out of it? Keep them exportable.
+The category exists because trust, not capability, is now the constraint on automation. Any of these tools can pause for a human. The question worth asking before you pick one is what you'll be able to say afterward: when a customer, a partner, or an auditor asks why something went out, the answer "a specific person reviewed it, here's the record" is worth more than any feature list. Relay.app's shutdown adds a second question worth asking: whatever you pick, can you get your workflows back out of it? Keep them exportable.
 
 ---
 
@@ -62,6 +63,6 @@ The category exists because trust, not capability, is now the constraint on auto
 Each vendor's approval mechanic is described from its own documentation, not from our reading of its marketing:
 
 - **Zapier** — [Request approval to keep your workflow running with Human in the Loop](https://help.zapier.com/hc/en-us/articles/38731463206029-Request-approval-to-keep-your-workflow-running-with-Human-in-the-Loop). The Request Approval action pauses the Zap until a reviewer approves, declines, or edits the submitted data; reviewers can be notified by email or Slack.
-- **Relay.app** — [the shutdown notice and export instructions](https://docs.relay.app/). Announced 16 July 2026; free accounts end 15 August 2026, paying customers 14 September 2026; workflows, sequences and MCP servers export as JSON, tables as CSV.
+- **Relay.app** — [the shutdown notice](https://docs.relay.app/). Wind-down announced 16 July 2026; free accounts closed 15 August 2026 and paying customers 14 September 2026; the notice says all accounts, workflows and run history have been permanently deleted.
 - **n8n** — [Human-in-the-loop for AI tool calls](https://docs.n8n.io/advanced-ai/human-in-the-loop-tools/). The review step is attached to the *tool*, so an agent can use safe tools freely while risky ones wait for a person; responses can be approve/deny, free text, or a custom form.
 - **Lindy** — [Human in the Loop](https://docs.lindy.ai/testing/human-in-the-loop). Ask for Confirmation appears on actions with side effects; the agent parks the work and waits for approval from the task view or the notification email.
