@@ -48,7 +48,7 @@ Zapier moves data between apps. HitLai runs work your team approves.
 
 - **Zapier** has the longest app list in the category — and your Zaps run as a step inside HitLai, so that list isn't a reason to stay put.
 - **n8n** is the self-hosting favourite, with gates enforced at the tool level. HitLai's orchestration core is MIT-licensed and self-hostable too — genuinely open source, not source-available with commercial strings.
-- **Lindy** sells an assistant that asks before it acts. HitLai ships one as well: your own agent with a personality and a memory, driving the same platform your team runs on, with every action crossing the same gate.
+- **Lindy** sells an assistant that asks before it acts. HitLai ships one as well: your own agent with a personality and a memory, driving the same platform your team runs on, with the same trust dial deciding what it does on its own and what waits for you.
 - **Relay.app** shut down in September 2026 and deleted its accounts and workflows. Its approval step is still the bar to judge the others by.
 - **HitLai** is the answer when the work touches customers or money and you need roles, multi-step sign-off, delegation, and a record you can hand an auditor.
 
