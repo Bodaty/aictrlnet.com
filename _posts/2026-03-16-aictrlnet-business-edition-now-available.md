@@ -197,11 +197,11 @@ Need more? Additional expert hours are $295/hour, available to any Business tier
 | **Business Starter** | $599/mo | 2 hrs/mo | 36 adapters, 177 templates, 41 industry packs, Phases 1-4 |
 | **Business Growth** | $1,499/mo | 5 hrs/mo | + Self-extending agents, intelligent automation, Pod intelligence |
 | **Business Scale** | $2,499/mo | 8 hrs/mo | + Full analytics, advanced governance, Swarm intelligence |
-| **Enterprise** | $10K+/mo | Dedicated team | Multi-tenant, federation, compliance frameworks, unlimited users |
+| **Enterprise** | From $12,000/mo, contact sales | Dedicated team | Multi-tenant, federation, compliance frameworks, unlimited users |
 
 All Business tiers support up to 50 users. Enterprise is unlimited.
 
-All Business tiers include an annual billing option at a 15% discount.
+All Business tiers include an annual billing option at about 16% less than monthly: $6,038/yr (Starter), $15,110/yr (Growth), $25,190/yr (Scale).
 
 Community Edition remains free, open source, and MIT licensed. No bait-and-switch. No feature crippling. It's a real product that real teams use every day — Business Edition is for teams that need the industry templates, the self-extending agents, the ML governance, and the expert support to get to production faster.
 
